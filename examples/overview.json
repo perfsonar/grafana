@@ -30,8 +30,7 @@
   "panels": [
     {
       "datasource": {
-        "type": "grafana-opensearch-datasource",
-        "uid": "gKB9-sBVk"
+        "type": "grafana-opensearch-datasource"
       },
       "gridPos": {
         "h": 6,
@@ -85,8 +84,7 @@
     },
     {
       "datasource": {
-        "type": "grafana-opensearch-datasource",
-        "uid": "gKB9-sBVk"
+        "type": "grafana-opensearch-datasource"
       },
       "fieldConfig": {
         "defaults": {
@@ -191,8 +189,7 @@
     },
     {
       "datasource": {
-        "type": "grafana-opensearch-datasource",
-        "uid": "gKB9-sBVk"
+        "type": "grafana-opensearch-datasource"
       },
       "fieldConfig": {
         "defaults": {
@@ -297,8 +294,7 @@
     },
     {
       "datasource": {
-        "type": "grafana-opensearch-datasource",
-        "uid": "gKB9-sBVk"
+        "type": "grafana-opensearch-datasource"
       },
       "fieldConfig": {
         "defaults": {
@@ -407,8 +403,7 @@
     },
     {
       "datasource": {
-        "type": "grafana-opensearch-datasource",
-        "uid": "gKB9-sBVk"
+        "type": "grafana-opensearch-datasource"
       },
       "fieldConfig": {
         "defaults": {
@@ -518,8 +513,7 @@
     },
     {
       "datasource": {
-        "type": "grafana-opensearch-datasource",
-        "uid": "gKB9-sBVk"
+        "type": "grafana-opensearch-datasource"
       },
       "fieldConfig": {
         "defaults": {
@@ -623,8 +617,7 @@
     },
     {
       "datasource": {
-        "type": "grafana-opensearch-datasource",
-        "uid": "gKB9-sBVk"
+        "type": "grafana-opensearch-datasource"
       },
       "fieldConfig": {
         "defaults": {
@@ -749,8 +742,7 @@
     },
     {
       "datasource": {
-        "type": "grafana-opensearch-datasource",
-        "uid": "gKB9-sBVk"
+        "type": "grafana-opensearch-datasource"
       },
       "fieldConfig": {
         "defaults": {
