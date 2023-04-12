@@ -1,0 +1,3127 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 1,
+  "id": 1,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "always",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bps"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "id": 27,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "alias": "{{term meta.source.hostname.keyword}} -> {{term meta.destination.hostname.keyword}} ({{term pscheduler.tool.keyword}}) - IPv{{term meta.ip_version}}",
+          "bucketAggs": [
+            {
+              "field": "meta.source.hostname.keyword",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.destination.hostname.keyword",
+              "id": "4",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.tool.keyword",
+              "id": "5",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.ip_version",
+              "id": "6",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.test_checksum.keyword",
+              "id": "7",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.start_time",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "gKB9-sBVk"
+          },
+          "format": "table",
+          "metrics": [
+            {
+              "field": "result.throughput",
+              "id": "1",
+              "type": "avg"
+            }
+          ],
+          "query": "(meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$target OR reference.display-set-dest.keyword:$target_ref) AND test.type.keyword:throughput",
+          "queryType": "lucene",
+          "refId": "throughput",
+          "timeField": "pscheduler.start_time"
+        },
+        {
+          "alias": "{{term meta.source.hostname.keyword}} -> {{term meta.destination.hostname.keyword}} ({{term pscheduler.tool.keyword}}) - IPv{{term meta.ip_version}}",
+          "bucketAggs": [
+            {
+              "field": "meta.source.hostname.keyword",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.destination.hostname.keyword",
+              "id": "4",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.tool.keyword",
+              "id": "5",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.ip_version",
+              "id": "6",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.test_checksum.keyword",
+              "id": "7",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.start_time",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "gKB9-sBVk"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "field": "result.throughput",
+              "id": "1",
+              "type": "avg"
+            }
+          ],
+          "query": "(meta.source.hostname.keyword: $target OR reference.display-set-source.keyword:$target_ref) AND (meta.destination.hostname.keyword: $source OR reference.display-set-dest.keyword:$source_ref) AND test.type.keyword:throughput",
+          "queryType": "lucene",
+          "refId": "thrughput-reverse",
+          "timeField": "pscheduler.start_time"
+        }
+      ],
+      "title": "Throughput",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "always",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "id": 28,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "alias": "{{term meta.source.hostname.keyword}} -> {{term meta.destination.hostname.keyword}} ({{term pscheduler.tool.keyword}}) - IPv{{term meta.ip_version}}",
+          "bucketAggs": [
+            {
+              "field": "meta.source.hostname.keyword",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.destination.hostname.keyword",
+              "id": "4",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.tool.keyword",
+              "id": "5",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.ip_version",
+              "id": "6",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.test_checksum.keyword",
+              "id": "7",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.start_time",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "gKB9-sBVk"
+          },
+          "format": "table",
+          "metrics": [
+            {
+              "field": "result.retransmits",
+              "id": "1",
+              "type": "avg"
+            }
+          ],
+          "query": "(meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$target OR reference.display-set-dest.keyword:$target_ref) AND test.type.keyword:throughput",
+          "queryType": "lucene",
+          "refId": "throughput",
+          "timeField": "pscheduler.start_time"
+        },
+        {
+          "alias": "{{term meta.source.hostname.keyword}} -> {{term meta.destination.hostname.keyword}} ({{term pscheduler.tool.keyword}}) - IPv{{term meta.ip_version}}",
+          "bucketAggs": [
+            {
+              "field": "meta.source.hostname.keyword",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.destination.hostname.keyword",
+              "id": "4",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.tool.keyword",
+              "id": "5",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.ip_version",
+              "id": "6",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.test_checksum.keyword",
+              "id": "7",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.start_time",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "gKB9-sBVk"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "field": "result.retransmits",
+              "id": "1",
+              "type": "avg"
+            }
+          ],
+          "query": "(meta.source.hostname.keyword: $target OR reference.display-set-source.keyword:$target_ref) AND (meta.destination.hostname.keyword: $source OR reference.display-set-dest.keyword:$source_ref) AND test.type.keyword:throughput",
+          "queryType": "lucene",
+          "refId": "thrughput-reverse",
+          "timeField": "pscheduler.start_time"
+        }
+      ],
+      "title": "Retransmits",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "always",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 0,
+        "y": 10
+      },
+      "id": 29,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "alias": "95th percentile - {{term meta.source.hostname.keyword}} -> {{term meta.destination.hostname.keyword}} ({{term pscheduler.tool.keyword}})  - IPv{{term meta.ip_version}}",
+          "bucketAggs": [
+            {
+              "field": "meta.source.hostname.keyword",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.destination.hostname.keyword",
+              "id": "4",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.tool.keyword",
+              "id": "5",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.ip_version",
+              "id": "6",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.test_checksum.keyword",
+              "id": "7",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.start_time",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "gKB9-sBVk"
+          },
+          "format": "table",
+          "metrics": [
+            {
+              "field": "result.latency.p_95",
+              "id": "1",
+              "type": "avg"
+            }
+          ],
+          "query": "(meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$target OR reference.display-set-dest.keyword:$target_ref) AND test.type: latencybg",
+          "queryType": "lucene",
+          "refId": "p95",
+          "timeField": "pscheduler.start_time"
+        },
+        {
+          "alias": "Median - {{term meta.source.hostname.keyword}} -> {{term meta.destination.hostname.keyword}} ({{term pscheduler.tool.keyword}})  - IPv{{term meta.ip_version}}",
+          "bucketAggs": [
+            {
+              "field": "meta.source.hostname.keyword",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.destination.hostname.keyword",
+              "id": "4",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.tool.keyword",
+              "id": "5",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.ip_version",
+              "id": "6",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.test_checksum.keyword",
+              "id": "7",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.start_time",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "gKB9-sBVk"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "field": "result.latency.median",
+              "id": "1",
+              "type": "avg"
+            }
+          ],
+          "query": "(meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$target OR reference.display-set-dest.keyword:$target_ref) AND test.type: latencybg",
+          "queryType": "lucene",
+          "refId": "median",
+          "timeField": "pscheduler.start_time"
+        },
+        {
+          "alias": "Minimum - {{term meta.source.hostname.keyword}} -> {{term meta.destination.hostname.keyword}} ({{term pscheduler.tool.keyword}})  - IPv{{term meta.ip_version}}",
+          "bucketAggs": [
+            {
+              "field": "meta.source.hostname.keyword",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.destination.hostname.keyword",
+              "id": "4",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.tool.keyword",
+              "id": "5",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.ip_version",
+              "id": "6",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.test_checksum.keyword",
+              "id": "7",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.start_time",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "gKB9-sBVk"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "field": "result.latency.min",
+              "id": "1",
+              "type": "min"
+            }
+          ],
+          "query": "(meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$target OR reference.display-set-dest.keyword:$target_ref) AND test.type: latencybg",
+          "queryType": "lucene",
+          "refId": "min",
+          "timeField": "pscheduler.start_time"
+        }
+      ],
+      "title": "Latency",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "always",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 12,
+        "y": 10
+      },
+      "id": 30,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "alias": "95th percentile - {{term meta.source.hostname.keyword}} -> {{term meta.destination.hostname.keyword}} ({{term pscheduler.tool.keyword}})  - IPv{{term meta.ip_version}}",
+          "bucketAggs": [
+            {
+              "field": "meta.source.hostname.keyword",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.destination.hostname.keyword",
+              "id": "4",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.tool.keyword",
+              "id": "5",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.ip_version",
+              "id": "6",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.test_checksum.keyword",
+              "id": "7",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.start_time",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "gKB9-sBVk"
+          },
+          "format": "table",
+          "metrics": [
+            {
+              "field": "result.latency.p_95",
+              "id": "1",
+              "type": "avg"
+            }
+          ],
+          "query": "(meta.source.hostname.keyword: $target OR reference.display-set-source.keyword:$target_ref) AND (meta.destination.hostname.keyword: $source OR reference.display-set-dest.keyword:$source_ref) AND test.type: latencybg",
+          "queryType": "lucene",
+          "refId": "p95",
+          "timeField": "pscheduler.start_time"
+        },
+        {
+          "alias": "Median - {{term meta.source.hostname.keyword}} -> {{term meta.destination.hostname.keyword}} ({{term pscheduler.tool.keyword}})  - IPv{{term meta.ip_version}}",
+          "bucketAggs": [
+            {
+              "field": "meta.source.hostname.keyword",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.destination.hostname.keyword",
+              "id": "4",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.tool.keyword",
+              "id": "5",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.ip_version",
+              "id": "6",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.test_checksum.keyword",
+              "id": "7",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.start_time",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "gKB9-sBVk"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "field": "result.latency.median",
+              "id": "1",
+              "type": "avg"
+            }
+          ],
+          "query": "(meta.source.hostname.keyword: $target OR reference.display-set-source.keyword:$target_ref) AND (meta.destination.hostname.keyword: $source OR reference.display-set-dest.keyword:$source_ref) AND test.type: latencybg",
+          "queryType": "lucene",
+          "refId": "median",
+          "timeField": "pscheduler.start_time"
+        },
+        {
+          "alias": "Minimum - {{term meta.source.hostname.keyword}} -> {{term meta.destination.hostname.keyword}} ({{term pscheduler.tool.keyword}})  - IPv{{term meta.ip_version}}",
+          "bucketAggs": [
+            {
+              "field": "meta.source.hostname.keyword",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.destination.hostname.keyword",
+              "id": "4",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.tool.keyword",
+              "id": "5",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.ip_version",
+              "id": "6",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.test_checksum.keyword",
+              "id": "7",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.start_time",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "gKB9-sBVk"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "field": "result.latency.min",
+              "id": "1",
+              "type": "min"
+            }
+          ],
+          "query": "(meta.source.hostname.keyword: $target OR reference.display-set-source.keyword:$target_ref) AND (meta.destination.hostname.keyword: $source OR reference.display-set-dest.keyword:$source_ref) AND test.type: latencybg",
+          "queryType": "lucene",
+          "refId": "min",
+          "timeField": "pscheduler.start_time"
+        }
+      ],
+      "title": "Latency (Reverse)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "always",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 0,
+        "y": 20
+      },
+      "id": 31,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "alias": "Maximum - {{term meta.source.hostname.keyword}} -> {{term meta.destination.hostname.keyword}} ({{term pscheduler.tool.keyword}}) - IPv{{term meta.ip_version}}",
+          "bucketAggs": [
+            {
+              "field": "meta.source.hostname.keyword",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.destination.hostname.keyword",
+              "id": "4",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.tool.keyword",
+              "id": "5",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.ip_version",
+              "id": "6",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.test_checksum.keyword",
+              "id": "7",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.start_time",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "gKB9-sBVk"
+          },
+          "format": "table",
+          "metrics": [
+            {
+              "field": "result.packets.loss",
+              "id": "1",
+              "type": "avg"
+            }
+          ],
+          "query": "(meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$target OR reference.display-set-dest.keyword:$target_ref) AND test.type: latencybg",
+          "queryType": "lucene",
+          "refId": "max",
+          "timeField": "pscheduler.start_time"
+        }
+      ],
+      "title": "Packet Loss",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "always",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 12,
+        "y": 20
+      },
+      "id": 32,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "alias": "Maximum - {{term meta.source.hostname.keyword}} -> {{term meta.destination.hostname.keyword}} ({{term pscheduler.tool.keyword}}) - IPv{{term meta.ip_version}}",
+          "bucketAggs": [
+            {
+              "field": "meta.source.hostname.keyword",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.destination.hostname.keyword",
+              "id": "4",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.tool.keyword",
+              "id": "5",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.ip_version",
+              "id": "6",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.test_checksum.keyword",
+              "id": "7",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.start_time",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "gKB9-sBVk"
+          },
+          "format": "table",
+          "metrics": [
+            {
+              "field": "result.packets.loss",
+              "id": "1",
+              "type": "avg"
+            }
+          ],
+          "query": "(meta.source.hostname.keyword: $target OR reference.display-set-source.keyword:$target_ref) AND (meta.destination.hostname.keyword: $source OR reference.display-set-dest.keyword:$source_ref) AND test.type: latencybg",
+          "queryType": "lucene",
+          "refId": "max",
+          "timeField": "pscheduler.start_time"
+        }
+      ],
+      "title": "Packet Loss (Reverse)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "always",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 0,
+        "y": 30
+      },
+      "id": 33,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "alias": "Interquartile Range - {{term meta.source.hostname.keyword}} -> {{term meta.destination.hostname.keyword}} ({{term pscheduler.tool.keyword}}) - IPv{{term meta.ip_version}}",
+          "bucketAggs": [
+            {
+              "field": "meta.source.hostname.keyword",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.destination.hostname.keyword",
+              "id": "4",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.tool.keyword",
+              "id": "5",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.ip_version",
+              "id": "6",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.test_checksum.keyword",
+              "id": "7",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.start_time",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "gKB9-sBVk"
+          },
+          "format": "table",
+          "metrics": [
+            {
+              "field": "result.latency.p_25",
+              "hide": true,
+              "id": "1",
+              "type": "avg"
+            },
+            {
+              "field": "result.latency.p_75",
+              "hide": true,
+              "id": "8",
+              "type": "avg"
+            },
+            {
+              "id": "9",
+              "pipelineVariables": [
+                {
+                  "name": "var1",
+                  "pipelineAgg": "8"
+                },
+                {
+                  "name": "var2",
+                  "pipelineAgg": "1"
+                }
+              ],
+              "settings": {
+                "script": "params.var1 - params.var2"
+              },
+              "type": "bucket_script"
+            }
+          ],
+          "query": "(meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$target OR reference.display-set-dest.keyword:$target_ref) AND test.type: latencybg",
+          "queryType": "lucene",
+          "refId": "iqr",
+          "timeField": "pscheduler.start_time"
+        },
+        {
+          "alias": "Standard Deviation - {{term meta.source.hostname.keyword}} -> {{term meta.destination.hostname.keyword}} ({{term pscheduler.tool.keyword}}) - IPv{{term meta.ip_version}}",
+          "bucketAggs": [
+            {
+              "field": "meta.source.hostname.keyword",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.destination.hostname.keyword",
+              "id": "4",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.tool.keyword",
+              "id": "5",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.ip_version",
+              "id": "6",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.test_checksum.keyword",
+              "id": "7",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.start_time",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "gKB9-sBVk"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "field": "result.latency.stddev",
+              "hide": false,
+              "id": "8",
+              "type": "avg"
+            }
+          ],
+          "query": "(meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$target OR reference.display-set-dest.keyword:$target_ref) AND test.type: latencybg",
+          "queryType": "lucene",
+          "refId": "stddev",
+          "timeField": "pscheduler.start_time"
+        },
+        {
+          "alias": "Variance - {{term meta.source.hostname.keyword}} -> {{term meta.destination.hostname.keyword}} ({{term pscheduler.tool.keyword}}) - IPv{{term meta.ip_version}}",
+          "bucketAggs": [
+            {
+              "field": "meta.source.hostname.keyword",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.destination.hostname.keyword",
+              "id": "4",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.tool.keyword",
+              "id": "5",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.ip_version",
+              "id": "6",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.test_checksum.keyword",
+              "id": "7",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.start_time",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "gKB9-sBVk"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "field": "result.latency.variance",
+              "hide": false,
+              "id": "8",
+              "type": "avg"
+            }
+          ],
+          "query": "(meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$target OR reference.display-set-dest.keyword:$target_ref) AND test.type: latencybg",
+          "queryType": "lucene",
+          "refId": "variance",
+          "timeField": "pscheduler.start_time"
+        }
+      ],
+      "title": "Jitter",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "always",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 12,
+        "y": 30
+      },
+      "id": 35,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "alias": "Interquartile Range - {{term meta.source.hostname.keyword}} -> {{term meta.destination.hostname.keyword}} ({{term pscheduler.tool.keyword}}) - IPv{{term meta.ip_version}}",
+          "bucketAggs": [
+            {
+              "field": "meta.source.hostname.keyword",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.destination.hostname.keyword",
+              "id": "4",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.tool.keyword",
+              "id": "5",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.ip_version",
+              "id": "6",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.test_checksum.keyword",
+              "id": "7",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.start_time",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "gKB9-sBVk"
+          },
+          "format": "table",
+          "metrics": [
+            {
+              "field": "result.latency.p_25",
+              "hide": true,
+              "id": "1",
+              "type": "avg"
+            },
+            {
+              "field": "result.latency.p_75",
+              "hide": true,
+              "id": "8",
+              "type": "avg"
+            },
+            {
+              "id": "9",
+              "pipelineVariables": [
+                {
+                  "name": "var1",
+                  "pipelineAgg": "8"
+                },
+                {
+                  "name": "var2",
+                  "pipelineAgg": "1"
+                }
+              ],
+              "settings": {
+                "script": "params.var1 - params.var2"
+              },
+              "type": "bucket_script"
+            }
+          ],
+          "query": "(meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$target OR reference.display-set-dest.keyword:$target_ref) AND test.type: latencybg",
+          "queryType": "lucene",
+          "refId": "iqr",
+          "timeField": "pscheduler.start_time"
+        },
+        {
+          "alias": "Standard Deviation - {{term meta.source.hostname.keyword}} -> {{term meta.destination.hostname.keyword}} ({{term pscheduler.tool.keyword}}) - IPv{{term meta.ip_version}}",
+          "bucketAggs": [
+            {
+              "field": "meta.source.hostname.keyword",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.destination.hostname.keyword",
+              "id": "4",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.tool.keyword",
+              "id": "5",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.ip_version",
+              "id": "6",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.test_checksum.keyword",
+              "id": "7",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.start_time",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "gKB9-sBVk"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "field": "result.latency.stddev",
+              "hide": false,
+              "id": "8",
+              "type": "avg"
+            }
+          ],
+          "query": "(meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$target OR reference.display-set-dest.keyword:$target_ref) AND test.type: latencybg",
+          "queryType": "lucene",
+          "refId": "stddev",
+          "timeField": "pscheduler.start_time"
+        },
+        {
+          "alias": "Variance - {{term meta.source.hostname.keyword}} -> {{term meta.destination.hostname.keyword}} ({{term pscheduler.tool.keyword}}) - IPv{{term meta.ip_version}}",
+          "bucketAggs": [
+            {
+              "field": "meta.source.hostname.keyword",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.destination.hostname.keyword",
+              "id": "4",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.tool.keyword",
+              "id": "5",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.ip_version",
+              "id": "6",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.test_checksum.keyword",
+              "id": "7",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.start_time",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "gKB9-sBVk"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "field": "result.latency.variance",
+              "hide": false,
+              "id": "8",
+              "type": "avg"
+            }
+          ],
+          "query": "(meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$target OR reference.display-set-dest.keyword:$target_ref) AND test.type: latencybg",
+          "queryType": "lucene",
+          "refId": "variance",
+          "timeField": "pscheduler.start_time"
+        }
+      ],
+      "title": "Jitter",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 10,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "always",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 13,
+        "w": 24,
+        "x": 0,
+        "y": 40
+      },
+      "id": 34,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "alias": "{{term meta.source.hostname.keyword}} -> {{term meta.destination.hostname.keyword}} ({{term pscheduler.tool.keyword}})  - IPv{{term meta.ip_version}}",
+          "bucketAggs": [
+            {
+              "field": "meta.source.hostname.keyword",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.destination.hostname.keyword",
+              "id": "4",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.tool.keyword",
+              "id": "5",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.ip_version",
+              "id": "6",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.test_checksum.keyword",
+              "id": "7",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.start_time",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "gKB9-sBVk"
+          },
+          "format": "table",
+          "metrics": [
+            {
+              "field": "result.hop.count",
+              "id": "8",
+              "type": "max"
+            }
+          ],
+          "query": "(meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$target OR reference.display-set-dest.keyword:$target_ref) AND test.type: trace",
+          "queryType": "lucene",
+          "refId": "fwd",
+          "timeField": "pscheduler.start_time"
+        },
+        {
+          "alias": "{{term meta.source.hostname.keyword}} -> {{term meta.destination.hostname.keyword}} ({{term pscheduler.tool.keyword}})  - IPv{{term meta.ip_version}}",
+          "bucketAggs": [
+            {
+              "field": "meta.source.hostname.keyword",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.destination.hostname.keyword",
+              "id": "4",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.tool.keyword",
+              "id": "5",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.ip_version",
+              "id": "6",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.test_checksum.keyword",
+              "id": "7",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.start_time",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "gKB9-sBVk"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "field": "result.hop.count",
+              "id": "8",
+              "type": "max"
+            }
+          ],
+          "query": "(meta.source.hostname.keyword:$target OR reference.display-set-source.keyword:$target_ref) AND (meta.destination.hostname.keyword:$source OR reference.display-set-dest.keyword:$source_ref) AND test.type: trace",
+          "queryType": "lucene",
+          "refId": "rev",
+          "timeField": "pscheduler.start_time"
+        }
+      ],
+      "title": "Traceroute Hop Count",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 53
+      },
+      "id": 36,
+      "options": {
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true
+      },
+      "pluginVersion": "9.4.7",
+      "targets": [
+        {
+          "alias": "{{term meta.source.hostname.keyword}} -> {{term meta.destination.hostname.keyword}} ({{term pscheduler.tool.keyword}})  - IPv{{term meta.ip_version}}",
+          "bucketAggs": [],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "gKB9-sBVk"
+          },
+          "format": "table",
+          "metrics": [
+            {
+              "id": "8",
+              "settings": {
+                "size": "500"
+              },
+              "type": "raw_data"
+            }
+          ],
+          "query": "(meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$target OR reference.display-set-dest.keyword:$target_ref) AND test.type: trace",
+          "queryType": "lucene",
+          "refId": "fwd",
+          "timeField": "pscheduler.start_time"
+        }
+      ],
+      "title": "Unique Traceroutes Observed",
+      "transformations": [
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "pattern": "result.*|meta.source.hostname|meta.destination.hostname|pscheduler.tool"
+            }
+          }
+        },
+        {
+          "id": "groupBy",
+          "options": {
+            "fields": {
+              "meta.destination.hostname": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "meta.source.hostname": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "pscheduler.tool": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "result.hop.count": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "result.hop.error_count": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "result.hop.ip": {
+                "aggregations": [],
+                "operation": "groupby"
+              }
+            }
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "indexByName": {
+              "meta.destination.hostname": 1,
+              "meta.source.hostname": 0,
+              "pscheduler.tool": 2,
+              "result.hop.count": 3,
+              "result.hop.error_count": 4,
+              "result.hop.ip": 5
+            },
+            "renameByName": {
+              "meta.destination.hostname": "Destination",
+              "meta.source.hostname": "Source",
+              "pscheduler.tool": "Tool",
+              "result.hop.count": "Hop Count",
+              "result.hop.error_count": "Error Count",
+              "result.hop.ip": "IPs"
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 60
+      },
+      "id": 37,
+      "options": {
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true
+      },
+      "pluginVersion": "9.4.7",
+      "targets": [
+        {
+          "alias": "{{term meta.source.hostname.keyword}} -> {{term meta.destination.hostname.keyword}} ({{term pscheduler.tool.keyword}})  - IPv{{term meta.ip_version}}",
+          "bucketAggs": [],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "gKB9-sBVk"
+          },
+          "format": "table",
+          "metrics": [
+            {
+              "id": "8",
+              "settings": {
+                "size": "500"
+              },
+              "type": "raw_data"
+            }
+          ],
+          "query": "(meta.source.hostname.keyword:$target OR reference.display-set-source.keyword:$target_ref) AND (meta.destination.hostname.keyword:$source OR reference.display-set-dest.keyword:$source_ref) AND test.type: trace",
+          "queryType": "lucene",
+          "refId": "fwd",
+          "timeField": "pscheduler.start_time"
+        }
+      ],
+      "title": "Unique Traceroutes Observed (Reverse)",
+      "transformations": [
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "pattern": "result.*|meta.source.hostname|meta.destination.hostname|pscheduler.tool"
+            }
+          }
+        },
+        {
+          "id": "groupBy",
+          "options": {
+            "fields": {
+              "meta.destination.hostname": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "meta.source.hostname": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "pscheduler.tool": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "result.hop.count": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "result.hop.error_count": {
+                "aggregations": [],
+                "operation": "groupby"
+              },
+              "result.hop.ip": {
+                "aggregations": [],
+                "operation": "groupby"
+              }
+            }
+          }
+        },
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "indexByName": {
+              "meta.destination.hostname": 1,
+              "meta.source.hostname": 0,
+              "pscheduler.tool": 2,
+              "result.hop.count": 3,
+              "result.hop.error_count": 4,
+              "result.hop.ip": 5
+            },
+            "renameByName": {
+              "meta.destination.hostname": "Destination",
+              "meta.source.hostname": "Source",
+              "pscheduler.tool": "Tool",
+              "result.hop.count": "Hop Count",
+              "result.hop.error_count": "Error Count",
+              "result.hop.ip": "IPs"
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 67
+      },
+      "id": 38,
+      "options": {
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true
+      },
+      "pluginVersion": "9.4.7",
+      "targets": [
+        {
+          "alias": "",
+          "bucketAggs": [],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "gKB9-sBVk"
+          },
+          "format": "table",
+          "metrics": [
+            {
+              "id": "8",
+              "settings": {
+                "size": "500"
+              },
+              "type": "raw_data"
+            }
+          ],
+          "query": "(meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$target OR reference.display-set-dest.keyword:$target_ref)",
+          "queryType": "lucene",
+          "refId": "fwd",
+          "timeField": "pscheduler.start_time"
+        }
+      ],
+      "title": "Raw Data",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "indexByName": {
+              "@timestamp": 5,
+              "@version": 6,
+              "_id": 7,
+              "_index": 8,
+              "_type": 9,
+              "host": 10,
+              "id": 11,
+              "meta.destination.geo.as": 12,
+              "meta.destination.hostname": 2,
+              "meta.destination.ip": 13,
+              "meta.ip_version": 14,
+              "meta.observer.geo.as": 15,
+              "meta.observer.hostname": 16,
+              "meta.observer.ip": 17,
+              "meta.source.geo.as": 18,
+              "meta.source.hostname": 0,
+              "meta.source.ip": 19,
+              "pscheduler.added": 20,
+              "pscheduler.duration": 21,
+              "pscheduler.end_time": 22,
+              "pscheduler.participants": 23,
+              "pscheduler.run_href": 24,
+              "pscheduler.run_id": 25,
+              "pscheduler.start_time": 1,
+              "pscheduler.task_href": 26,
+              "pscheduler.task_id": 27,
+              "pscheduler.test_checksum": 28,
+              "pscheduler.tool": 4,
+              "reference.psconfig.created-by.user-agent": 29,
+              "reference.psconfig.created-by.uuid": 30,
+              "result.hop.as_number": 31,
+              "result.hop.as_organization": 32,
+              "result.hop.checksum": 33,
+              "result.hop.count": 34,
+              "result.hop.error_count": 35,
+              "result.hop.ip": 36,
+              "result.hop.success_count": 37,
+              "result.intervals.json": 38,
+              "result.json": 39,
+              "result.latency.histogram.counts": 40,
+              "result.latency.histogram.values": 41,
+              "result.latency.max": 42,
+              "result.latency.mean": 43,
+              "result.latency.median": 44,
+              "result.latency.min": 45,
+              "result.latency.mode": 46,
+              "result.latency.p_25": 47,
+              "result.latency.p_75": 48,
+              "result.latency.p_95": 49,
+              "result.latency.stddev": 50,
+              "result.latency.variance": 51,
+              "result.max_clock_error": 52,
+              "result.packets.duplicated": 53,
+              "result.packets.json": 54,
+              "result.packets.loss": 55,
+              "result.packets.lost": 56,
+              "result.packets.received": 57,
+              "result.packets.reordered": 58,
+              "result.packets.sent": 59,
+              "result.retransmits": 60,
+              "result.rtt.max": 61,
+              "result.rtt.mean": 62,
+              "result.rtt.min": 63,
+              "result.rtt.stddev": 64,
+              "result.succeeded": 65,
+              "result.throughput": 66,
+              "result.ttl.histogram.counts": 67,
+              "result.ttl.histogram.values": 68,
+              "result.ttl.max": 69,
+              "result.ttl.mean": 70,
+              "result.ttl.median": 71,
+              "result.ttl.min": 72,
+              "result.ttl.mode": 73,
+              "result.ttl.p_25": 74,
+              "result.ttl.p_75": 75,
+              "result.ttl.p_95": 76,
+              "result.ttl.stddev": 77,
+              "result.ttl.variance": 78,
+              "schedule.repeat": 79,
+              "schedule.slip": 80,
+              "schedule.sliprand": 81,
+              "schedule.start": 82,
+              "schedule.until": 83,
+              "tags": 84,
+              "test.spec.data-ports.lower": 85,
+              "test.spec.data-ports.upper": 86,
+              "test.spec.dest": 87,
+              "test.spec.dest-node": 88,
+              "test.spec.duration": 89,
+              "test.spec.flip": 90,
+              "test.spec.ip-version": 91,
+              "test.spec.schema": 92,
+              "test.spec.source": 93,
+              "test.spec.source-node": 94,
+              "test.spec.ttl": 95,
+              "test.type": 3
+            },
+            "renameByName": {
+              "@timestamp": "",
+              "meta.destination.hostname": "Dest Host",
+              "meta.destination.ip": "Dest IP",
+              "meta.observer.ip": "",
+              "meta.source.hostname": "Source Host",
+              "meta.source.ip": "Source IP",
+              "pscheduler.duration": "",
+              "pscheduler.end_time": "End Time",
+              "pscheduler.run_href": "",
+              "pscheduler.start_time": "Start",
+              "pscheduler.tool": "Tool",
+              "test.type": "Test Type"
+            }
+          }
+        }
+      ],
+      "type": "table"
+    }
+  ],
+  "refresh": "",
+  "revision": 1,
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "allValue": "",
+        "current": {
+          "selected": false,
+          "text": "ps-dev-staging-tk-1.c.esnet-perfsonar.internal",
+          "value": "ps-dev-staging-tk-1.c.esnet-perfsonar.internal"
+        },
+        "datasource": {
+          "type": "grafana-opensearch-datasource",
+          "uid": "gKB9-sBVk"
+        },
+        "definition": "{\"find\": \"terms\", \"field\":\"meta.source.hostname.keyword\", \"size\": 10000000}",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Source",
+        "multi": false,
+        "name": "source",
+        "options": [],
+        "query": "{\"find\": \"terms\", \"field\":\"meta.source.hostname.keyword\", \"size\": 10000000}",
+        "refresh": 2,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "allValue": "",
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "datasource": {
+          "type": "grafana-opensearch-datasource",
+          "uid": "gKB9-sBVk"
+        },
+        "definition": "{\"find\": \"terms\", \"field\":\"reference.display-set-source.keyword\", \"query\":\"meta.source.hostname.keyword:$source\", \"size\": 10000000}",
+        "hide": 2,
+        "includeAll": true,
+        "label": "Source Host",
+        "multi": true,
+        "name": "source_ref",
+        "options": [],
+        "query": "{\"find\": \"terms\", \"field\":\"reference.display-set-source.keyword\", \"query\":\"meta.source.hostname.keyword:$source\", \"size\": 10000000}",
+        "refresh": 2,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "allValue": "",
+        "current": {
+          "selected": false,
+          "text": "ps-dev-staging-u20-1.c.esnet-perfsonar.internal",
+          "value": "ps-dev-staging-u20-1.c.esnet-perfsonar.internal"
+        },
+        "datasource": {
+          "type": "grafana-opensearch-datasource",
+          "uid": "gKB9-sBVk"
+        },
+        "definition": "{\"find\": \"terms\", \"field\":\"meta.destination.hostname.keyword\", \"size\": 10000000}",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Destination",
+        "multi": false,
+        "name": "target",
+        "options": [],
+        "query": "{\"find\": \"terms\", \"field\":\"meta.destination.hostname.keyword\", \"size\": 10000000}",
+        "refresh": 2,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "allValue": "",
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "datasource": {
+          "type": "grafana-opensearch-datasource",
+          "uid": "gKB9-sBVk"
+        },
+        "definition": "{\"find\": \"terms\", \"field\":\"reference.display-set-dest.keyword\",  \"query\":\"meta.destination.hostname.keyword:$target\", \"size\": 10000000}",
+        "hide": 2,
+        "includeAll": true,
+        "label": "Destination Host",
+        "multi": true,
+        "name": "target_ref",
+        "options": [],
+        "query": "{\"find\": \"terms\", \"field\":\"reference.display-set-dest.keyword\",  \"query\":\"meta.destination.hostname.keyword:$target\", \"size\": 10000000}",
+        "refresh": 2,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "datasource": {
+          "type": "grafana-opensearch-datasource",
+          "uid": "gKB9-sBVk"
+        },
+        "filters": [],
+        "hide": 0,
+        "label": "Filters",
+        "name": "filters",
+        "skipUrlSync": false,
+        "type": "adhoc"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-2d",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "perfSONAR Endpoint Pair Explorer",
+  "uid": "kzuX1fD4k",
+  "version": 9,
+  "weekStart": ""
+}
