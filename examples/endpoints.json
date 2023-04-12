@@ -174,8 +174,7 @@
             }
           ],
           "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "gKB9-sBVk"
+            "type": "grafana-opensearch-datasource"
           },
           "format": "table",
           "metrics": [
@@ -258,8 +257,7 @@
             }
           ],
           "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "gKB9-sBVk"
+            "type": "grafana-opensearch-datasource"
           },
           "format": "table",
           "hide": false,
@@ -425,8 +423,7 @@
             }
           ],
           "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "gKB9-sBVk"
+            "type": "grafana-opensearch-datasource"
           },
           "format": "table",
           "metrics": [
@@ -509,8 +506,7 @@
             }
           ],
           "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "gKB9-sBVk"
+            "type": "grafana-opensearch-datasource"
           },
           "format": "table",
           "hide": false,
@@ -676,8 +672,7 @@
             }
           ],
           "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "gKB9-sBVk"
+            "type": "grafana-opensearch-datasource"
           },
           "format": "table",
           "metrics": [
@@ -760,8 +755,7 @@
             }
           ],
           "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "gKB9-sBVk"
+            "type": "grafana-opensearch-datasource"
           },
           "format": "table",
           "hide": false,
@@ -845,8 +839,7 @@
             }
           ],
           "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "gKB9-sBVk"
+            "type": "grafana-opensearch-datasource"
           },
           "format": "table",
           "hide": false,
@@ -1012,8 +1005,7 @@
             }
           ],
           "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "gKB9-sBVk"
+            "type": "grafana-opensearch-datasource"
           },
           "format": "table",
           "metrics": [
@@ -1096,8 +1088,7 @@
             }
           ],
           "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "gKB9-sBVk"
+            "type": "grafana-opensearch-datasource"
           },
           "format": "table",
           "hide": false,
@@ -1181,8 +1172,7 @@
             }
           ],
           "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "gKB9-sBVk"
+            "type": "grafana-opensearch-datasource"
           },
           "format": "table",
           "hide": false,
@@ -1348,8 +1338,7 @@
             }
           ],
           "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "gKB9-sBVk"
+            "type": "grafana-opensearch-datasource"
           },
           "format": "table",
           "metrics": [
@@ -1514,8 +1503,7 @@
             }
           ],
           "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "gKB9-sBVk"
+            "type": "grafana-opensearch-datasource"
           },
           "format": "table",
           "metrics": [
@@ -1679,8 +1667,7 @@
             }
           ],
           "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "gKB9-sBVk"
+            "type": "grafana-opensearch-datasource"
           },
           "format": "table",
           "metrics": [
@@ -1787,8 +1774,7 @@
             }
           ],
           "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "gKB9-sBVk"
+            "type": "grafana-opensearch-datasource"
           },
           "format": "table",
           "hide": false,
@@ -1873,8 +1859,7 @@
             }
           ],
           "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "gKB9-sBVk"
+            "type": "grafana-opensearch-datasource"
           },
           "format": "table",
           "hide": false,
@@ -2040,8 +2025,7 @@
             }
           ],
           "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "gKB9-sBVk"
+            "type": "grafana-opensearch-datasource"
           },
           "format": "table",
           "metrics": [
@@ -2148,8 +2132,7 @@
             }
           ],
           "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "gKB9-sBVk"
+            "type": "grafana-opensearch-datasource"
           },
           "format": "table",
           "hide": false,
@@ -2234,8 +2217,7 @@
             }
           ],
           "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "gKB9-sBVk"
+            "type": "grafana-opensearch-datasource"
           },
           "format": "table",
           "hide": false,
@@ -2401,8 +2383,7 @@
             }
           ],
           "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "gKB9-sBVk"
+            "type": "grafana-opensearch-datasource"
           },
           "format": "table",
           "metrics": [
@@ -2485,8 +2466,7 @@
             }
           ],
           "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "gKB9-sBVk"
+            "type": "grafana-opensearch-datasource"
           },
           "format": "table",
           "hide": false,
@@ -2564,8 +2544,7 @@
           "alias": "{{term meta.source.hostname.keyword}} -> {{term meta.destination.hostname.keyword}} ({{term pscheduler.tool.keyword}})  - IPv{{term meta.ip_version}}",
           "bucketAggs": [],
           "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "gKB9-sBVk"
+            "type": "grafana-opensearch-datasource"
           },
           "format": "table",
           "metrics": [
@@ -2707,8 +2686,7 @@
           "alias": "{{term meta.source.hostname.keyword}} -> {{term meta.destination.hostname.keyword}} ({{term pscheduler.tool.keyword}})  - IPv{{term meta.ip_version}}",
           "bucketAggs": [],
           "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "gKB9-sBVk"
+            "type": "grafana-opensearch-datasource"
           },
           "format": "table",
           "metrics": [
@@ -2850,8 +2828,7 @@
           "alias": "",
           "bucketAggs": [],
           "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "gKB9-sBVk"
+            "type": "grafana-opensearch-datasource"
           },
           "format": "table",
           "metrics": [
@@ -3008,8 +2985,7 @@
           "value": "ps-dev-staging-tk-1.c.esnet-perfsonar.internal"
         },
         "datasource": {
-          "type": "grafana-opensearch-datasource",
-          "uid": "gKB9-sBVk"
+          "type": "grafana-opensearch-datasource"
         },
         "definition": "{\"find\": \"terms\", \"field\":\"meta.source.hostname.keyword\", \"size\": 10000000}",
         "hide": 0,
@@ -3033,8 +3009,7 @@
           "value": "$__all"
         },
         "datasource": {
-          "type": "grafana-opensearch-datasource",
-          "uid": "gKB9-sBVk"
+          "type": "grafana-opensearch-datasource"
         },
         "definition": "{\"find\": \"terms\", \"field\":\"reference.display-set-source.keyword\", \"query\":\"meta.source.hostname.keyword:$source\", \"size\": 10000000}",
         "hide": 2,
@@ -3058,8 +3033,7 @@
           "value": "ps-dev-staging-u20-1.c.esnet-perfsonar.internal"
         },
         "datasource": {
-          "type": "grafana-opensearch-datasource",
-          "uid": "gKB9-sBVk"
+          "type": "grafana-opensearch-datasource"
         },
         "definition": "{\"find\": \"terms\", \"field\":\"meta.destination.hostname.keyword\", \"size\": 10000000}",
         "hide": 0,
@@ -3083,8 +3057,7 @@
           "value": "$__all"
         },
         "datasource": {
-          "type": "grafana-opensearch-datasource",
-          "uid": "gKB9-sBVk"
+          "type": "grafana-opensearch-datasource"
         },
         "definition": "{\"find\": \"terms\", \"field\":\"reference.display-set-dest.keyword\",  \"query\":\"meta.destination.hostname.keyword:$target\", \"size\": 10000000}",
         "hide": 2,
@@ -3102,8 +3075,7 @@
       },
       {
         "datasource": {
-          "type": "grafana-opensearch-datasource",
-          "uid": "gKB9-sBVk"
+          "type": "grafana-opensearch-datasource"
         },
         "filters": [],
         "hide": 0,

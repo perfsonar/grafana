@@ -63,8 +63,7 @@
             }
           ],
           "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "gKB9-sBVk"
+            "type": "grafana-opensearch-datasource"
           },
           "format": "table",
           "metrics": [
@@ -166,8 +165,7 @@
             }
           ],
           "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "gKB9-sBVk"
+            "type": "grafana-opensearch-datasource"
           },
           "format": "table",
           "metrics": [
@@ -271,8 +269,7 @@
             }
           ],
           "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "gKB9-sBVk"
+            "type": "grafana-opensearch-datasource"
           },
           "format": "table",
           "metrics": [
@@ -367,8 +364,7 @@
             }
           ],
           "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "gKB9-sBVk"
+            "type": "grafana-opensearch-datasource"
           },
           "format": "table",
           "metrics": [
@@ -476,8 +472,7 @@
             }
           ],
           "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "gKB9-sBVk"
+            "type": "grafana-opensearch-datasource"
           },
           "format": "table",
           "metrics": [
@@ -594,8 +589,7 @@
             }
           ],
           "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "gKB9-sBVk"
+            "type": "grafana-opensearch-datasource"
           },
           "format": "table",
           "metrics": [
@@ -704,8 +698,7 @@
             }
           ],
           "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "gKB9-sBVk"
+            "type": "grafana-opensearch-datasource"
           },
           "format": "table",
           "metrics": [
@@ -829,8 +822,7 @@
             }
           ],
           "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "gKB9-sBVk"
+            "type": "grafana-opensearch-datasource"
           },
           "format": "table",
           "metrics": [
