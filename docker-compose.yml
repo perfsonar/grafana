@@ -1,0 +1,22 @@
+version: '3.7'
+services:
+  grafana:
+    restart: &grafana-restart always
+    image: grafana/grafana:10.0.8-ubuntu
+    environment:
+      &grafana-env
+      - GF_INSTALL_PLUGINS=grafana-opensearch-datasource,marcusolsson-hourly-heatmap-panel,netsage-sankey-panel,netsage-slopegraph-panel,esnet-chord-panel,netsage-bumpchart-panel,esnet-matrix-panel
+      - GF_PANELS_DISABLE_SANITIZE_HTML=true
+    ports:
+      &grafana-ports
+       - 3000:3000
+  gdg:
+    image:  ghcr.io/esnet/gdg:0.5.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+    platform: linux/amd64
+    command: "--help"            ## Add additional parameters here
+    volumes:
+      - ./grafana:/app/grafana
+      - ./importer.yml:/app/importer.yml

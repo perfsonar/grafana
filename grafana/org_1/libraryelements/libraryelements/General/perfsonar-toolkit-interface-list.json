@@ -1,0 +1,207 @@
+{
+	"id": 3,
+	"kind": 1,
+	"meta": {
+		"connectedDashboards": 1,
+		"created": "2023-08-17T15:12:23.000Z",
+		"createdBy": {
+			"avatarUrl": "/grafana/avatar/46d229b033af06a191ff2267bca9ae56",
+			"id": 1,
+			"name": "admin"
+		},
+		"folderName": "General",
+		"updated": "2023-08-17T15:12:23.000Z",
+		"updatedBy": {
+			"avatarUrl": "/grafana/avatar/46d229b033af06a191ff2267bca9ae56",
+			"id": 1,
+			"name": "admin"
+		}
+	},
+	"model": {
+		"datasource": {
+			"type": "grafana-opensearch-datasource",
+			"uid": "f60bacda-08de-4933-9013-91cfae76df57"
+		},
+		"description": "",
+		"fieldConfig": {
+			"defaults": {
+				"color": {
+					"mode": "thresholds"
+				},
+				"custom": {
+					"align": "auto",
+					"cellOptions": {
+						"type": "auto"
+					},
+					"inspect": false
+				},
+				"mappings": [],
+				"thresholds": {
+					"mode": "absolute",
+					"steps": [
+						{
+							"color": "green",
+							"value": null
+						},
+						{
+							"color": "red",
+							"value": 80
+						}
+					]
+				}
+			},
+			"overrides": [
+				{
+					"matcher": {
+						"id": "byName",
+						"options": "Speed"
+					},
+					"properties": [
+						{
+							"id": "unit",
+							"value": "bps"
+						},
+						{
+							"id": "mappings",
+							"value": [
+								{
+									"options": {
+										"from": -999999999,
+										"result": {
+											"index": 0,
+											"text": "n/a"
+										},
+										"to": 0
+									},
+									"type": "range"
+								}
+							]
+						},
+						{
+							"id": "custom.width",
+							"value": 58
+						}
+					]
+				},
+				{
+					"matcher": {
+						"id": "byName",
+						"options": "MTU"
+					},
+					"properties": [
+						{
+							"id": "unit",
+							"value": "B"
+						},
+						{
+							"id": "custom.width",
+							"value": 118
+						}
+					]
+				},
+				{
+					"matcher": {
+						"id": "byName",
+						"options": "Interface"
+					},
+					"properties": [
+						{
+							"id": "custom.width",
+							"value": 83
+						}
+					]
+				}
+			]
+		},
+		"gridPos": {
+			"h": 5,
+			"w": 4,
+			"x": 20,
+			"y": 3
+		},
+		"id": 3,
+		"libraryPanel": {
+			"name": "perfSONAR Toolkit Interface List",
+			"uid": ""
+		},
+		"options": {
+			"cellHeight": "sm",
+			"footer": {
+				"countRows": false,
+				"enablePagination": false,
+				"fields": "",
+				"reducer": [
+					"sum"
+				],
+				"show": false
+			},
+			"frameIndex": 1,
+			"showHeader": true,
+			"sortBy": []
+		},
+		"pluginVersion": "10.0.3",
+		"targets": [
+			{
+				"alias": "",
+				"bucketAggs": [
+					{
+						"field": "meta.labels.device.keyword",
+						"id": "2",
+						"settings": {
+							"min_doc_count": "1",
+							"order": "desc",
+							"orderBy": "_term",
+							"size": "0"
+						},
+						"type": "terms"
+					}
+				],
+				"datasource": {
+					"type": "grafana-opensearch-datasource",
+					"uid": "f60bacda-08de-4933-9013-91cfae76df57"
+				},
+				"format": "table",
+				"metrics": [
+					{
+						"field": "values.node_network_speed_bytes.val",
+						"id": "1",
+						"settings": {
+							"script": "_value * 8"
+						},
+						"type": "max"
+					},
+					{
+						"field": "values.node_network_mtu_bytes.val",
+						"id": "3",
+						"type": "max"
+					}
+				],
+				"query": "type.keyword: node AND values.node_network_speed_bytes.val: *",
+				"queryType": "lucene",
+				"refId": "A",
+				"timeField": "@timestamp"
+			}
+		],
+		"title": "Interfaces",
+		"transformations": [
+			{
+				"id": "organize",
+				"options": {
+					"excludeByName": {},
+					"indexByName": {},
+					"renameByName": {
+						"Max values.node_network_mtu_bytes.val": "MTU",
+						"Max values.node_network_speed_bytes.val": "Speed",
+						"meta.labels.device.keyword": "Interface"
+					}
+				}
+			}
+		],
+		"type": "table"
+	},
+	"name": "perfSONAR Toolkit Interface List",
+	"orgId": 1,
+	"type": "table",
+	"uid": "f2aa7087-9934-4635-979b-3e8207e6f0b1",
+	"version": 1
+}

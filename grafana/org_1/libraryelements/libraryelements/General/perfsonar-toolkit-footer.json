@@ -1,0 +1,85 @@
+{
+	"id": 2,
+	"kind": 1,
+	"meta": {
+		"connectedDashboards": 3,
+		"created": "2023-08-17T01:22:52.000Z",
+		"createdBy": {
+			"avatarUrl": "/grafana/avatar/46d229b033af06a191ff2267bca9ae56",
+			"id": 1,
+			"name": "admin"
+		},
+		"folderName": "General",
+		"updated": "2023-08-17T01:22:52.000Z",
+		"updatedBy": {
+			"avatarUrl": "/grafana/avatar/46d229b033af06a191ff2267bca9ae56",
+			"id": 1,
+			"name": "admin"
+		}
+	},
+	"model": {
+		"datasource": {
+			"type": "grafana-opensearch-datasource",
+			"uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
+		},
+		"description": "",
+		"gridPos": {
+			"h": 7,
+			"w": 24,
+			"x": 0,
+			"y": 34
+		},
+		"id": 13,
+		"libraryPanel": {
+			"name": "perfSONAR Toolkit Footer",
+			"uid": ""
+		},
+		"options": {
+			"code": {
+				"language": "plaintext",
+				"showLineNumbers": false,
+				"showMiniMap": false
+			},
+			"content": "\u003chr\u003e\n\u003cdiv style=\"text-align:center\"\u003e\u003ca href=\"https://www.perfsonar.net/about/privacy-policy/\"\u003ePrivacy Policy\u003c/a\u003e | \u003ca href=\"http://stats.perfsonar.net/\"\u003eGlobal Node Directory\u003c/a\u003e | \u003ca href=\"/toolkit/services/host.cgi?method=get_summary\"\u003eHost JSON\u003c/a\u003e\u003c/div\u003e\n\u003cdiv style=\"padding:10px 10px 10px 10px;text-align:center\"\u003e\u003cimg style=\"width:30px;\" src=\"public/img/ps_footer_grafana_logo.svg\"/\u003e\u0026nbsp;Powered by Grafana\u003c/div\u003e",
+			"mode": "html"
+		},
+		"pluginVersion": "10.0.3",
+		"targets": [
+			{
+				"alias": "",
+				"bucketAggs": [
+					{
+						"field": "pscheduler.start_time",
+						"id": "2",
+						"settings": {
+							"interval": "auto"
+						},
+						"type": "date_histogram"
+					}
+				],
+				"datasource": {
+					"type": "grafana-opensearch-datasource",
+					"uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
+				},
+				"format": "table",
+				"metrics": [
+					{
+						"id": "1",
+						"type": "count"
+					}
+				],
+				"query": "",
+				"queryType": "lucene",
+				"refId": "A",
+				"timeField": "pscheduler.start_time"
+			}
+		],
+		"transparent": true,
+		"type": "text"
+	},
+	"name": "perfSONAR Toolkit Footer",
+	"orgId": 1,
+	"type": "text",
+	"uid": "c6446274-51b4-4c01-b461-9aa71390e997",
+	"version": 1
+}

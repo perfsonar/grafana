@@ -1,0 +1,1406 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations \u0026 Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 2,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "gridPos": {
+        "h": 3,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "libraryPanel": {
+        "name": "perfSONAR Toolkit Top Menu",
+        "uid": "bf11bf7d-1093-4f43-a72b-c37f8883e52a"
+      },
+      "title": ""
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 5000000000
+              }
+            ]
+          },
+          "unit": "bps"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Max result.throughput"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Throughput (Max)"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 1,
+        "y": 3
+      },
+      "id": 4,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "vertical",
+        "reduceOptions": {
+          "calcs": ["max"],
+          "fields": "",
+          "values": false
+        },
+        "text": {
+          "valueSize": 64
+        },
+        "textMode": "value_and_name"
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "alias": "",
+          "bucketAggs": [
+            {
+              "field": "pscheduler.start_time",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
+          },
+          "format": "table",
+          "metrics": [
+            {
+              "field": "result.throughput",
+              "id": "1",
+              "type": "max"
+            }
+          ],
+          "query": "",
+          "queryType": "lucene",
+          "refId": "A",
+          "timeField": "pscheduler.start_time"
+        }
+      ],
+      "transparent": true,
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1e-10
+              }
+            ]
+          },
+          "unit": "percentunit"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Max result.packets.loss"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Packet Loss (Max)"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 8,
+        "y": 3
+      },
+      "id": 5,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "vertical",
+        "reduceOptions": {
+          "calcs": ["max"],
+          "fields": "",
+          "values": false
+        },
+        "text": {
+          "valueSize": 64
+        },
+        "textMode": "value_and_name"
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "alias": "",
+          "bucketAggs": [
+            {
+              "field": "pscheduler.start_time",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
+          },
+          "format": "table",
+          "metrics": [
+            {
+              "field": "result.packets.loss",
+              "id": "1",
+              "type": "max"
+            }
+          ],
+          "query": "",
+          "queryType": "lucene",
+          "refId": "A",
+          "timeField": "pscheduler.start_time"
+        }
+      ],
+      "transparent": true,
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 3
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Max result.latency.stddev"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Jitter (Max)"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 14,
+        "y": 3
+      },
+      "id": 6,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "vertical",
+        "reduceOptions": {
+          "calcs": ["max"],
+          "fields": "",
+          "values": false
+        },
+        "text": {
+          "valueSize": 64
+        },
+        "textMode": "value_and_name"
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "alias": "",
+          "bucketAggs": [
+            {
+              "field": "pscheduler.start_time",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
+          },
+          "format": "table",
+          "metrics": [
+            {
+              "field": "result.latency.stddev",
+              "id": "1",
+              "type": "max"
+            }
+          ],
+          "query": "",
+          "queryType": "lucene",
+          "refId": "A",
+          "timeField": "pscheduler.start_time"
+        }
+      ],
+      "transparent": true,
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "f60bacda-08de-4933-9013-91cfae76df57"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Speed"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "bps"
+              },
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "options": {
+                      "from": -999999999,
+                      "result": {
+                        "index": 0,
+                        "text": "n/a"
+                      },
+                      "to": 0
+                    },
+                    "type": "range"
+                  }
+                ]
+              },
+              {
+                "id": "custom.width",
+                "value": 58
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "MTU"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "B"
+              },
+              {
+                "id": "custom.width",
+                "value": 118
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Interface"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 83
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 20,
+        "y": 3
+      },
+      "id": 3,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "enablePagination": false,
+          "fields": "",
+          "reducer": ["sum"],
+          "show": false
+        },
+        "frameIndex": 1,
+        "showHeader": true,
+        "sortBy": []
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "alias": "",
+          "bucketAggs": [
+            {
+              "field": "meta.labels.device.keyword",
+              "id": "2",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "f60bacda-08de-4933-9013-91cfae76df57"
+          },
+          "format": "table",
+          "metrics": [
+            {
+              "field": "values.node_network_speed_bytes.val",
+              "id": "1",
+              "settings": {
+                "script": "_value * 8"
+              },
+              "type": "max"
+            },
+            {
+              "field": "values.node_network_mtu_bytes.val",
+              "id": "3",
+              "type": "max"
+            }
+          ],
+          "query": "type.keyword: node AND values.node_network_speed_bytes.val: *",
+          "queryType": "lucene",
+          "refId": "A",
+          "timeField": "@timestamp"
+        }
+      ],
+      "title": "Interfaces",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "indexByName": {},
+            "renameByName": {
+              "Max values.node_network_mtu_bytes.val": "MTU",
+              "Max values.node_network_speed_bytes.val": "Speed",
+              "meta.labels.device.keyword": "Interface"
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "dark-green",
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "bars",
+            "fillOpacity": 62,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "normal"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 19,
+        "x": 1,
+        "y": 7
+      },
+      "id": 8,
+      "interval": "5m",
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "alias": "",
+          "bucketAggs": [
+            {
+              "field": "test.type.keyword",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "10"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.start_time",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
+          },
+          "format": "table",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "",
+          "queryType": "lucene",
+          "refId": "A",
+          "timeField": "pscheduler.start_time"
+        }
+      ],
+      "title": "Number of Tests Run",
+      "transparent": true,
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Speed"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "bps"
+              },
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "options": {
+                      "from": -999999999,
+                      "result": {
+                        "index": 0,
+                        "text": "n/a"
+                      },
+                      "to": 0
+                    },
+                    "type": "range"
+                  }
+                ]
+              },
+              {
+                "id": "custom.width",
+                "value": 58
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "MTU"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "B"
+              },
+              {
+                "id": "custom.width",
+                "value": 118
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Interface"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 83
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Type"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 101
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "#"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 103
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 20,
+        "y": 8
+      },
+      "id": 7,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "enablePagination": false,
+          "fields": "",
+          "reducer": ["sum"],
+          "show": false
+        },
+        "frameIndex": 1,
+        "showHeader": true,
+        "sortBy": []
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "alias": "",
+          "bucketAggs": [
+            {
+              "field": "test.type.keyword",
+              "id": "2",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
+          },
+          "format": "table",
+          "metrics": [
+            {
+              "field": "pscheduler.test_checksum.keyword",
+              "id": "3",
+              "type": "cardinality"
+            }
+          ],
+          "query": "",
+          "queryType": "lucene",
+          "refId": "A",
+          "timeField": "pscheduler.start_time"
+        }
+      ],
+      "title": "Tests  Configured by Type",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "indexByName": {},
+            "renameByName": {
+              "Max values.node_network_mtu_bytes.val": "MTU",
+              "Max values.node_network_speed_bytes.val": "Speed",
+              "Unique Count": "#",
+              "meta.labels.device.keyword": "Interface",
+              "test.type.keyword": "Type"
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 20,
+        "y": 13
+      },
+      "id": 2,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "\u003cdiv class=\"nav-div\"\u003e\n\u003ca class=\"simple-button\" href=\"/grafana/d/eb96563b-0d93-4910-be3c-5be331a00339/perfsonar-host-metrics?orgId=1\"\u003eHost Info\u003c/a\u003e\n\u003c/div\u003e\n\u003cdiv class=\"nav-div\"\u003e\n\u003ca class=\"simple-button\" href=\"/grafana/dashboards/f/fd44984e-41df-4659-a60a-67809aa46cd2/external-dashboards\"\u003eExternal Dashboards\u003c/a\u003e\n\u003c/div\u003e\n\u003cdiv class=\"nav-div\"\u003e\n\u003ca class=\"simple-button\" href=\"/grafana/dashboards/f/d94dcbb1-4076-4c61-b947-3194b3881b65/my-dashboards\"\u003eMy Dashboards \u003c/a\u003e\n\u003c/div\u003e\n\n\u003cstyle\u003e\n  .nav-div {\n    margin:28px 10px; \n    text-align:center;\n  }\n\u003c/style\u003e",
+        "mode": "html"
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "alias": "",
+          "bucketAggs": [
+            {
+              "field": "pscheduler.start_time",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
+          },
+          "format": "table",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "",
+          "queryType": "lucene",
+          "refId": "A",
+          "timeField": "pscheduler.start_time"
+        }
+      ],
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "links": [
+            {
+              "title": "See results from ${__data.fields.Source} to ${__data.fields.Destination}",
+              "url": "/d/b6df6a8d-1b66-4712-a8da-957b36dc37dc/perfsonar-endpoint-pair-explorer?orgId=1\u0026var-ds=perfSONAR%20Local\u0026from=${__from}\u0026to=${__to}\u0026var-source=${__data.fields.Source}\u0026var-dest=${__data.fields.Destination}"
+            }
+          ],
+          "mappings": [
+            {
+              "options": {
+                "-999999": {
+                  "index": 0,
+                  "text": "-"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "IP Version"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 86
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Throughput (Min)"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "bps"
+              },
+              {
+                "id": "custom.cellOptions",
+                "value": {
+                  "mode": "basic",
+                  "type": "gauge",
+                  "valueDisplayMode": "text"
+                }
+              },
+              {
+                "id": "thresholds",
+                "value": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "dark-red",
+                      "value": null
+                    },
+                    {
+                      "color": "green",
+                      "value": 5000000000
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Packet Loss (Max)"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "percentunit"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Latency (Min)"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "ms"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "RTT (Min)"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "ms"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 11,
+        "w": 19,
+        "x": 1,
+        "y": 14
+      },
+      "id": 12,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "enablePagination": true,
+          "fields": "",
+          "reducer": ["sum"],
+          "show": false
+        },
+        "showHeader": true,
+        "sortBy": []
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "alias": "",
+          "bucketAggs": [
+            {
+              "field": "meta.source.hostname.keyword",
+              "id": "2",
+              "settings": {
+                "min_doc_count": "1",
+                "missing": "-",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.destination.hostname.keyword",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "missing": "-",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.ip_version",
+              "id": "4",
+              "settings": {
+                "min_doc_count": "1",
+                "missing": "-999999",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
+          },
+          "format": "table",
+          "metrics": [
+            {
+              "field": "result.throughput",
+              "id": "5",
+              "type": "min"
+            },
+            {
+              "field": "result.packets.loss",
+              "id": "6",
+              "settings": {
+                "missing": "-999999"
+              },
+              "type": "max"
+            },
+            {
+              "field": "result.latency.min",
+              "id": "7",
+              "settings": {},
+              "type": "min"
+            },
+            {
+              "field": "result.rtt",
+              "id": "8",
+              "settings": {
+                "missing": "-999999"
+              },
+              "type": "min"
+            }
+          ],
+          "query": "test.type.keyword: throughput OR test.type.keyword: latencybg",
+          "queryType": "lucene",
+          "refId": "A",
+          "timeField": "pscheduler.start_time"
+        }
+      ],
+      "title": "Test Result Summary",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {},
+            "indexByName": {
+              "Average": 3,
+              "Count": 6,
+              "Max": 4,
+              "Min": 5,
+              "meta.destination.hostname.keyword": 1,
+              "meta.ip_version": 2,
+              "meta.source.hostname.keyword": 0
+            },
+            "renameByName": {
+              "Average": "Throughput (Avg)",
+              "Count": "Result Count",
+              "Max": "Packet Loss (Max)",
+              "Min": "One-way Latency (Min)",
+              "Min result.latency.min": "Latency (Min)",
+              "Min result.rtt": "RTT (Min)",
+              "Min result.throughput": "Throughput (Min)",
+              "meta.destination.hostname.keyword": "Destination",
+              "meta.ip_version": "IP Version",
+              "meta.source.hostname.keyword": "Source"
+            }
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "table"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 25
+      },
+      "id": 11,
+      "panels": [
+        {
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "auto",
+                "cellOptions": {
+                  "type": "auto"
+                },
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 18,
+            "x": 1,
+            "y": 33
+          },
+          "id": 9,
+          "options": {
+            "cellHeight": "sm",
+            "footer": {
+              "countRows": false,
+              "enablePagination": true,
+              "fields": "",
+              "reducer": ["sum"],
+              "show": false
+            },
+            "showHeader": true,
+            "sortBy": [
+              {
+                "desc": false,
+                "displayName": "Type"
+              }
+            ]
+          },
+          "pluginVersion": "10.0.3",
+          "targets": [
+            {
+              "alias": "",
+              "bucketAggs": [
+                {
+                  "field": "pscheduler.test_checksum.keyword",
+                  "id": "2",
+                  "settings": {
+                    "min_doc_count": "1",
+                    "order": "desc",
+                    "orderBy": "_term",
+                    "size": "0"
+                  },
+                  "type": "terms"
+                },
+                {
+                  "field": "test.type.keyword",
+                  "id": "3",
+                  "settings": {
+                    "min_doc_count": "1",
+                    "missing": "-",
+                    "order": "desc",
+                    "orderBy": "_term",
+                    "size": "1"
+                  },
+                  "type": "terms"
+                },
+                {
+                  "field": "meta.source.hostname.keyword",
+                  "id": "4",
+                  "settings": {
+                    "min_doc_count": "1",
+                    "missing": "-",
+                    "order": "desc",
+                    "orderBy": "_term",
+                    "size": "1"
+                  },
+                  "type": "terms"
+                },
+                {
+                  "field": "meta.destination.hostname.keyword",
+                  "id": "5",
+                  "settings": {
+                    "min_doc_count": "1",
+                    "missing": "-",
+                    "order": "desc",
+                    "orderBy": "_term",
+                    "size": "1"
+                  },
+                  "type": "terms"
+                }
+              ],
+              "datasource": {
+                "type": "grafana-opensearch-datasource",
+                "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
+              },
+              "format": "table",
+              "metrics": [
+                {
+                  "id": "1",
+                  "type": "count"
+                }
+              ],
+              "query": "",
+              "queryType": "lucene",
+              "refId": "A",
+              "timeField": "pscheduler.start_time"
+            }
+          ],
+          "title": "List of Tests",
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {},
+                "indexByName": {},
+                "renameByName": {
+                  "Count": "Result Count",
+                  "meta.destination.hostname.keyword": "Destination",
+                  "meta.source.hostname.keyword": "Source",
+                  "pscheduler.test_checksum.keyword": "ID",
+                  "test.type.keyword": "Type"
+                }
+              }
+            }
+          ],
+          "transparent": true,
+          "type": "table"
+        }
+      ],
+      "title": "Full Test Listing",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 26
+      },
+      "id": 13,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "\u003chr\u003e\n\u003cdiv style=\"text-align:center\"\u003e\u003ca href=\"https://www.perfsonar.net/about/privacy-policy/\"\u003ePrivacy Policy\u003c/a\u003e | \u003ca href=\"http://stats.perfsonar.net/\"\u003eGlobal Node Directory\u003c/a\u003e | \u003ca href=\"/toolkit/services/host.cgi?method=get_summary\"\u003eHost JSON\u003c/a\u003e\u003c/div\u003e\n\u003cdiv style=\"padding:10px 10px 10px 10px;text-align:center\"\u003e\u003cimg style=\"width:30px;\" src=\"public/img/ps_footer_grafana_logo.svg\"/\u003e\u0026nbsp;Powered by Grafana\u003c/div\u003e",
+        "mode": "html"
+      },
+      "pluginVersion": "10.0.3",
+      "targets": [
+        {
+          "alias": "",
+          "bucketAggs": [
+            {
+              "field": "pscheduler.start_time",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
+          },
+          "format": "table",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "",
+          "queryType": "lucene",
+          "refId": "A",
+          "timeField": "pscheduler.start_time"
+        }
+      ],
+      "transparent": true,
+      "type": "text"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "selected": false,
+          "text": "ps-dev-staging-el9-tk-1.c.esnet-perfsonar.internal",
+          "value": "ps-dev-staging-el9-tk-1.c.esnet-perfsonar.internal"
+        },
+        "datasource": {
+          "type": "grafana-opensearch-datasource",
+          "uid": "f60bacda-08de-4933-9013-91cfae76df57"
+        },
+        "definition": "{\"find\":\"terms\", \"field\":\"meta.uname.nodename.keyword\", \"size\": 1}",
+        "hide": 2,
+        "includeAll": false,
+        "multi": false,
+        "name": "node_name",
+        "options": [],
+        "query": "{\"find\":\"terms\", \"field\":\"meta.uname.nodename.keyword\", \"size\": 1}",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-24h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "perfSONAR Toolkit",
+  "uid": "ff439cb3-6042-43b5-a999-674681d80395",
+  "version": 28,
+  "weekStart": ""
+}
