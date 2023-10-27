@@ -9,5 +9,5 @@ changecom()dnl
 #
 
 # Build primary packages
-#grafana
+grafana
 #perfsonar-grafana
