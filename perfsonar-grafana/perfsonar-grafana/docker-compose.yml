@@ -2,7 +2,7 @@ version: '3.7'
 services:
   grafana:
     restart: &grafana-restart always
-    image: grafana/grafana:10.0.8-ubuntu
+    image: grafana/grafana:10.2.0-ubuntu
     environment:
       &grafana-env
       - GF_INSTALL_PLUGINS=grafana-opensearch-datasource,marcusolsson-hourly-heatmap-panel,netsage-sankey-panel,netsage-slopegraph-panel,esnet-chord-panel,netsage-bumpchart-panel,esnet-matrix-panel

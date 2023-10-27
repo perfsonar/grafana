@@ -10,4 +10,4 @@ changecom()dnl
 
 # Build primary packages
 grafana
-#perfsonar-grafana
+perfsonar-grafana
