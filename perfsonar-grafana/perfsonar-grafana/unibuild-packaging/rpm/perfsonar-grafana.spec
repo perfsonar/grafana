@@ -27,6 +27,8 @@ Requires:       openssl
 Requires:       grafana
 Requires:       httpd
 Requires:       mod_ssl
+Requires:       curl
+Requires(post): unzip
 Requires(post): python3
 Requires:       selinux-policy-%{selinuxtype}
 Requires(post): selinux-policy-%{selinuxtype}
@@ -80,8 +82,11 @@ fi
 %defattr(0644,perfsonar,perfsonar,0755)
 %license LICENSE
 %attr(0755, perfsonar, perfsonar) %{pkg_install_base}/grafana_config.py
+%attr(0755, perfsonar, perfsonar) %{pkg_install_base}/grafana_common.sh
 %attr(0755, perfsonar, perfsonar) %{pkg_install_base}/grafana_config.sh
+%attr(0755, perfsonar, perfsonar) %{pkg_install_base}/grafana_plugin_download.sh
 %attr(0644, perfsonar, perfsonar) %{pkg_install_base}/images/*
+%attr(0644, perfsonar, perfsonar) %{pkg_install_base}/plugins/*
 %attr(0644, perfsonar, perfsonar) %{httpd_config_base}/apache-grafana.conf
 
 %changelog
