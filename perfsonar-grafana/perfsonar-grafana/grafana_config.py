@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
 import configparser
+import random
+import string
 
 GRAFANA_INI_FILE='/etc/grafana/grafana.ini'
 
@@ -16,7 +18,7 @@ grafana_ini['server'] = {
 #enable anonymous auth
 grafana_ini['auth.anonymous'] = {
     "enabled": 'true',
-    "org_name": "Main org.",
+    "org_name": "Main Org.",
     "org_role": "Viewer"
 }
 
@@ -24,6 +26,13 @@ grafana_ini['auth.anonymous'] = {
 grafana_ini['panels'] = {
      "disable_sanitize_html": 'true'
 }
+
+# Set admin password if not set
+if not grafana_ini.get('security', {}):
+    grafana_ini['security'] = {
+        'admin_password': ''.join(random.choice(string.ascii_letters + string.digits) for i in range(32)),
+        'disable_initial_admin_creation': 'true'
+    }
 
 #write file
 with open(GRAFANA_INI_FILE, 'w') as file:
