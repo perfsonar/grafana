@@ -12,11 +12,8 @@ services:
        - 3000:3000
   gdg:
     image:  ghcr.io/esnet/gdg:0.5.0
-    build:
-      context: .
-      dockerfile: Dockerfile
     platform: linux/amd64
     command: "--help"            ## Add additional parameters here
     volumes:
-      - ./grafana:/app/grafana
+      - ./gdg:/app/gdg
       - ./importer.yml:/app/importer.yml

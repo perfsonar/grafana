@@ -2,7 +2,7 @@ context_name: local
 
 contexts:
   local:
-    output_path: grafana
+    output_path: gdg
     user_name: admin
     password: admin
     url: http://grafana:3000/
