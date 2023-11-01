@@ -27,8 +27,13 @@ grafana_ini['panels'] = {
      "disable_sanitize_html": 'true'
 }
 
+#enable provisioning
+grafana_ini['paths'] = {
+    "provisioning": '/usr/lib/perfsonar/grafana/provisioning' 
+}
+
 # Set admin password if not set
-if not grafana_ini.get('security', {}):
+if not (grafana_ini.has_section('security') and grafana_ini['security']):
     grafana_ini['security'] = {
         'admin_password': ''.join(random.choice(string.ascii_letters + string.digits) for i in range(32)),
         'disable_initial_admin_creation': 'true'

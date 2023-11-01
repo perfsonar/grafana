@@ -10,7 +10,7 @@
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
-        "name": "Annotations \u0026 Alerts",
+        "name": "Annotations & Alerts",
         "type": "dashboard"
       }
     ]
@@ -18,88 +18,31 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 2,
   "links": [],
   "liveNow": false,
   "panels": [
     {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
+      },
       "gridPos": {
         "h": 3,
-        "w": 24,
+        "w": 20,
         "x": 0,
         "y": 0
       },
-      "id": 1,
-      "libraryPanel": {
-        "name": "perfSONAR Toolkit Top Menu",
-        "uid": "bf11bf7d-1093-4f43-a72b-c37f8883e52a"
-      },
-      "title": ""
-    },
-    {
-      "datasource": {
-        "type": "grafana-opensearch-datasource",
-        "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "red",
-                "value": null
-              },
-              {
-                "color": "green",
-                "value": 5000000000
-              }
-            ]
-          },
-          "unit": "bps"
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "Max result.throughput"
-            },
-            "properties": [
-              {
-                "id": "displayName",
-                "value": "Throughput (Max)"
-              }
-            ]
-          }
-        ]
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 6,
-        "x": 1,
-        "y": 3
-      },
-      "id": 4,
+      "id": 14,
       "options": {
-        "colorMode": "value",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "orientation": "vertical",
-        "reduceOptions": {
-          "calcs": ["max"],
-          "fields": "",
-          "values": false
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
         },
-        "text": {
-          "valueSize": 64
-        },
-        "textMode": "value_and_name"
+        "content": "<div>\n<text style=\"font-size:20pt;\">\n<img \nsrc=\"https://www.perfsonar.net/images/logos/perfsonar/perfsonar-logo-white-full.svg\" \nstyle=\"background:rgb(17, 18, 23); width:200px; \"/> \nToolkit on $node_name\n</text>\n<a class=\"simple-button\" target=\"_blank\" href=\"#\" style=\"float: right;\">? Help</a>\n<a class=\"simple-button\" target=\"_blank\" href=\"https://35.188.119.41/toolkit/auth/admin/\" style=\"float: right;\">Configuration</a>\n<a class=\"simple-button\" href=\"/grafana\" style=\"float: right;\">Home</a>\n</div>\n\n\n<style>\n  /* custom stuff */\n  a.buttons, button.buttons {\n    text-decoration: none;\n    background-color: #1b6522;\n    border: 3px solid white; \n    border-radius: 3px;\n    color: white !important;  \n    font-weight: bold; \n    text-align: right; \n    padding: 10px; \n    width: auto;\n    display: inline-block;\n  }\n  a.simple-button {\n    text-decoration: none;\n    background-color: black;\n    border: 3px solid #1b6522; \n    border-radius: 3px;\n    color: white; \n    font-weight: bold; \n    text-align: right; \n    padding: 10px; \n    width: auto;\n    margin: 0 5px 0 5px;\n  }\n  a.simple-button:hover {\n    color: #1b6522;\n  }\n  h1.title,h2.title,h3.title,div.title {\n    color: #6D6E71; \n    font-weight:bold;\n  }\n  p.description {\n    color: #6D6E71;\n  }\n  a.link {\n    color: #1b6522;\n  }\n\n  /* ----grafana stuff---- */\n  button.css-82ooe6-button, button.css-1pq88ji-button {\n    background-color: rgba(78, 193, 224,0.7);\n    color: white;\n  }\n  button.css-82ooe6-button:hover, button.css-1pq88ji-button:hover {\n    background-color: #1b6522;\n  }\n  button.dashboard-row__title {\n    color: #6D6E71;\n  }\n  /* +add button */\n  button.css-r8pbcf-button-add-panel-button-add-panel-button-text,\n  button.css-1bvfhzx-button-add-panel-button-add-panel-button-text {\n    color: #1b6522;\n    border: 1px solid #1b6522;\n    }\n\n\n  /* ----light mode---- */\n  button.css-14424at {\n    color: #6D6E71; \n  }\n  button.css-14424at:hover {\n    color: #1b6522; \n  }\n    /* data links */\n  div.css-1d09i7b {\n    color: rgb(36, 41, 46);\n  }\n  div.css-1d09i7b:hover {\n    color: #1b6522;\n  }\n\n  /* ----dark mode---- */\n  div.css-1h2bvkc {\n    color: rgb(204, 204, 220);\n  }\n  div.css-1h2bvkc:hover {\n    color: #6d6e71;\n  }\n  button.css-1n3c59t {\n    color: #1b6522;\n  }\n  button.css-1n3c59t:hover {\n    color: #6D6E71;\n  }\n\n  /* data links */\n  div.css-1ijov7j {\n    color: rgb(204, 204, 220);\n  }\n  div.css-1ijov7j:hover {\n    color: #1b6522;\n  }\n  \n</style>",
+        "mode": "html"
       },
-      "pluginVersion": "10.0.3",
+      "pluginVersion": "10.2.0",
       "targets": [
         {
           "alias": "",
@@ -120,9 +63,8 @@
           "format": "table",
           "metrics": [
             {
-              "field": "result.throughput",
               "id": "1",
-              "type": "max"
+              "type": "count"
             }
           ],
           "query": "",
@@ -132,203 +74,7 @@
         }
       ],
       "transparent": true,
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "grafana-opensearch-datasource",
-        "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 1e-10
-              }
-            ]
-          },
-          "unit": "percentunit"
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "Max result.packets.loss"
-            },
-            "properties": [
-              {
-                "id": "displayName",
-                "value": "Packet Loss (Max)"
-              }
-            ]
-          }
-        ]
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 6,
-        "x": 8,
-        "y": 3
-      },
-      "id": 5,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "orientation": "vertical",
-        "reduceOptions": {
-          "calcs": ["max"],
-          "fields": "",
-          "values": false
-        },
-        "text": {
-          "valueSize": 64
-        },
-        "textMode": "value_and_name"
-      },
-      "pluginVersion": "10.0.3",
-      "targets": [
-        {
-          "alias": "",
-          "bucketAggs": [
-            {
-              "field": "pscheduler.start_time",
-              "id": "2",
-              "settings": {
-                "interval": "auto"
-              },
-              "type": "date_histogram"
-            }
-          ],
-          "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
-          },
-          "format": "table",
-          "metrics": [
-            {
-              "field": "result.packets.loss",
-              "id": "1",
-              "type": "max"
-            }
-          ],
-          "query": "",
-          "queryType": "lucene",
-          "refId": "A",
-          "timeField": "pscheduler.start_time"
-        }
-      ],
-      "transparent": true,
-      "type": "stat"
-    },
-    {
-      "datasource": {
-        "type": "grafana-opensearch-datasource",
-        "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 3
-              }
-            ]
-          },
-          "unit": "ms"
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "Max result.latency.stddev"
-            },
-            "properties": [
-              {
-                "id": "displayName",
-                "value": "Jitter (Max)"
-              }
-            ]
-          }
-        ]
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 6,
-        "x": 14,
-        "y": 3
-      },
-      "id": 6,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "orientation": "vertical",
-        "reduceOptions": {
-          "calcs": ["max"],
-          "fields": "",
-          "values": false
-        },
-        "text": {
-          "valueSize": 64
-        },
-        "textMode": "value_and_name"
-      },
-      "pluginVersion": "10.0.3",
-      "targets": [
-        {
-          "alias": "",
-          "bucketAggs": [
-            {
-              "field": "pscheduler.start_time",
-              "id": "2",
-              "settings": {
-                "interval": "auto"
-              },
-              "type": "date_histogram"
-            }
-          ],
-          "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
-          },
-          "format": "table",
-          "metrics": [
-            {
-              "field": "result.latency.stddev",
-              "id": "1",
-              "type": "max"
-            }
-          ],
-          "query": "",
-          "queryType": "lucene",
-          "refId": "A",
-          "timeField": "pscheduler.start_time"
-        }
-      ],
-      "transparent": true,
-      "type": "stat"
+      "type": "text"
     },
     {
       "datasource": {
@@ -429,7 +175,7 @@
         "h": 5,
         "w": 4,
         "x": 20,
-        "y": 3
+        "y": 0
       },
       "id": 3,
       "options": {
@@ -438,14 +184,16 @@
           "countRows": false,
           "enablePagination": false,
           "fields": "",
-          "reducer": ["sum"],
+          "reducer": [
+            "sum"
+          ],
           "show": false
         },
         "frameIndex": 1,
         "showHeader": true,
         "sortBy": []
       },
-      "pluginVersion": "10.0.3",
+      "pluginVersion": "10.2.0",
       "targets": [
         {
           "alias": "",
@@ -510,95 +258,71 @@
         "type": "grafana-opensearch-datasource",
         "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
       },
-      "description": "",
       "fieldConfig": {
         "defaults": {
           "color": {
-            "fixedColor": "dark-green",
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "bars",
-            "fillOpacity": 62,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "normal"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
+            "mode": "thresholds"
           },
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
+                "color": "red",
                 "value": null
               },
               {
-                "color": "red",
-                "value": 80
+                "color": "green",
+                "value": 5000000000
+              }
+            ]
+          },
+          "unit": "bps"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Max result.throughput"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Throughput (Max)"
               }
             ]
           }
-        },
-        "overrides": []
+        ]
       },
       "gridPos": {
-        "h": 7,
-        "w": 19,
+        "h": 4,
+        "w": 6,
         "x": 1,
-        "y": 7
+        "y": 3
       },
-      "id": 8,
-      "interval": "5m",
+      "id": 4,
       "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "vertical",
+        "reduceOptions": {
+          "calcs": [
+            "max"
+          ],
+          "fields": "",
+          "values": false
         },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "none"
-        }
+        "text": {
+          "valueSize": 64
+        },
+        "textMode": "value_and_name"
       },
+      "pluginVersion": "10.2.0",
       "targets": [
         {
           "alias": "",
           "bucketAggs": [
-            {
-              "field": "test.type.keyword",
-              "id": "3",
-              "settings": {
-                "min_doc_count": "1",
-                "order": "desc",
-                "orderBy": "_term",
-                "size": "10"
-              },
-              "type": "terms"
-            },
             {
               "field": "pscheduler.start_time",
               "id": "2",
@@ -615,8 +339,9 @@
           "format": "table",
           "metrics": [
             {
+              "field": "result.throughput",
               "id": "1",
-              "type": "count"
+              "type": "max"
             }
           ],
           "query": "",
@@ -625,9 +350,208 @@
           "timeField": "pscheduler.start_time"
         }
       ],
-      "title": "Number of Tests Run",
       "transparent": true,
-      "type": "timeseries"
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 1e-10
+              }
+            ]
+          },
+          "unit": "percentunit"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Max result.packets.loss"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Packet Loss (Max)"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 8,
+        "y": 3
+      },
+      "id": 5,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "vertical",
+        "reduceOptions": {
+          "calcs": [
+            "max"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {
+          "valueSize": 64
+        },
+        "textMode": "value_and_name"
+      },
+      "pluginVersion": "10.2.0",
+      "targets": [
+        {
+          "alias": "",
+          "bucketAggs": [
+            {
+              "field": "pscheduler.start_time",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
+          },
+          "format": "table",
+          "metrics": [
+            {
+              "field": "result.packets.loss",
+              "id": "1",
+              "type": "max"
+            }
+          ],
+          "query": "",
+          "queryType": "lucene",
+          "refId": "A",
+          "timeField": "pscheduler.start_time"
+        }
+      ],
+      "transparent": true,
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 3
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Max result.latency.stddev"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Jitter (Max)"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 14,
+        "y": 3
+      },
+      "id": 6,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "vertical",
+        "reduceOptions": {
+          "calcs": [
+            "max"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {
+          "valueSize": 64
+        },
+        "textMode": "value_and_name"
+      },
+      "pluginVersion": "10.2.0",
+      "targets": [
+        {
+          "alias": "",
+          "bucketAggs": [
+            {
+              "field": "pscheduler.start_time",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
+          },
+          "format": "table",
+          "metrics": [
+            {
+              "field": "result.latency.stddev",
+              "id": "1",
+              "type": "max"
+            }
+          ],
+          "query": "",
+          "queryType": "lucene",
+          "refId": "A",
+          "timeField": "pscheduler.start_time"
+        }
+      ],
+      "transparent": true,
+      "type": "stat"
     },
     {
       "datasource": {
@@ -752,7 +676,7 @@
         "h": 5,
         "w": 4,
         "x": 20,
-        "y": 8
+        "y": 5
       },
       "id": 7,
       "options": {
@@ -761,14 +685,16 @@
           "countRows": false,
           "enablePagination": false,
           "fields": "",
-          "reducer": ["sum"],
+          "reducer": [
+            "sum"
+          ],
           "show": false
         },
         "frameIndex": 1,
         "showHeader": true,
         "sortBy": []
       },
-      "pluginVersion": "10.0.3",
+      "pluginVersion": "10.2.0",
       "targets": [
         {
           "alias": "",
@@ -827,11 +753,137 @@
         "type": "grafana-opensearch-datasource",
         "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
       },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "dark-green",
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "bars",
+            "fillOpacity": 62,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "normal"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 19,
+        "x": 1,
+        "y": 7
+      },
+      "id": 8,
+      "interval": "5m",
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "alias": "",
+          "bucketAggs": [
+            {
+              "field": "test.type.keyword",
+              "id": "3",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "10"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "pscheduler.start_time",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
+          },
+          "format": "table",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "",
+          "queryType": "lucene",
+          "refId": "A",
+          "timeField": "pscheduler.start_time"
+        }
+      ],
+      "title": "Number of Tests Run",
+      "transparent": true,
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
+      },
       "gridPos": {
         "h": 8,
         "w": 4,
         "x": 20,
-        "y": 13
+        "y": 10
       },
       "id": 2,
       "options": {
@@ -840,10 +892,10 @@
           "showLineNumbers": false,
           "showMiniMap": false
         },
-        "content": "\u003cdiv class=\"nav-div\"\u003e\n\u003ca class=\"simple-button\" href=\"/grafana/d/eb96563b-0d93-4910-be3c-5be331a00339/perfsonar-host-metrics?orgId=1\"\u003eHost Info\u003c/a\u003e\n\u003c/div\u003e\n\u003cdiv class=\"nav-div\"\u003e\n\u003ca class=\"simple-button\" href=\"/grafana/dashboards/f/fd44984e-41df-4659-a60a-67809aa46cd2/external-dashboards\"\u003eExternal Dashboards\u003c/a\u003e\n\u003c/div\u003e\n\u003cdiv class=\"nav-div\"\u003e\n\u003ca class=\"simple-button\" href=\"/grafana/dashboards/f/d94dcbb1-4076-4c61-b947-3194b3881b65/my-dashboards\"\u003eMy Dashboards \u003c/a\u003e\n\u003c/div\u003e\n\n\u003cstyle\u003e\n  .nav-div {\n    margin:28px 10px; \n    text-align:center;\n  }\n\u003c/style\u003e",
+        "content": "<div class=\"nav-div\">\n<a class=\"simple-button\" href=\"/grafana/d/eb96563b-0d93-4910-be3c-5be331a00339/perfsonar-host-metrics?orgId=1\">Host Info</a>\n</div>\n<div class=\"nav-div\">\n<a class=\"simple-button\" href=\"/grafana/dashboards/f/fd44984e-41df-4659-a60a-67809aa46cd2/external-dashboards\">External Dashboards</a>\n</div>\n<div class=\"nav-div\">\n<a class=\"simple-button\" href=\"/grafana/dashboards/f/d94dcbb1-4076-4c61-b947-3194b3881b65/my-dashboards\">My Dashboards </a>\n</div>\n\n<style>\n  .nav-div {\n    margin:28px 10px; \n    text-align:center;\n  }\n</style>",
         "mode": "html"
       },
-      "pluginVersion": "10.0.3",
+      "pluginVersion": "10.2.0",
       "targets": [
         {
           "alias": "",
@@ -896,7 +948,7 @@
           "links": [
             {
               "title": "See results from ${__data.fields.Source} to ${__data.fields.Destination}",
-              "url": "/d/b6df6a8d-1b66-4712-a8da-957b36dc37dc/perfsonar-endpoint-pair-explorer?orgId=1\u0026var-ds=perfSONAR%20Local\u0026from=${__from}\u0026to=${__to}\u0026var-source=${__data.fields.Source}\u0026var-dest=${__data.fields.Destination}"
+              "url": "/d/b6df6a8d-1b66-4712-a8da-957b36dc37dc/perfsonar-endpoint-pair-explorer?orgId=1&var-ds=perfSONAR%20Local&from=${__from}&to=${__to}&var-source=${__data.fields.Source}&var-dest=${__data.fields.Destination}"
             }
           ],
           "mappings": [
@@ -1024,13 +1076,15 @@
           "countRows": false,
           "enablePagination": true,
           "fields": "",
-          "reducer": ["sum"],
+          "reducer": [
+            "sum"
+          ],
           "show": false
         },
         "showHeader": true,
         "sortBy": []
       },
-      "pluginVersion": "10.0.3",
+      "pluginVersion": "10.2.0",
       "targets": [
         {
           "alias": "",
@@ -1192,7 +1246,7 @@
             "h": 8,
             "w": 18,
             "x": 1,
-            "y": 33
+            "y": 41
           },
           "id": 9,
           "options": {
@@ -1201,7 +1255,9 @@
               "countRows": false,
               "enablePagination": true,
               "fields": "",
-              "reducer": ["sum"],
+              "reducer": [
+                "sum"
+              ],
               "show": false
             },
             "showHeader": true,
@@ -1324,10 +1380,10 @@
           "showLineNumbers": false,
           "showMiniMap": false
         },
-        "content": "\u003chr\u003e\n\u003cdiv style=\"text-align:center\"\u003e\u003ca href=\"https://www.perfsonar.net/about/privacy-policy/\"\u003ePrivacy Policy\u003c/a\u003e | \u003ca href=\"http://stats.perfsonar.net/\"\u003eGlobal Node Directory\u003c/a\u003e | \u003ca href=\"/toolkit/services/host.cgi?method=get_summary\"\u003eHost JSON\u003c/a\u003e\u003c/div\u003e\n\u003cdiv style=\"padding:10px 10px 10px 10px;text-align:center\"\u003e\u003cimg style=\"width:30px;\" src=\"public/img/ps_footer_grafana_logo.svg\"/\u003e\u0026nbsp;Powered by Grafana\u003c/div\u003e",
+        "content": "<hr>\n<div style=\"text-align:center\"><a href=\"https://www.perfsonar.net/about/privacy-policy/\">Privacy Policy</a> | <a href=\"http://stats.perfsonar.net/\">Global Node Directory</a> | <a href=\"/toolkit/services/host.cgi?method=get_summary\">Host JSON</a></div>\n<div style=\"padding:10px 10px 10px 10px;text-align:center\"><img style=\"width:30px;\" src=\"public/img/ps_footer_grafana_logo.svg\"/>&nbsp;Powered by Grafana</div>",
         "mode": "html"
       },
-      "pluginVersion": "10.0.3",
+      "pluginVersion": "10.2.0",
       "targets": [
         {
           "alias": "",
@@ -1364,15 +1420,14 @@
   ],
   "refresh": "",
   "schemaVersion": 38,
-  "style": "dark",
   "tags": [],
   "templating": {
     "list": [
       {
         "current": {
           "selected": false,
-          "text": "ps-dev-staging-el9-tk-1.c.esnet-perfsonar.internal",
-          "value": "ps-dev-staging-el9-tk-1.c.esnet-perfsonar.internal"
+          "text": "ps-dev-510-el9-tk-1.c.esnet-perfsonar.internal",
+          "value": "ps-dev-510-el9-tk-1.c.esnet-perfsonar.internal"
         },
         "datasource": {
           "type": "grafana-opensearch-datasource",
@@ -1401,6 +1456,6 @@
   "timezone": "",
   "title": "perfSONAR Toolkit",
   "uid": "ff439cb3-6042-43b5-a999-674681d80395",
-  "version": 28,
+  "version": 1,
   "weekStart": ""
 }

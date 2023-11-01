@@ -7,6 +7,10 @@ services:
       &grafana-env
       - GF_INSTALL_PLUGINS=grafana-opensearch-datasource,marcusolsson-hourly-heatmap-panel,netsage-sankey-panel,netsage-slopegraph-panel,esnet-chord-panel,netsage-bumpchart-panel,esnet-matrix-panel
       - GF_PANELS_DISABLE_SANITIZE_HTML=true
+      - GF_PATHS_PROVISIONING=/usr/lib/perfsonar/grafana/provisioning
+    volumes:
+      - ./provisioning:/usr/lib/perfsonar/grafana/provisioning
+      - ./dashboards:/usr/lib/perfsonar/grafana/dashboards
     ports:
       &grafana-ports
        - 3000:3000

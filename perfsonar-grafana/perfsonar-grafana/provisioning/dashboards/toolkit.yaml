@@ -1,0 +1,10 @@
+apiVersion: 1
+
+providers:
+- name: 'perfSONAR Toolkit'
+  orgId: 1
+  folder: 'perfSONAR'
+  folderUid: 'e65dd0fc-fd6d-45c2-a8bb-f6df1186cf66'
+  type: file
+  options:
+    path: /usr/lib/perfsonar/grafana/dashboards/toolkit
