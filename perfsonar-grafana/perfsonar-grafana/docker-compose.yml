@@ -3,21 +3,16 @@ services:
   grafana:
     restart: &grafana-restart always
     image: grafana/grafana:10.2.0-ubuntu
+    build:
+      context: .
+      dockerfile: Dockerfile
     environment:
       &grafana-env
-      - GF_INSTALL_PLUGINS=grafana-opensearch-datasource,marcusolsson-hourly-heatmap-panel,netsage-sankey-panel,netsage-slopegraph-panel,esnet-chord-panel,netsage-bumpchart-panel,esnet-matrix-panel
+      - GF_INSTALL_PLUGINS=grafana-opensearch-datasource,esnet-matrix-panel
       - GF_PANELS_DISABLE_SANITIZE_HTML=true
       - GF_PATHS_PROVISIONING=/usr/lib/perfsonar/grafana/provisioning
-    volumes:
-      - ./provisioning:/usr/lib/perfsonar/grafana/provisioning
-      - ./dashboards:/usr/lib/perfsonar/grafana/dashboards
+      - GF_SERVER_ROOT_URL=%(protocol)s://%(domain)s:%(http_port)s/grafana/
+      - GF_SERVER_SERVE_FROM_SUB_PATH=true
     ports:
       &grafana-ports
        - 3000:3000
-  gdg:
-    image:  ghcr.io/esnet/gdg:0.5.0
-    platform: linux/amd64
-    command: "--help"            ## Add additional parameters here
-    volumes:
-      - ./gdg:/app/gdg
-      - ./importer.yml:/app/importer.yml

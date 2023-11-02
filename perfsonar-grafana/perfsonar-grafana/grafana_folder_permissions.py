@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
 
+##
+# This scripts sets the permissions on Grafana folders so that
+# Viewers can View and Editors can Edit. Hopefully in future Grafana
+# versions this won't be needed, but for now corrects issue where folders
+# created as part of provisioning only allow Admin access.
+#
+
 import sys
 import time
 import configparser
