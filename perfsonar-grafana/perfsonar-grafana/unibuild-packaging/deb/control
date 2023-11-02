@@ -1,0 +1,21 @@
+Source: perfsonar-grafana
+Maintainer: perfSONAR developers <debian@perfsonar.net>
+Section: net
+Priority: optional
+Standards-Version: 4.3.0
+Build-Depends: debhelper (>= 10)
+Homepage: http://www.perfsonar.net
+
+Package: perfsonar-grafana
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, grafana, python3, python3-requests,
+ openssl, apache2, apache2-ssl-dev, perfsonar-common, unzip, curl
+Description: perfSONAR Grafana
+ A package that installs and configures Grafana for perfSONAR
+
+Package: perfsonar-grafana-toolkit
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, perfsonar-grafana
+Description: perfSONAR Grafana Toolkit Dashboards
+ A package that installs and configures perfSONAR Toolkit dashboards in Grafana
+

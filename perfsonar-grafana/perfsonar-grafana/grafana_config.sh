@@ -42,4 +42,4 @@ do
 done
 
 #Restart grafana
-systemctl restart grafana-server.service
+systemctl restart grafana-server.service || :

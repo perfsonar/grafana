@@ -1,0 +1,8 @@
+usr/lib/perfsonar/grafana/grafana_config.py
+usr/lib/perfsonar/grafana/grafana_folder_permissions.py
+usr/lib/perfsonar/grafana/grafana_common.sh
+usr/lib/perfsonar/grafana/grafana_config.sh
+usr/lib/perfsonar/grafana/grafana_plugin_download.sh
+usr/lib/perfsonar/grafana/images/*
+usr/lib/perfsonar/grafana/plugins/*
+etc/apache2/conf-available/apache-grafana.conf

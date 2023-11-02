@@ -1,0 +1,47 @@
+#!/bin/bash
+# postinst script for perfsonar-grafana
+#
+# see: dh_installdeb(1)
+
+set -e
+
+case "$1" in
+    configure)
+        # check if installation or update, where version is a parameter
+        if [ -z "$2" ]; then
+
+            #Enable grafana on new install
+            systemctl daemon-reload  || :
+            systemctl enable grafana-server.service  || :
+
+            #Enable and restart apache for reverse proxy
+            systemctl enable httpd  || :
+            systemctl restart httpd  || :
+
+            # Apache setup
+            if [ -e /usr/share/apache2/apache2-maintscript-helper ]; then
+                . /usr/share/apache2/apache2-maintscript-helper
+
+                apache2_invoke enmod ssl
+                apache2_invoke ensite default-ssl
+                apache2_invoke enmod proxy
+                apache2_invoke enmod proxy_http
+                apache2_invoke enconf apache-grafana
+            fi
+        fi
+
+        #update grafana config - this also starts grafana
+        /usr/lib/perfsonar/grafana//grafana_config.sh
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+#DEBHELPER#
+exit 0

@@ -1,0 +1,4 @@
+usr/lib/perfsonar/grafana/dashboards/toolkit/*
+usr/lib/perfsonar/grafana/provisioning/dashboards/toolkit.yaml
+usr/lib/perfsonar/grafana/provisioning/datasources/exporter-metrics-local.yaml
+usr/lib/perfsonar/grafana/provisioning/datasources/perfsonar-local.yaml
