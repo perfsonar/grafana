@@ -23,6 +23,7 @@ endif
 	install -m 755 grafana_config.sh ${PERFSONAR-ROOTPATH}/
 	install -m 755 grafana_plugin_download.sh ${PERFSONAR-ROOTPATH}/
 	install -m 755 grafana_config.py ${PERFSONAR-ROOTPATH}/
+	install -m 755 grafana_folder_permissions.py ${PERFSONAR-ROOTPATH}/
 	install -m 644 apache-grafana.conf ${HTTPD-CONFIGPATH}/
 	install -m 644 images/* ${PERFSONAR-ROOTPATH}/images
 	install -m 644 provisioning/dashboards/* ${PERFSONAR-ROOTPATH}/provisioning/dashboards

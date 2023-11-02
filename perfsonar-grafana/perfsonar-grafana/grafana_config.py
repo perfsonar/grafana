@@ -36,7 +36,7 @@ grafana_ini['paths'] = {
 if not (grafana_ini.has_section('security') and grafana_ini['security']):
     grafana_ini['security'] = {
         'admin_password': ''.join(random.choice(string.ascii_letters + string.digits) for i in range(32)),
-        'disable_initial_admin_creation': 'true'
+        'disable_initial_admin_creation': 'false'
     }
 
 #write file

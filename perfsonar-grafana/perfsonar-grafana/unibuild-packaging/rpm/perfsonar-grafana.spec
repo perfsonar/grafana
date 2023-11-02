@@ -30,6 +30,7 @@ Requires:       mod_ssl
 Requires:       curl
 Requires(post): unzip
 Requires(post): python3
+Requires(post): python3-requests
 Requires:       selinux-policy-%{selinuxtype}
 Requires(post): selinux-policy-%{selinuxtype}
 BuildRequires:  selinux-policy-devel
@@ -77,6 +78,13 @@ fi
 #update grafana config - this also starts grafana
 %{pkg_install_base}/grafana_config.sh
 
+%post toolkit
+#Restart grafana on new install so it picks-up new dashboards and datasources
+if [ "$1" = "1" ]; then
+    systemctl restart grafana-server.service
+    %{pkg_install_base}/grafana_folder_permissions.py e65dd0fc-fd6d-45c2-a8bb-f6df1186cf66 d94dcbb1-4076-4c61-b947-3194b3881b65
+fi
+
 %preun
 %systemd_preun grafana-server.service
 
@@ -90,6 +98,7 @@ fi
 %defattr(0644,perfsonar,perfsonar,0755)
 %license LICENSE
 %attr(0755, perfsonar, perfsonar) %{pkg_install_base}/grafana_config.py
+%attr(0755, perfsonar, perfsonar) %{pkg_install_base}/grafana_folder_permissions.py
 %attr(0755, perfsonar, perfsonar) %{pkg_install_base}/grafana_common.sh
 %attr(0755, perfsonar, perfsonar) %{pkg_install_base}/grafana_config.sh
 %attr(0755, perfsonar, perfsonar) %{pkg_install_base}/grafana_plugin_download.sh

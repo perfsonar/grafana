@@ -6,12 +6,13 @@ providers:
   folder: 'perfSONAR'
   folderUid: 'e65dd0fc-fd6d-45c2-a8bb-f6df1186cf66'
   type: file
+  updateIntervalSeconds: 10
   options:
     path: /usr/lib/perfsonar/grafana/dashboards/toolkit
 - name: 'My perfSONAR Dashboards Empty Folder'
   orgId: 1
   folder: 'My perfSONAR Dashboards'
-  folderUid: 'e65dd0fc-fd6d-45c2-a8bb-f6df1186cf66'
+  folderUid: 'd94dcbb1-4076-4c61-b947-3194b3881b65'
   type: file
   options:
     path: /usr/lib/perfsonar/grafana/dashboards/empty
