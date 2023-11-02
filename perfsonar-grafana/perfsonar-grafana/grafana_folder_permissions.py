@@ -47,7 +47,6 @@ SLEEP_TIME=2
 while(try_count < TRY_MAX):
     try:
         for folder_uid in folder_uids:
-            print(folder_uid)
             r = requests.post(
                     "{}/folders/{}/permissions".format(GF_URL,folder_uid), 
                     auth=('admin', admin_password),
