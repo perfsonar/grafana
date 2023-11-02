@@ -38,6 +38,14 @@ BuildRequires:  selinux-policy-devel
 %description
 A package that installs and configures Grafana for perfSONAR
 
+%package toolkit
+Summary:		perfSONAR Grafana Toolkit Dashboards
+Group:			Applications/Communications
+Requires:       perfsonar-grafana
+
+%description toolkit
+A package that installs and configures perfSONAR Toolkit dashboards in Grafana
+
 %prep
 %setup -q -n perfsonar-grafana-%{version}
 
@@ -88,6 +96,13 @@ fi
 %attr(0644, perfsonar, perfsonar) %{pkg_install_base}/images/*
 %attr(0644, perfsonar, perfsonar) %{pkg_install_base}/plugins/*
 %attr(0644, perfsonar, perfsonar) %{httpd_config_base}/apache-grafana.conf
+
+%files toolkit
+%defattr(0644,perfsonar,perfsonar,0755)
+%attr(0644, perfsonar, perfsonar) %{pkg_install_base}/dashboards/toolkit/*
+%attr(0644, perfsonar, perfsonar) %{pkg_install_base}/provisioning/dashboards/toolkit.yaml
+%attr(0644, perfsonar, perfsonar) %{pkg_install_base}/provisioning/datasources/exporter-metrics-local.yaml
+%attr(0644, perfsonar, perfsonar) %{pkg_install_base}/provisioning/datasources/perfsonar-local.yaml
 
 %changelog
 * Tue Oct 24 2023 andy@es.net 5.0.5-0.0.a1

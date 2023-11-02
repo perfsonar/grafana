@@ -11,4 +11,4 @@ PLUGINS_TO_INSTALL[grafana-esnet-matrix-panel-viz]="https://grafana.com/api/plug
 
 ##
 # PLUGINS_TO_REMOVE: Array with the names of the unzipped directories to be removed on install
-PLUGINS_TO_REMOVE=( esnet-matrix-panel )
+PLUGINS_TO_REMOVE=( esnet-matrix-panel grafana-opensearch-datasource )

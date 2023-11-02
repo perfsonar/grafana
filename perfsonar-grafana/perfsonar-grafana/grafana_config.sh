@@ -16,6 +16,9 @@ if [ $? == 0 ]; then
 fi
 ${PS_ROOT}/grafana_config.py
 
+#Make an empty directory used by provisioning to create empty folders
+mkdir -p ${PS_ROOT}/dashboards/empty
+
 #Install custom images
 mv -f ${PS_IMG_ROOT}/*.svg ${GF_IMG_DIR}/
 
@@ -35,7 +38,7 @@ cd ${PS_PLUGIN_ROOT}
 for plugin_name in "${!PLUGINS_TO_INSTALL[@]}"
 do
 : 
-   unzip -d ${GF_PLUGIN_DIR} ${plugin_name}.zip 
+   unzip -q -d ${GF_PLUGIN_DIR} ${plugin_name}.zip 
 done
 
 #Restart grafana
