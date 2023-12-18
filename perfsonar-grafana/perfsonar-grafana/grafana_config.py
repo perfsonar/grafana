@@ -49,7 +49,7 @@ with open(GRAFANA_INI_FILE, 'w') as file:
 # Now configure psconfig
 if os.path.exists(PSCONFIG_GRAFANA_FILE):
     with open(PSCONFIG_GRAFANA_FILE) as pgf_file_in:
-        pgf_file_contents = pgf_file_in.read()
+        pgf_file_contents = json.loads(pgf_file_in.read())
     pgf_file_contents["grafana-user"] = "admin"
     pgf_file_contents["grafana-password"] = grafana_ini['security']['admin_password']
     with open(PSCONFIG_GRAFANA_FILE, "w") as pgf_file_out:
