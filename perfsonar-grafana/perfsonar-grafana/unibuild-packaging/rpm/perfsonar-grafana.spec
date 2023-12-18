@@ -23,11 +23,13 @@ Source0:		perfsonar-grafana-%{version}.tar.gz
 BuildRoot:		%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:		noarch
 Requires:       perfsonar-common
+Requires:       perfsonar-psconfig-grafana
 Requires:       openssl
 Requires:       grafana
 Requires:       httpd
 Requires:       mod_ssl
 Requires:       curl
+Requires(post): perfsonar-psconfig-grafana
 Requires(post): unzip
 Requires(post): python3
 Requires(post): python3-requests

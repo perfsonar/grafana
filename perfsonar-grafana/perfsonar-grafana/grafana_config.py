@@ -3,8 +3,11 @@
 import configparser
 import random
 import string
+import json
+import os
 
 GRAFANA_INI_FILE='/etc/grafana/grafana.ini'
+PSCONFIG_GRAFANA_FILE='/etc/perfsonar/psconfig/grafana-agent.json'
 
 #read file
 grafana_ini = configparser.ConfigParser()
@@ -42,3 +45,12 @@ if not (grafana_ini.has_section('security') and grafana_ini['security']):
 #write file
 with open(GRAFANA_INI_FILE, 'w') as file:
         grafana_ini.write(file)
+
+# Now configure psconfig
+if os.path.exists(PSCONFIG_GRAFANA_FILE):
+    with open(PSCONFIG_GRAFANA_FILE) as pgf_file_in:
+        pgf_file_contents = pgf_file_in.read()
+    pgf_file_contents["grafana-user"] = "admin"
+    pgf_file_contents["grafana-password"] = grafana_ini['security']['admin_password']
+    with open(PSCONFIG_GRAFANA_FILE, "w") as pgf_file_out:
+        pgf_file_out.write(json.dumps(pgf_file_contents, indent=4))
