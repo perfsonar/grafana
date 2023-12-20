@@ -1879,7 +1879,7 @@
               "type": "max"
             }
           ],
-          "query": "type.keyword: pscheduler AND meta.id.keyword: localhost AND values.perfsonar_pscheduler_runs: *",
+          "query": "type.keyword: perfsonar_host AND meta.id.keyword: localhost AND values.perfsonar_pscheduler_runs: *",
           "queryType": "lucene",
           "refId": "A",
           "timeField": "@timestamp"
@@ -2004,7 +2004,7 @@
               "type": "max"
             }
           ],
-          "query": "type.keyword: pscheduler AND meta.id.keyword: localhost AND values.perfsonar_pscheduler_archiving: *",
+          "query": "type.keyword: perfsonar_host AND meta.id.keyword: localhost AND values.perfsonar_pscheduler_archiving: *",
           "queryType": "lucene",
           "refId": "A",
           "timeField": "@timestamp"
@@ -2129,7 +2129,7 @@
               "type": "max"
             }
           ],
-          "query": "type.keyword: pscheduler AND meta.id.keyword: localhost AND values.perfsonar_pscheduler_paused: *",
+          "query": "type.keyword: perfsonar_host AND meta.id.keyword: localhost AND values.perfsonar_pscheduler_paused: *",
           "queryType": "lucene",
           "refId": "A",
           "timeField": "@timestamp"
@@ -2254,7 +2254,7 @@
               "type": "max"
             }
           ],
-          "query": "type.keyword: pscheduler AND meta.id.keyword: localhost AND  values.perfsonar_pscheduler_http_queue: *",
+          "query": "type.keyword: perfsonar_host AND meta.id.keyword: localhost AND  values.perfsonar_pscheduler_http_queue: *",
           "queryType": "lucene",
           "refId": "A",
           "timeField": "@timestamp"
