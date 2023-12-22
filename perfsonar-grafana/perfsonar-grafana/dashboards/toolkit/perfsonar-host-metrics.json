@@ -72,7 +72,7 @@
           "showLineNumbers": false,
           "showMiniMap": false
         },
-        "content": "<div>\n<text style=\"font-size:20pt;\">\n<img \nsrc=\"/grafana/public/img/perfsonar-logo-white-full.svg\" \nstyle=\"background:rgb(17, 18, 23); width:200px; \"/> \nToolkit on $node_name\n</text>\n<a class=\"simple-button\" target=\"_blank\" href=\"https://docs.perfsonar.net/\" style=\"float: right;\">? Help</a>\n<a class=\"simple-button\" target=\"_blank\" href=\"/toolkit/auth/admin/\" style=\"float: right;\">Configuration</a>\n<a class=\"simple-button\" href=\"/grafana/d/ff439cb3-6042-43b5-a999-674681d80395/perfsonar-toolkit?orgId=1\" style=\"float: right;\">Home</a>\n</div>\n\n\n<style>\n  /* custom stuff */\n  a.buttons, button.buttons {\n    text-decoration: none;\n    background-color: #1b6522;\n    border: 3px solid white; \n    border-radius: 3px;\n    color: white !important;  \n    font-weight: bold; \n    text-align: right; \n    padding: 10px; \n    width: auto;\n    display: inline-block;\n  }\n  a.simple-button {\n    text-decoration: none;\n    background-color: black;\n    border: 3px solid #1b6522; \n    border-radius: 3px;\n    color: white; \n    font-weight: bold; \n    text-align: right; \n    padding: 10px; \n    width: auto;\n    margin: 0 5px 0 5px;\n  }\n  a.simple-button:hover {\n    color: #1b6522;\n  }\n  h1.title,h2.title,h3.title,div.title {\n    color: #6D6E71; \n    font-weight:bold;\n  }\n  p.description {\n    color: #6D6E71;\n  }\n  a.link {\n    color: #1b6522;\n  }\n\n  /* ----grafana stuff---- */\n  button.css-82ooe6-button, button.css-1pq88ji-button {\n    background-color: rgba(78, 193, 224,0.7);\n    color: white;\n  }\n  button.css-82ooe6-button:hover, button.css-1pq88ji-button:hover {\n    background-color: #1b6522;\n  }\n  button.dashboard-row__title {\n    color: #6D6E71;\n  }\n  /* +add button */\n  button.css-r8pbcf-button-add-panel-button-add-panel-button-text,\n  button.css-1bvfhzx-button-add-panel-button-add-panel-button-text {\n    color: #1b6522;\n    border: 1px solid #1b6522;\n    }\n\n\n  /* ----light mode---- */\n  button.css-14424at {\n    color: #6D6E71; \n  }\n  button.css-14424at:hover {\n    color: #1b6522; \n  }\n    /* data links */\n  div.css-1d09i7b {\n    color: rgb(36, 41, 46);\n  }\n  div.css-1d09i7b:hover {\n    color: #1b6522;\n  }\n\n  /* ----dark mode---- */\n  div.css-1h2bvkc {\n    color: rgb(204, 204, 220);\n  }\n  div.css-1h2bvkc:hover {\n    color: #6d6e71;\n  }\n  button.css-1n3c59t {\n    color: #1b6522;\n  }\n  button.css-1n3c59t:hover {\n    color: #6D6E71;\n  }\n\n  /* data links */\n  div.css-1ijov7j {\n    color: rgb(204, 204, 220);\n  }\n  div.css-1ijov7j:hover {\n    color: #1b6522;\n  }\n  \n</style>",
+        "content": "<div>\n<text style=\"font-size:20pt;\">\n<img \nsrc=\"/grafana/public/img/perfsonar-logo-white-full.svg\" \nstyle=\"background:rgb(17, 18, 23); width:200px; \"/> \non $node_name\n</text>\n<a class=\"simple-button\" target=\"_blank\" href=\"https://docs.perfsonar.net/\" style=\"float: right;\">? Help</a>\n<a class=\"simple-button\" target=\"_blank\" href=\"/toolkit/auth/admin/\" style=\"float: right;\">Configuration</a>\n<a class=\"simple-button\" href=\"/grafana/d/ff439cb3-6042-43b5-a999-674681d80395/perfsonar-toolkit?orgId=1\" style=\"float: right;\">Home</a>\n</div>\n\n\n<style>\n  /* custom stuff */\n  a.buttons, button.buttons {\n    text-decoration: none;\n    background-color: #1b6522;\n    border: 3px solid white; \n    border-radius: 3px;\n    color: white !important;  \n    font-weight: bold; \n    text-align: right; \n    padding: 10px; \n    width: auto;\n    display: inline-block;\n  }\n  a.simple-button {\n    text-decoration: none;\n    background-color: black;\n    border: 3px solid #1b6522; \n    border-radius: 3px;\n    color: white; \n    font-weight: bold; \n    text-align: right; \n    padding: 10px; \n    width: auto;\n    margin: 0 5px 0 5px;\n  }\n  a.simple-button:hover {\n    color: #1b6522;\n  }\n  h1.title,h2.title,h3.title,div.title {\n    color: #6D6E71; \n    font-weight:bold;\n  }\n  p.description {\n    color: #6D6E71;\n  }\n  a.link {\n    color: #1b6522;\n  }\n\n  /* ----grafana stuff---- */\n  button.css-82ooe6-button, button.css-1pq88ji-button {\n    background-color: rgba(78, 193, 224,0.7);\n    color: white;\n  }\n  button.css-82ooe6-button:hover, button.css-1pq88ji-button:hover {\n    background-color: #1b6522;\n  }\n  button.dashboard-row__title {\n    color: #6D6E71;\n  }\n  /* +add button */\n  button.css-r8pbcf-button-add-panel-button-add-panel-button-text,\n  button.css-1bvfhzx-button-add-panel-button-add-panel-button-text {\n    color: #1b6522;\n    border: 1px solid #1b6522;\n    }\n\n\n  /* ----light mode---- */\n  button.css-14424at {\n    color: #6D6E71; \n  }\n  button.css-14424at:hover {\n    color: #1b6522; \n  }\n    /* data links */\n  div.css-1d09i7b {\n    color: rgb(36, 41, 46);\n  }\n  div.css-1d09i7b:hover {\n    color: #1b6522;\n  }\n\n  /* ----dark mode---- */\n  div.css-1h2bvkc {\n    color: rgb(204, 204, 220);\n  }\n  div.css-1h2bvkc:hover {\n    color: #6d6e71;\n  }\n  button.css-1n3c59t {\n    color: #1b6522;\n  }\n  button.css-1n3c59t:hover {\n    color: #6D6E71;\n  }\n\n  /* data links */\n  div.css-1ijov7j {\n    color: rgb(204, 204, 220);\n  }\n  div.css-1ijov7j:hover {\n    color: #1b6522;\n  }\n  \n</style>",
         "mode": "html"
       },
       "pluginVersion": "10.2.0",
@@ -684,8 +684,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "red",
-                "value": null
+                "color": "red"
               },
               {
                 "color": "green",
@@ -790,8 +789,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -988,8 +986,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1109,8 +1106,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1278,8 +1274,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1441,8 +1436,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1533,8 +1527,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1736,8 +1729,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1909,8 +1901,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2053,8 +2044,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2259,8 +2249,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2384,8 +2373,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2509,8 +2497,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2634,8 +2621,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2789,8 +2775,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2957,8 +2942,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3171,8 +3155,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3352,8 +3335,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3558,8 +3540,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3735,29 +3716,6 @@
     "list": [
       {
         "current": {
-          "selected": false,
-          "text": "ps-dev-el9-510-tk-1.c.esnet-perfsonar.internal",
-          "value": "ps-dev-el9-510-tk-1.c.esnet-perfsonar.internal"
-        },
-        "datasource": {
-          "type": "grafana-opensearch-datasource",
-          "uid": "f60bacda-08de-4933-9013-91cfae76df57"
-        },
-        "definition": "{\"find\":\"terms\", \"field\":\"meta.uname.nodename.keyword\", \"size\": 1}",
-        "hide": 2,
-        "includeAll": false,
-        "multi": false,
-        "name": "node_name",
-        "options": [],
-        "query": "{\"find\":\"terms\", \"field\":\"meta.uname.nodename.keyword\", \"size\": 1}",
-        "refresh": 1,
-        "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
-        "type": "query"
-      },
-      {
-        "current": {
           "selected": true,
           "text": "localhost",
           "value": "localhost"
@@ -3779,6 +3737,29 @@
         "skipUrlSync": false,
         "sort": 0,
         "type": "query"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "ps-dev-510-el9-archive-1.c.esnet-perfsonar.internal",
+          "value": "ps-dev-510-el9-archive-1.c.esnet-perfsonar.internal"
+        },
+        "datasource": {
+          "type": "grafana-opensearch-datasource",
+          "uid": "f60bacda-08de-4933-9013-91cfae76df57"
+        },
+        "definition": "{\"find\":\"terms\", \"field\":\"meta.uname.nodename.keyword\", \"query\": \"meta.id: $host\", \"size\": 1}",
+        "hide": 2,
+        "includeAll": false,
+        "multi": false,
+        "name": "node_name",
+        "options": [],
+        "query": "{\"find\":\"terms\", \"field\":\"meta.uname.nodename.keyword\", \"query\": \"meta.id: $host\", \"size\": 1}",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
       }
     ]
   },
@@ -3790,6 +3771,6 @@
   "timezone": "",
   "title": "perfSONAR Host Metrics",
   "uid": "eb96563b-0d93-4910-be3c-5be331a00339",
-  "version": 3,
+  "version": 4,
   "weekStart": ""
 }
