@@ -10,7 +10,7 @@ Package: perfsonar-grafana
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, grafana, python3, python3-requests,
  openssl, apache2, apache2-ssl-dev, perfsonar-common, unzip, curl, perfsonar-psconfig-grafana
-Description: perfSONAR Grafana
+Description: Grafana setup for perfSONAR
  A package that installs and configures Grafana for perfSONAR
 
 Package: perfsonar-grafana-toolkit
