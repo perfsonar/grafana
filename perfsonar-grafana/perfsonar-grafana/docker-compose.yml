@@ -1,8 +1,8 @@
 version: '3.7'
 services:
-  grafana_dev:
+  grafana:
     restart: &grafana-restart always
-    image: perfsonar/grafana-dev:latest
+    image: ghcr.io/perfsonar/grafana:latest
     build:
       context: .
       dockerfile: Dockerfile
