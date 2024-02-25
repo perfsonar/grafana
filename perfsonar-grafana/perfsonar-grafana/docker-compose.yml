@@ -1,8 +1,8 @@
 version: '3.7'
 services:
-  grafana:
+  grafana_dev:
     restart: &grafana-restart always
-    image: grafana/grafana:10.2.0-ubuntu
+    image: perfsonar/grafana-dev:latest
     build:
       context: .
       dockerfile: Dockerfile
