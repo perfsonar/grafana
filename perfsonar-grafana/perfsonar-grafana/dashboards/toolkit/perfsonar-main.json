@@ -18,7 +18,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 2,
+  "id": 4,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -887,7 +887,7 @@
         "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
       },
       "gridPos": {
-        "h": 8,
+        "h": 4,
         "w": 4,
         "x": 20,
         "y": 10
@@ -899,7 +899,7 @@
           "showLineNumbers": false,
           "showMiniMap": false
         },
-        "content": "<div class=\"nav-div\">\n<a class=\"simple-button\" href=\"/grafana/d/eb96563b-0d93-4910-be3c-5be331a00339/perfsonar-host-metrics?orgId=1\">Host Info</a>\n</div>\n<div class=\"nav-div\">\n<a class=\"simple-button\" href=\"/grafana/dashboards\">All Dashboards</a>\n</div>\n\n<style>\n  .nav-div {\n    margin:28px 10px; \n    text-align:center;\n  }\n</style>",
+        "content": "<div class=\"nav-div\">\n<a class=\"simple-button\" href=\"/grafana/d/eb96563b-0d93-4910-be3c-5be331a00339/perfsonar-host-metrics?orgId=1\">Host Info</a>\n</div>\n<div class=\"nav-div\">\n<a class=\"simple-button\" href=\"/grafana/dashboards/f/d94dcbb1-4076-4c61-b947-3194b3881b65/\">My Dashboards</a>\n</div>\n\n<style>\n  .nav-div {\n    margin:28px 10px; \n    text-align:center;\n  }\n</style>",
         "mode": "html"
       },
       "pluginVersion": "10.4.0",
@@ -1211,6 +1211,65 @@
       "type": "table"
     },
     {
+      "datasource": {
+        "type": "grafana-opensearch-datasource",
+        "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
+      },
+      "gridPos": {
+        "h": 11,
+        "w": 4,
+        "x": 20,
+        "y": 14
+      },
+      "id": 15,
+      "options": {
+        "includeVars": false,
+        "keepTime": false,
+        "maxItems": 100,
+        "query": "",
+        "showHeadings": false,
+        "showRecentlyViewed": false,
+        "showSearch": true,
+        "showStarred": false,
+        "tags": [
+          "perfsonar-psconfig"
+        ]
+      },
+      "pluginVersion": "10.4.0",
+      "targets": [
+        {
+          "alias": "",
+          "bucketAggs": [
+            {
+              "field": "pscheduler.start_time",
+              "id": "2",
+              "settings": {
+                "interval": "auto"
+              },
+              "type": "date_histogram"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
+          },
+          "format": "table",
+          "metrics": [
+            {
+              "id": "1",
+              "type": "count"
+            }
+          ],
+          "query": "",
+          "queryType": "lucene",
+          "refId": "A",
+          "timeField": "pscheduler.start_time"
+        }
+      ],
+      "title": "pSConfig Dashboards",
+      "type": "dashlist"
+    },
+    {
       "collapsed": true,
       "gridPos": {
         "h": 1,
@@ -1257,7 +1316,7 @@
             "h": 8,
             "w": 18,
             "x": 1,
-            "y": 26
+            "y": 34
           },
           "id": 9,
           "options": {
@@ -1378,7 +1437,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 34
+            "y": 42
           },
           "id": 13,
           "options": {
@@ -1467,6 +1526,6 @@
   "timezone": "",
   "title": "perfSONAR Main",
   "uid": "ff439cb3-6042-43b5-a999-674681d80395",
-  "version": 5,
+  "version": 3,
   "weekStart": ""
 }
