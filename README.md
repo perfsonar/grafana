@@ -3,7 +3,7 @@
 This is a set of packages to configure [Grafana](https://grafana.com/) and install dashboards, data sources and other resources used by perfSONAR. 
 
 # Editing Dashboards
-This repository provides a Docker setup that runs Grafana and installs the dashboards in an editable mode. The datasources are updated to point at a development archive so you also have data with which to work. To use the development environment perform the following steps:
+This repository provides a Docker setup that runs Grafana and installs the dashboards in an editable mode. The datasources can be updated to point at a development archive so you also have data with which to work. You can do this by editing the Dockerfile to update the datasource with the URL of your archive (see comments in Dockerfile). To use the development environment perform the following steps:
 
 1. Run the following to start the container:
 ```

@@ -892,7 +892,7 @@
           "showLineNumbers": false,
           "showMiniMap": false
         },
-        "content": "<div class=\"nav-div\">\n<a class=\"simple-button\" href=\"/grafana/d/eb96563b-0d93-4910-be3c-5be331a00339/perfsonar-host-metrics?orgId=1\">Host Info</a>\n</div>\n<div class=\"nav-div\">\n<a class=\"simple-button\" href=\"/grafana/dashboards/f/d94dcbb1-4076-4c61-b947-3194b3881b65/my-perfsonar-dashboards\">My Dashboards</a>\n</div>\n\n<style>\n  .nav-div {\n    margin:28px 10px; \n    text-align:center;\n  }\n</style>",
+        "content": "<div class=\"nav-div\">\n<a class=\"simple-button\" href=\"/grafana/d/eb96563b-0d93-4910-be3c-5be331a00339/perfsonar-host-metrics?orgId=1\">Host Info</a>\n</div>\n<div class=\"nav-div\">\n<a class=\"simple-button\" href=\"/grafana/dashboards\">All Dashboards</a>\n</div>\n\n<style>\n  .nav-div {\n    margin:28px 10px; \n    text-align:center;\n  }\n</style>",
         "mode": "html"
       },
       "pluginVersion": "10.2.0",
