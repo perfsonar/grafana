@@ -1029,6 +1029,10 @@
                     }
                   ]
                 }
+              },
+              {
+                "id": "custom.width",
+                "value": 423
               }
             ]
           },
@@ -1440,13 +1444,13 @@
           "type": "grafana-opensearch-datasource",
           "uid": "f60bacda-08de-4933-9013-91cfae76df57"
         },
-        "definition": "{\"find\":\"terms\", \"field\":\"meta.uname.nodename.keyword\", \"size\": 1}",
+        "definition": "{\"find\":\"terms\", \"field\":\"meta.uname.nodename.keyword\", \"query\": \"is_local: true\", \"size\": 1}",
         "hide": 2,
         "includeAll": false,
         "multi": false,
         "name": "node_name",
         "options": [],
-        "query": "{\"find\":\"terms\", \"field\":\"meta.uname.nodename.keyword\", \"size\": 1}",
+        "query": "{\"find\":\"terms\", \"field\":\"meta.uname.nodename.keyword\", \"query\": \"is_local: true\", \"size\": 1}",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -1463,6 +1467,6 @@
   "timezone": "",
   "title": "perfSONAR Main",
   "uid": "ff439cb3-6042-43b5-a999-674681d80395",
-  "version": 4,
+  "version": 5,
   "weekStart": ""
 }
