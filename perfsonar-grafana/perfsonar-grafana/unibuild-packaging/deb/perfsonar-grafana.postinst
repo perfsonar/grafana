@@ -14,10 +14,6 @@ case "$1" in
             systemctl daemon-reload  || :
             systemctl enable grafana-server.service  || :
 
-            #Enable and restart apache for reverse proxy
-            systemctl enable httpd  || :
-            systemctl restart httpd  || :
-
             # Apache setup
             if [ -e /usr/share/apache2/apache2-maintscript-helper ]; then
                 . /usr/share/apache2/apache2-maintscript-helper
