@@ -18,7 +18,7 @@
           "type": "grafana-opensearch-datasource",
           "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
         },
-        "enable": true,
+        "enable": false,
         "iconColor": "green",
         "mappings": {},
         "name": "Incoming Throughput Tests",
@@ -37,7 +37,7 @@
           "type": "grafana-opensearch-datasource",
           "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
         },
-        "enable": true,
+        "enable": false,
         "iconColor": "yellow",
         "name": "Outgoing Throughput Tests",
         "query": "test.type.keyword: throughput AND meta.source.hostname.keyword: ${node_name}",
