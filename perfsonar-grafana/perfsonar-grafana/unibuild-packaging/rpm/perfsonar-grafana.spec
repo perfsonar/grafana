@@ -36,7 +36,6 @@ Requires(post): python3-requests
 Requires:       selinux-policy-%{selinuxtype}
 Requires(post): selinux-policy-%{selinuxtype}
 BuildRequires:  selinux-policy-devel
-%{?selinux_requires}
 
 %description
 A package that installs and configures Grafana for perfSONAR
