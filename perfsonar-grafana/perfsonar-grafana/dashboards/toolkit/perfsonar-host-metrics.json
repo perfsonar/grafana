@@ -603,7 +603,7 @@
               "type": "count"
             }
           ],
-          "query": "values.perfsonar_bundle.val: 1",
+          "query": "meta.id.keyword: $host AND values.perfsonar_bundle.val: 1",
           "queryType": "lucene",
           "refId": "A",
           "timeField": "@timestamp"
@@ -1680,7 +1680,7 @@
               "type": "max"
             }
           ],
-          "query": "type.keyword: node AND values.node_network_speed_bytes.val: *",
+          "query": "meta.id.keyword: $host AND type.keyword: node AND values.node_network_speed_bytes.val: *",
           "queryType": "lucene",
           "refId": "A",
           "timeField": "@timestamp"
@@ -1723,7 +1723,7 @@
               "type": "count"
             }
           ],
-          "query": "type.keyword: node AND meta.labels.scope: global",
+          "query": "meta.id.keyword: $host AND type.keyword: node AND meta.labels.scope: global",
           "queryType": "lucene",
           "refId": "B",
           "timeField": "@timestamp"
