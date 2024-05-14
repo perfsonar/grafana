@@ -784,7 +784,7 @@
           "timeField": "pscheduler.start_time"
         }
       ],
-      "title": "Tests  Configured by Type",
+      "title": "Test Results by Type",
       "transformations": [
         {
           "id": "organize",
