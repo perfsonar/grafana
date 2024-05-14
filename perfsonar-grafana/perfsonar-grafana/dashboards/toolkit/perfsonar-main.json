@@ -18,7 +18,6 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 4,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -157,18 +156,6 @@
                 "value": 118
               }
             ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "Interface"
-            },
-            "properties": [
-              {
-                "id": "custom.width",
-                "value": 83
-              }
-            ]
           }
         ]
       },
@@ -235,18 +222,79 @@
           "queryType": "lucene",
           "refId": "A",
           "timeField": "@timestamp"
+        },
+        {
+          "alias": "",
+          "bucketAggs": [
+            {
+              "field": "meta.labels.device.keyword",
+              "id": "2",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.labels.address.keyword",
+              "id": "4",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "f60bacda-08de-4933-9013-91cfae76df57"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "3",
+              "type": "count"
+            }
+          ],
+          "query": "type.keyword: node AND meta.labels.scope.keyword: global",
+          "queryType": "lucene",
+          "refId": "B",
+          "timeField": "@timestamp"
         }
       ],
       "title": "Interfaces",
       "transformations": [
         {
+          "id": "joinByField",
+          "options": {
+            "byField": "meta.labels.device.keyword",
+            "mode": "outer"
+          }
+        },
+        {
           "id": "organize",
           "options": {
-            "excludeByName": {},
-            "indexByName": {},
+            "excludeByName": {
+              "Count": true,
+              "meta.labels.device.keyword": true
+            },
+            "includeByName": {},
+            "indexByName": {
+              "Count": 4,
+              "Max values.node_network_mtu_bytes.val": 3,
+              "Max values.node_network_speed_bytes.val": 2,
+              "meta.labels.address.keyword": 0,
+              "meta.labels.device.keyword": 1
+            },
             "renameByName": {
               "Max values.node_network_mtu_bytes.val": "MTU",
               "Max values.node_network_speed_bytes.val": "Speed",
+              "meta.labels.address.keyword": "IP",
               "meta.labels.device.keyword": "Interface"
             }
           }
@@ -1496,8 +1544,8 @@
       {
         "current": {
           "selected": false,
-          "text": "ps-dev-nminor-el9-tk-1.c.esnet-perfsonar.internal",
-          "value": "ps-dev-nminor-el9-tk-1.c.esnet-perfsonar.internal"
+          "text": "ps-dev-staging-el9-tk2.c.esnet-perfsonar.internal",
+          "value": "ps-dev-staging-el9-tk2.c.esnet-perfsonar.internal"
         },
         "datasource": {
           "type": "grafana-opensearch-datasource",

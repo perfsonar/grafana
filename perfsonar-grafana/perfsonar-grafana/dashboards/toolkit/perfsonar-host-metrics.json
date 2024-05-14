@@ -51,6 +51,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 1,
+  "id": 3,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -75,7 +76,7 @@
         "content": "<div>\n<text style=\"font-size:20pt;\">\n<img \nsrc=\"/grafana/public/img/perfsonar-logo-white-full.svg\" \nstyle=\"background:rgb(17, 18, 23); width:200px; \"/> \non $node_name\n</text>\n<a class=\"simple-button\" target=\"_blank\" href=\"https://docs.perfsonar.net/\" style=\"float: right;\">? Help</a>\n<a class=\"simple-button\" target=\"_blank\" href=\"/toolkit/auth/admin/\" style=\"float: right;\">Configuration</a>\n<a class=\"simple-button\" href=\"/grafana/d/ff439cb3-6042-43b5-a999-674681d80395/perfsonar-main?orgId=1\" style=\"float: right;\">Home</a>\n</div>\n\n\n<style>\n  /* custom stuff */\n  a.buttons, button.buttons {\n    text-decoration: none;\n    background-color: #1b6522;\n    border: 3px solid white; \n    border-radius: 3px;\n    color: white !important;  \n    font-weight: bold; \n    text-align: right; \n    padding: 10px; \n    width: auto;\n    display: inline-block;\n  }\n  a.simple-button {\n    text-decoration: none;\n    background-color: black;\n    border: 3px solid #1b6522; \n    border-radius: 3px;\n    color: white; \n    font-weight: bold; \n    text-align: right; \n    padding: 10px; \n    width: auto;\n    margin: 0 5px 0 5px;\n  }\n  a.simple-button:hover {\n    color: #1b6522;\n  }\n  h1.title,h2.title,h3.title,div.title {\n    color: #6D6E71; \n    font-weight:bold;\n  }\n  p.description {\n    color: #6D6E71;\n  }\n  a.link {\n    color: #1b6522;\n  }\n\n  /* ----grafana stuff---- */\n  button.css-82ooe6-button, button.css-1pq88ji-button {\n    background-color: rgba(78, 193, 224,0.7);\n    color: white;\n  }\n  button.css-82ooe6-button:hover, button.css-1pq88ji-button:hover {\n    background-color: #1b6522;\n  }\n  button.dashboard-row__title {\n    color: #6D6E71;\n  }\n  /* +add button */\n  button.css-r8pbcf-button-add-panel-button-add-panel-button-text,\n  button.css-1bvfhzx-button-add-panel-button-add-panel-button-text {\n    color: #1b6522;\n    border: 1px solid #1b6522;\n    }\n\n\n  /* ----light mode---- */\n  button.css-14424at {\n    color: #6D6E71; \n  }\n  button.css-14424at:hover {\n    color: #1b6522; \n  }\n    /* data links */\n  div.css-1d09i7b {\n    color: rgb(36, 41, 46);\n  }\n  div.css-1d09i7b:hover {\n    color: #1b6522;\n  }\n\n  /* ----dark mode---- */\n  div.css-1h2bvkc {\n    color: rgb(204, 204, 220);\n  }\n  div.css-1h2bvkc:hover {\n    color: #6d6e71;\n  }\n  button.css-1n3c59t {\n    color: #1b6522;\n  }\n  button.css-1n3c59t:hover {\n    color: #6D6E71;\n  }\n\n  /* data links */\n  div.css-1ijov7j {\n    color: rgb(204, 204, 220);\n  }\n  div.css-1ijov7j:hover {\n    color: #1b6522;\n  }\n  \n</style>",
         "mode": "html"
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.4.0",
       "targets": [
         {
           "alias": "",
@@ -130,7 +131,7 @@
         "content": "<div>\n<text style=\"font-size:20pt;\">\nService Up/Down Metrics\n</text>\n</div>",
         "mode": "html"
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.4.0",
       "targets": [
         {
           "alias": "",
@@ -241,13 +242,15 @@
           "fields": "",
           "values": false
         },
+        "showPercentChange": false,
         "text": {
           "titleSize": 12,
           "valueSize": 12
         },
-        "textMode": "auto"
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.4.0",
       "targets": [
         {
           "alias": "",
@@ -460,7 +463,7 @@
         "content": "<div>\n<text style=\"font-size:20pt;\">\nLookup Sevice Metrics\n</text>\n</div>",
         "mode": "html"
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.4.0",
       "targets": [
         {
           "alias": "",
@@ -561,7 +564,7 @@
         "showHeader": false,
         "sortBy": []
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.4.0",
       "targets": [
         {
           "alias": "",
@@ -684,7 +687,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "red"
+                "color": "red",
+                "value": null
               },
               {
                 "color": "green",
@@ -789,7 +793,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -821,7 +826,7 @@
         "showHeader": false,
         "sortBy": []
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.4.0",
       "targets": [
         {
           "alias": "",
@@ -905,7 +910,7 @@
         "content": "<div>\n<text style=\"font-size:20pt;\">\nHost Metrics\n</text>\n</div>",
         "mode": "html"
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.4.0",
       "targets": [
         {
           "alias": "",
@@ -986,7 +991,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1106,7 +1112,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1151,7 +1158,7 @@
         "showHeader": false,
         "sortBy": []
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.4.0",
       "targets": [
         {
           "alias": "",
@@ -1274,7 +1281,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1331,7 +1339,7 @@
         "showHeader": true,
         "sortBy": []
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.4.0",
       "targets": [
         {
           "alias": "",
@@ -1436,7 +1444,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1520,14 +1529,15 @@
             "cellOptions": {
               "type": "auto"
             },
-            "inspect": false
+            "inspect": true
           },
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1596,6 +1606,18 @@
                 "value": 83
               }
             ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "IP"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 116
+              }
+            ]
           }
         ]
       },
@@ -1621,7 +1643,7 @@
         "showHeader": true,
         "sortBy": []
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.4.0",
       "targets": [
         {
           "alias": "",
@@ -1662,18 +1684,78 @@
           "queryType": "lucene",
           "refId": "A",
           "timeField": "@timestamp"
+        },
+        {
+          "alias": "",
+          "bucketAggs": [
+            {
+              "field": "meta.labels.device.keyword",
+              "id": "2",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "0"
+              },
+              "type": "terms"
+            },
+            {
+              "field": "meta.labels.address.keyword",
+              "id": "4",
+              "settings": {
+                "min_doc_count": "1",
+                "order": "desc",
+                "orderBy": "_term",
+                "size": "10"
+              },
+              "type": "terms"
+            }
+          ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "f60bacda-08de-4933-9013-91cfae76df57"
+          },
+          "format": "table",
+          "hide": false,
+          "metrics": [
+            {
+              "id": "3",
+              "type": "count"
+            }
+          ],
+          "query": "type.keyword: node AND meta.labels.scope: global",
+          "queryType": "lucene",
+          "refId": "B",
+          "timeField": "@timestamp"
         }
       ],
-      "title": "Interfaces",
+      "title": "IP Addresses",
       "transformations": [
+        {
+          "id": "joinByField",
+          "options": {
+            "byField": "meta.labels.device.keyword",
+            "mode": "outer"
+          }
+        },
         {
           "id": "organize",
           "options": {
-            "excludeByName": {},
-            "indexByName": {},
+            "excludeByName": {
+              "Count": true
+            },
+            "includeByName": {},
+            "indexByName": {
+              "Count": 4,
+              "Max values.node_network_mtu_bytes.val": 3,
+              "Max values.node_network_speed_bytes.val": 2,
+              "meta.labels.address.keyword": 0,
+              "meta.labels.device.keyword": 1
+            },
             "renameByName": {
               "Max values.node_network_mtu_bytes.val": "MTU",
               "Max values.node_network_speed_bytes.val": "Speed",
+              "meta.labels.address.keyword": "IP",
               "meta.labels.device.keyword": "Interface"
             }
           }
@@ -1729,7 +1811,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1901,7 +1984,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1946,7 +2030,7 @@
         "showHeader": true,
         "sortBy": []
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.4.0",
       "targets": [
         {
           "alias": "",
@@ -2044,7 +2128,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2167,7 +2252,7 @@
         "content": "<div>\n<text style=\"font-size:20pt;\">\npScheduler Metrics\n</text>\n</div>",
         "mode": "html"
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.4.0",
       "targets": [
         {
           "alias": "",
@@ -2249,7 +2334,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2373,7 +2459,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2497,7 +2584,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2621,7 +2709,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2718,7 +2807,7 @@
         "content": "<div>\n<text style=\"font-size:20pt;\">\npSConfig Metrics\n</text>\n</div>",
         "mode": "html"
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.4.0",
       "targets": [
         {
           "alias": "",
@@ -2775,7 +2864,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2832,7 +2922,7 @@
         "showHeader": true,
         "sortBy": []
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.4.0",
       "targets": [
         {
           "alias": "",
@@ -2942,7 +3032,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2987,7 +3078,7 @@
         "showHeader": true,
         "sortBy": []
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.4.0",
       "targets": [
         {
           "alias": "",
@@ -3073,7 +3164,7 @@
         "content": "<div>\n<text style=\"font-size:20pt;\">\nClock Metrics\n</text>\n</div>",
         "mode": "html"
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.4.0",
       "targets": [
         {
           "alias": "",
@@ -3155,7 +3246,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3267,7 +3359,7 @@
         "content": "<div>\n<text style=\"font-size:20pt;\">\nHost Tuning Settings\n</text>\n</div>",
         "mode": "html"
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.4.0",
       "targets": [
         {
           "alias": "",
@@ -3335,7 +3427,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3367,7 +3460,7 @@
         "showHeader": true,
         "sortBy": []
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.4.0",
       "targets": [
         {
           "alias": "",
@@ -3540,7 +3633,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3577,7 +3671,7 @@
           }
         ]
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.4.0",
       "targets": [
         {
           "alias": "",
@@ -3674,7 +3768,7 @@
         "content": "<hr>\n<div style=\"text-align:center\"><a href=\"https://www.perfsonar.net/about/privacy-policy/\">Privacy Policy</a> | <a href=\"http://stats.perfsonar.net/\">Global Node Directory</a> | <a href=\"/toolkit/services/host.cgi?method=get_summary\">Host JSON</a></div>\n<div style=\"padding:10px 10px 10px 10px;text-align:center\"><img style=\"width:30px;\" src=\"public/img/ps_footer_grafana_logo.svg\"/>&nbsp;Powered by Grafana</div>",
         "mode": "html"
       },
-      "pluginVersion": "10.2.0",
+      "pluginVersion": "10.4.0",
       "targets": [
         {
           "alias": "",
@@ -3710,13 +3804,13 @@
     }
   ],
   "refresh": "",
-  "schemaVersion": 38,
+  "schemaVersion": 39,
   "tags": [],
   "templating": {
     "list": [
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "localhost",
           "value": "localhost"
         },
@@ -3741,8 +3835,8 @@
       {
         "current": {
           "selected": false,
-          "text": "ps-dev-510-el9-archive-1.c.esnet-perfsonar.internal",
-          "value": "ps-dev-510-el9-archive-1.c.esnet-perfsonar.internal"
+          "text": "ps-dev-staging-el9-tk2.c.esnet-perfsonar.internal",
+          "value": "ps-dev-staging-el9-tk2.c.esnet-perfsonar.internal"
         },
         "datasource": {
           "type": "grafana-opensearch-datasource",
