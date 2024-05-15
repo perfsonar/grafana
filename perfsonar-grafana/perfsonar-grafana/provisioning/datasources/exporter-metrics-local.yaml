@@ -51,7 +51,7 @@ datasources:
       timeField: "@timestamp"
       tlsAuth: false
       tlsSkipVerify: true
-      version: "2.13.0"
+      version: "2.6.0"
     # <map> Fields to encrypt before storing in jsonData.
     # secureJsonData:
     #   # <string> Defines the CA cert, client cert, and
