@@ -218,7 +218,7 @@
               "type": "max"
             }
           ],
-          "query": "type.keyword: node AND values.node_network_speed_bytes.val: *",
+          "query": "type.keyword: node AND values.node_network_speed_bytes.val: * AND meta.id.keyword: localhost",
           "queryType": "lucene",
           "refId": "A",
           "timeField": "@timestamp"
@@ -261,7 +261,7 @@
               "type": "count"
             }
           ],
-          "query": "type.keyword: node AND meta.labels.scope.keyword: global",
+          "query": "type.keyword: node AND meta.labels.scope.keyword: global AND meta.id.keyword: localhost",
           "queryType": "lucene",
           "refId": "B",
           "timeField": "@timestamp"
@@ -1544,8 +1544,8 @@
       {
         "current": {
           "selected": false,
-          "text": "ps-dev-staging-el9-tk2.c.esnet-perfsonar.internal",
-          "value": "ps-dev-staging-el9-tk2.c.esnet-perfsonar.internal"
+          "text": "ps-dev-staging-el9-archive1.c.esnet-perfsonar.internal",
+          "value": "ps-dev-staging-el9-archive1.c.esnet-perfsonar.internal"
         },
         "datasource": {
           "type": "grafana-opensearch-datasource",
