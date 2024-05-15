@@ -18,7 +18,6 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 1,
-  "id": 3,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -236,7 +235,7 @@
               "type": "avg"
             }
           ],
-          "query": "test.type.keyword:throughput AND meta.source.hostname.keyword:$source AND meta.destination.hostname.keyword:$dest",
+          "query": "test.type.keyword:throughput AND (meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$dest OR reference.display-set-dest.keyword:$dest_ref)",
           "queryType": "lucene",
           "refId": "A",
           "timeField": "pscheduler.start_time"
@@ -321,7 +320,7 @@
               "type": "avg"
             }
           ],
-          "query": "test.type.keyword:throughput AND meta.source.hostname.keyword:$dest AND meta.destination.hostname.keyword:$source",
+          "query": "test.type.keyword:throughput AND (meta.source.hostname.keyword:$dest OR reference.display-set-source.keyword:$dest_ref) AND (meta.destination.hostname.keyword:$source OR reference.display-set-dest.keyword:$source_ref)",
           "queryType": "lucene",
           "refId": "B",
           "timeField": "pscheduler.start_time"
@@ -490,7 +489,7 @@
               "type": "avg"
             }
           ],
-          "query": "test.type.keyword:throughput AND meta.source.hostname.keyword:$source AND meta.destination.hostname.keyword:$dest",
+          "query": "test.type.keyword:throughput AND (meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$dest OR reference.display-set-dest.keyword:$dest_ref)",
           "queryType": "lucene",
           "refId": "A",
           "timeField": "pscheduler.start_time"
@@ -575,7 +574,7 @@
               "type": "avg"
             }
           ],
-          "query": "test.type.keyword:throughput AND meta.source.hostname.keyword:$dest AND meta.destination.hostname.keyword:$source",
+          "query": "test.type.keyword:throughput AND (meta.source.hostname.keyword:$dest OR reference.display-set-source.keyword:$dest_ref) AND (meta.destination.hostname.keyword:$source OR reference.display-set-dest.keyword:$source_ref)",
           "queryType": "lucene",
           "refId": "B",
           "timeField": "pscheduler.start_time"
@@ -744,7 +743,7 @@
               "type": "max"
             }
           ],
-          "query": "test.type.keyword:latencybg AND meta.source.hostname.keyword:$source AND meta.destination.hostname.keyword:$dest",
+          "query": "test.type.keyword:latencybg AND (meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$dest OR reference.display-set-dest.keyword:$dest_ref)",
           "queryType": "lucene",
           "refId": "A",
           "timeField": "pscheduler.start_time"
@@ -829,7 +828,7 @@
               "type": "max"
             }
           ],
-          "query": "test.type.keyword:latencybg AND meta.source.hostname.keyword:$source AND meta.destination.hostname.keyword:$dest",
+          "query": "test.type.keyword:latencybg AND (meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$dest OR reference.display-set-dest.keyword:$dest_ref)",
           "queryType": "lucene",
           "refId": "B",
           "timeField": "pscheduler.start_time"
@@ -914,7 +913,7 @@
               "type": "min"
             }
           ],
-          "query": "test.type.keyword:latencybg AND meta.source.hostname.keyword:$source AND meta.destination.hostname.keyword:$dest",
+          "query": "test.type.keyword:latencybg AND (meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$dest OR reference.display-set-dest.keyword:$dest_ref)",
           "queryType": "lucene",
           "refId": "C",
           "timeField": "pscheduler.start_time"
@@ -1083,7 +1082,7 @@
               "type": "max"
             }
           ],
-          "query": "test.type.keyword:latencybg AND meta.source.hostname.keyword:$dest AND meta.destination.hostname.keyword:$source",
+          "query": "test.type.keyword:latencybg AND (meta.source.hostname.keyword:$dest OR reference.display-set-source.keyword:$dest_ref) AND (meta.destination.hostname.keyword:$source OR reference.display-set-dest.keyword:$source_ref)",
           "queryType": "lucene",
           "refId": "A",
           "timeField": "pscheduler.start_time"
@@ -1168,7 +1167,7 @@
               "type": "max"
             }
           ],
-          "query": "test.type.keyword:latencybg AND meta.source.hostname.keyword:$dest AND meta.destination.hostname.keyword:$source",
+          "query": "test.type.keyword:latencybg AND (meta.source.hostname.keyword:$dest OR reference.display-set-source.keyword:$dest_ref) AND (meta.destination.hostname.keyword:$source OR reference.display-set-dest.keyword:$source_ref)",
           "queryType": "lucene",
           "refId": "B",
           "timeField": "pscheduler.start_time"
@@ -1253,7 +1252,7 @@
               "type": "min"
             }
           ],
-          "query": "test.type.keyword:latencybg AND meta.source.hostname.keyword:$dest AND meta.destination.hostname.keyword:$source",
+          "query": "test.type.keyword:latencybg AND (meta.source.hostname.keyword:$dest OR reference.display-set-source.keyword:$dest_ref) AND (meta.destination.hostname.keyword:$source OR reference.display-set-dest.keyword:$source_ref)",
           "queryType": "lucene",
           "refId": "C",
           "timeField": "pscheduler.start_time"
@@ -1422,7 +1421,7 @@
               "type": "max"
             }
           ],
-          "query": "test.type.keyword:latencybg AND meta.source.hostname.keyword:$source AND meta.destination.hostname.keyword:$dest",
+          "query": "test.type.keyword:latencybg AND (meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$dest OR reference.display-set-dest.keyword:$dest_ref)",
           "queryType": "lucene",
           "refId": "A",
           "timeField": "pscheduler.start_time"
@@ -1592,7 +1591,7 @@
               "type": "max"
             }
           ],
-          "query": "test.type.keyword:latencybg AND meta.source.hostname.keyword:$dest AND meta.destination.hostname.keyword:$source",
+          "query": "test.type.keyword:latencybg AND (meta.source.hostname.keyword:$dest OR reference.display-set-source.keyword:$dest_ref) AND (meta.destination.hostname.keyword:$source OR reference.display-set-dest.keyword:$source_ref)",
           "queryType": "lucene",
           "refId": "A",
           "timeField": "pscheduler.start_time"
@@ -1761,7 +1760,7 @@
               "type": "avg"
             }
           ],
-          "query": "test.type.keyword:latencybg AND meta.source.hostname.keyword:$source AND meta.destination.hostname.keyword:$dest",
+          "query": "test.type.keyword:latencybg AND (meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$dest OR reference.display-set-dest.keyword:$dest_ref)",
           "queryType": "lucene",
           "refId": "A",
           "timeField": "pscheduler.start_time"
@@ -1846,7 +1845,7 @@
               "type": "avg"
             }
           ],
-          "query": "test.type.keyword:latencybg AND meta.source.hostname.keyword:$source AND meta.destination.hostname.keyword:$dest",
+          "query": "test.type.keyword:latencybg AND (meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$dest OR reference.display-set-dest.keyword:$dest_ref)",
           "queryType": "lucene",
           "refId": "B",
           "timeField": "pscheduler.start_time"
@@ -1955,7 +1954,7 @@
               "type": "bucket_script"
             }
           ],
-          "query": "test.type.keyword:latencybg AND meta.source.hostname.keyword:$source AND meta.destination.hostname.keyword:$dest",
+          "query": "test.type.keyword:latencybg AND (meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$dest OR reference.display-set-dest.keyword:$dest_ref)",
           "queryType": "lucene",
           "refId": "C",
           "timeField": "pscheduler.start_time"
@@ -2124,7 +2123,7 @@
               "type": "avg"
             }
           ],
-          "query": "test.type.keyword:latencybg AND meta.source.hostname.keyword:$dest AND meta.destination.hostname.keyword:$source",
+          "query": "test.type.keyword:latencybg AND (meta.source.hostname.keyword:$dest OR reference.display-set-source.keyword:$dest_ref) AND (meta.destination.hostname.keyword:$source OR reference.display-set-dest.keyword:$source_ref)",
           "queryType": "lucene",
           "refId": "A",
           "timeField": "pscheduler.start_time"
@@ -2209,7 +2208,7 @@
               "type": "avg"
             }
           ],
-          "query": "test.type.keyword:latencybg AND meta.source.hostname.keyword:$dest AND meta.destination.hostname.keyword:$source",
+          "query": "test.type.keyword:latencybg AND (meta.source.hostname.keyword:$dest OR reference.display-set-source.keyword:$dest_ref) AND (meta.destination.hostname.keyword:$source OR reference.display-set-dest.keyword:$source_ref)",
           "queryType": "lucene",
           "refId": "B",
           "timeField": "pscheduler.start_time"
@@ -2318,7 +2317,7 @@
               "type": "bucket_script"
             }
           ],
-          "query": "test.type.keyword:latencybg AND meta.source.hostname.keyword:$dest AND meta.destination.hostname.keyword:$source",
+          "query": "test.type.keyword:latencybg AND (meta.source.hostname.keyword:$dest OR reference.display-set-source.keyword:$dest_ref) AND (meta.destination.hostname.keyword:$source OR reference.display-set-dest.keyword:$source_ref)",
           "queryType": "lucene",
           "refId": "C",
           "timeField": "pscheduler.start_time"
@@ -2487,7 +2486,7 @@
               "type": "min"
             }
           ],
-          "query": "test.type.keyword:rtt AND meta.source.hostname.keyword:$source AND meta.destination.hostname.keyword:$dest",
+          "query": "test.type.keyword:rtt AND (meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$dest OR reference.display-set-dest.keyword:$dest_ref)",
           "queryType": "lucene",
           "refId": "A",
           "timeField": "pscheduler.start_time"
@@ -2572,7 +2571,7 @@
               "type": "avg"
             }
           ],
-          "query": "test.type.keyword:rtt AND meta.source.hostname.keyword:$source AND meta.destination.hostname.keyword:$dest",
+          "query": "test.type.keyword:rtt AND (meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$dest OR reference.display-set-dest.keyword:$dest_ref)",
           "queryType": "lucene",
           "refId": "B",
           "timeField": "pscheduler.start_time"
@@ -2657,7 +2656,7 @@
               "type": "max"
             }
           ],
-          "query": "test.type.keyword:rtt AND meta.source.hostname.keyword:$source AND meta.destination.hostname.keyword:$dest",
+          "query": "test.type.keyword:rtt AND (meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$dest OR reference.display-set-dest.keyword:$dest_ref)",
           "queryType": "lucene",
           "refId": "C",
           "timeField": "pscheduler.start_time"
@@ -2826,7 +2825,7 @@
               "type": "min"
             }
           ],
-          "query": "test.type.keyword:rtt AND meta.source.hostname.keyword:$dest AND meta.destination.hostname.keyword:$source",
+          "query": "test.type.keyword:rtt AND (meta.source.hostname.keyword:$dest OR reference.display-set-source.keyword:$dest_ref) AND (meta.destination.hostname.keyword:$source OR reference.display-set-dest.keyword:$source_ref)",
           "queryType": "lucene",
           "refId": "A",
           "timeField": "pscheduler.start_time"
@@ -2911,7 +2910,7 @@
               "type": "avg"
             }
           ],
-          "query": "test.type.keyword:rtt AND meta.source.hostname.keyword:$dest AND meta.destination.hostname.keyword:$source",
+          "query": "test.type.keyword:rtt AND (meta.source.hostname.keyword:$dest OR reference.display-set-source.keyword:$dest_ref) AND (meta.destination.hostname.keyword:$source OR reference.display-set-dest.keyword:$source_ref)",
           "queryType": "lucene",
           "refId": "B",
           "timeField": "pscheduler.start_time"
@@ -2996,7 +2995,7 @@
               "type": "max"
             }
           ],
-          "query": "test.type.keyword:rtt AND meta.source.hostname.keyword:$dest AND meta.destination.hostname.keyword:$source",
+          "query": "test.type.keyword:rtt AND (meta.source.hostname.keyword:$dest OR reference.display-set-source.keyword:$dest_ref) AND (meta.destination.hostname.keyword:$source OR reference.display-set-dest.keyword:$source_ref)",
           "queryType": "lucene",
           "refId": "C",
           "timeField": "pscheduler.start_time"
@@ -3165,7 +3164,7 @@
               "type": "max"
             }
           ],
-          "query": "test.type.keyword:trace AND meta.source.hostname.keyword:$source AND meta.destination.hostname.keyword:$dest",
+          "query": "test.type.keyword:trace AND (meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$dest OR reference.display-set-dest.keyword:$dest_ref)",
           "queryType": "lucene",
           "refId": "A",
           "timeField": "pscheduler.start_time"
@@ -3250,7 +3249,7 @@
               "type": "max"
             }
           ],
-          "query": "test.type.keyword:trace AND meta.source.hostname.keyword:$dest AND meta.destination.hostname.keyword:$source",
+          "query": "test.type.keyword:trace AND (meta.source.hostname.keyword:$dest OR reference.display-set-source.keyword:$dest_ref) AND (meta.destination.hostname.keyword:$source OR reference.display-set-dest.keyword:$source_ref)",
           "queryType": "lucene",
           "refId": "B",
           "timeField": "pscheduler.start_time"
@@ -3599,7 +3598,7 @@
               "type": "count"
             }
           ],
-          "query": "test.type.keyword:trace AND meta.source.hostname.keyword:$dest AND meta.destination.hostname.keyword:$source",
+          "query": "test.type.keyword:trace AND (meta.source.hostname.keyword:$dest OR reference.display-set-source.keyword:$dest_ref) AND (meta.destination.hostname.keyword:$source OR reference.display-set-dest.keyword:$source_ref)",
           "queryType": "lucene",
           "refId": "A",
           "timeField": "pscheduler.start_time"
@@ -4117,8 +4116,8 @@
       {
         "current": {
           "selected": false,
-          "text": "ps-dev-nminor-el9-tk-1.c.esnet-perfsonar.internal",
-          "value": "ps-dev-nminor-el9-tk-1.c.esnet-perfsonar.internal"
+          "text": "ps-dev-staging-d11-tk1",
+          "value": "ps-dev-staging-d11-tk1"
         },
         "datasource": {
           "type": "grafana-opensearch-datasource",
@@ -4140,8 +4139,8 @@
       {
         "current": {
           "selected": false,
-          "text": "ps-dev-nminor-el9-tk-1.c.esnet-perfsonar.internal",
-          "value": "ps-dev-nminor-el9-tk-1.c.esnet-perfsonar.internal"
+          "text": "ps-dev-staging-u22-tp1.c.esnet-perfsonar.internal",
+          "value": "ps-dev-staging-u22-tp1.c.esnet-perfsonar.internal"
         },
         "datasource": {
           "type": "grafana-opensearch-datasource",
@@ -4163,9 +4162,9 @@
       },
       {
         "current": {
-          "selected": true,
-          "text": "ps-dev-nminor-el9-tp-1.c.esnet-perfsonar.internal",
-          "value": "ps-dev-nminor-el9-tp-1.c.esnet-perfsonar.internal"
+          "selected": false,
+          "text": "ps-dev-staging-u22-tk1.c.esnet-perfsonar.internal",
+          "value": "ps-dev-staging-u22-tk1.c.esnet-perfsonar.internal"
         },
         "datasource": {
           "type": "grafana-opensearch-datasource",
@@ -4180,6 +4179,44 @@
         "options": [],
         "query": "{\"find\":\"terms\", \"field\":\"meta.destination.hostname.keyword\", \"query\": \"meta.source.hostname.keyword: $source\", \"size\": 10000000}",
         "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "definition": "{\"find\": \"terms\", \"field\":\"reference.display-set-source.keyword\", \"query\":\"test.spec.source.keyword:$source\", \"size\": 10000000}",
+        "hide": 2,
+        "includeAll": true,
+        "multi": true,
+        "name": "source_ref",
+        "options": [],
+        "query": "{\"find\": \"terms\", \"field\":\"reference.display-set-source.keyword\", \"query\":\"test.spec.source.keyword:$source\", \"size\": 10000000}",
+        "refresh": 2,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "definition": "{\"find\": \"terms\", \"field\":\"reference.display-set-dest.keyword\",  \"query\":\"test.spec.dest.keyword:$dest\", \"size\": 10000000}",
+        "hide": 2,
+        "includeAll": true,
+        "multi": true,
+        "name": "dest_ref",
+        "options": [],
+        "query": "{\"find\": \"terms\", \"field\":\"reference.display-set-dest.keyword\",  \"query\":\"test.spec.dest.keyword:$dest\", \"size\": 10000000}",
+        "refresh": 2,
         "regex": "",
         "skipUrlSync": false,
         "sort": 0,
