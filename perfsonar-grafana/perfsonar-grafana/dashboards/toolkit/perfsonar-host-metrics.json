@@ -22,10 +22,10 @@
         "iconColor": "green",
         "mappings": {},
         "name": "Incoming Throughput Tests",
-        "query": "test.type.keyword: throughput AND meta.destination.hostname.keyword: ${node_name}",
+        "query": "test.type.keyword: throughput AND (meta.destination.hostname.keyword: ${node_name} OR meta.destination.ip: ${node_ip})",
         "tagsField": "pscheduler.tool",
         "target": {
-          "query": "test.type: throughput AND meta.destination.hostname.keyword: ${node_name}",
+          "query": "test.type.keyword: throughput AND meta.destination.hostname.keyword: ${node_name}",
           "refId": "annotation_query"
         },
         "textField": "meta.source.hostname",
@@ -39,9 +39,14 @@
         },
         "enable": false,
         "iconColor": "yellow",
+        "mappings": {},
         "name": "Outgoing Throughput Tests",
-        "query": "test.type.keyword: throughput AND meta.source.hostname.keyword: ${node_name}",
+        "query": "test.type.keyword: throughput AND (meta.source.hostname.keyword: ${node_name} OR meta.source.ip: ${node_ip})",
         "tagsField": "pscheduler.tool",
+        "target": {
+          "query": "test.type.keyword: throughput AND meta.source.hostname.keyword: ${node_name}",
+          "refId": "annotation_query"
+        },
         "textField": "meta.destination.hostname",
         "timeEndField": "pscheduler.end_time",
         "timeField": "pscheduler.start_time"
@@ -51,7 +56,6 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 1,
-  "id": 3,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -991,8 +995,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1112,8 +1115,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1281,8 +1283,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1444,8 +1445,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1536,8 +1536,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1811,8 +1810,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1984,8 +1982,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2128,8 +2125,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2334,8 +2330,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2459,8 +2454,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2584,8 +2578,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2709,8 +2702,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2864,8 +2856,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3032,8 +3023,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3246,8 +3236,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3427,8 +3416,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3633,8 +3621,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3810,9 +3797,9 @@
     "list": [
       {
         "current": {
-          "selected": false,
-          "text": "localhost",
-          "value": "localhost"
+          "selected": true,
+          "text": "10.128.15.219",
+          "value": "10.128.15.219"
         },
         "datasource": {
           "type": "grafana-opensearch-datasource",
@@ -3849,6 +3836,34 @@
         "name": "node_name",
         "options": [],
         "query": "{\"find\":\"terms\", \"field\":\"meta.uname.nodename.keyword\", \"query\": \"meta.id: $host\", \"size\": 1}",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "allValue": "",
+        "current": {
+          "selected": true,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": {
+          "type": "grafana-opensearch-datasource",
+          "uid": "f60bacda-08de-4933-9013-91cfae76df57"
+        },
+        "definition": "{\"find\":\"terms\", \"field\":\"meta.labels.address.keyword\", \"query\": \"meta.id: $host AND type.keyword: node AND meta.labels.scope.keyword: global\", \"size\": 1}",
+        "hide": 2,
+        "includeAll": true,
+        "multi": true,
+        "name": "node_ip",
+        "options": [],
+        "query": "{\"find\":\"terms\", \"field\":\"meta.labels.address.keyword\", \"query\": \"meta.id: $host AND type.keyword: node AND meta.labels.scope.keyword: global\", \"size\": 1}",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
