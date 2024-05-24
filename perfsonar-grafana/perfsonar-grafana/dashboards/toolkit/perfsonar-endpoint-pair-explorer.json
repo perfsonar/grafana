@@ -18,6 +18,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 1,
+  "id": 2,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -1309,8 +1310,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1479,8 +1479,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1648,8 +1647,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2011,8 +2009,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2374,8 +2371,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2713,8 +2709,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3052,8 +3047,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3281,8 +3275,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3466,8 +3459,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -4116,8 +4108,8 @@
       {
         "current": {
           "selected": false,
-          "text": "ps-dev-staging-d11-tk1",
-          "value": "ps-dev-staging-d11-tk1"
+          "text": "ps-dev-staging-el9-tk2.c.esnet-perfsonar.internal",
+          "value": "ps-dev-staging-el9-tk2.c.esnet-perfsonar.internal"
         },
         "datasource": {
           "type": "grafana-opensearch-datasource",
@@ -4130,7 +4122,7 @@
         "name": "node_name",
         "options": [],
         "query": "{\"find\":\"terms\", \"field\":\"meta.uname.nodename.keyword\", \"size\": 1}",
-        "refresh": 1,
+        "refresh": 2,
         "regex": "",
         "skipUrlSync": false,
         "sort": 0,
@@ -4139,8 +4131,8 @@
       {
         "current": {
           "selected": false,
-          "text": "ps-dev-staging-u22-tp1.c.esnet-perfsonar.internal",
-          "value": "ps-dev-staging-u22-tp1.c.esnet-perfsonar.internal"
+          "text": "ps-dev-staging-el9-tk2.c.esnet-perfsonar.internal",
+          "value": "ps-dev-staging-el9-tk2.c.esnet-perfsonar.internal"
         },
         "datasource": {
           "type": "grafana-opensearch-datasource",
@@ -4154,7 +4146,7 @@
         "name": "source",
         "options": [],
         "query": "{\"find\":\"terms\", \"field\":\"meta.source.hostname.keyword\", \"size\": 10000000}",
-        "refresh": 1,
+        "refresh": 2,
         "regex": "",
         "skipUrlSync": false,
         "sort": 0,
@@ -4163,8 +4155,8 @@
       {
         "current": {
           "selected": false,
-          "text": "ps-dev-staging-u22-tk1.c.esnet-perfsonar.internal",
-          "value": "ps-dev-staging-u22-tk1.c.esnet-perfsonar.internal"
+          "text": "ps-dev-staging-el9-tp1.c.esnet-perfsonar.internal",
+          "value": "ps-dev-staging-el9-tp1.c.esnet-perfsonar.internal"
         },
         "datasource": {
           "type": "grafana-opensearch-datasource",
@@ -4178,7 +4170,7 @@
         "name": "dest",
         "options": [],
         "query": "{\"find\":\"terms\", \"field\":\"meta.destination.hostname.keyword\", \"query\": \"meta.source.hostname.keyword: $source\", \"size\": 10000000}",
-        "refresh": 1,
+        "refresh": 2,
         "regex": "",
         "skipUrlSync": false,
         "sort": 0,
@@ -4189,6 +4181,10 @@
           "selected": false,
           "text": "All",
           "value": "$__all"
+        },
+        "datasource": {
+          "type": "grafana-opensearch-datasource",
+          "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
         },
         "definition": "{\"find\": \"terms\", \"field\":\"reference.display-set-source.keyword\", \"query\":\"test.spec.source.keyword:$source\", \"size\": 10000000}",
         "hide": 2,
@@ -4208,6 +4204,10 @@
           "selected": false,
           "text": "All",
           "value": "$__all"
+        },
+        "datasource": {
+          "type": "grafana-opensearch-datasource",
+          "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
         },
         "definition": "{\"find\": \"terms\", \"field\":\"reference.display-set-dest.keyword\",  \"query\":\"test.spec.dest.keyword:$dest\", \"size\": 10000000}",
         "hide": 2,
