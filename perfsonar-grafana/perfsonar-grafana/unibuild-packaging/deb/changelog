@@ -1,5 +1,5 @@
-perfsonar-grafana (5.1.0~b1.5-1) perfsonar-5.1; urgency=low
+perfsonar-grafana (5.1.0~b2.6-1) perfsonar-5.1; urgency=low
 
   * Initial release. 
 
- -- perfSONAR developers <debian@perfsonar.net>  Tue, 23 Apr 2024 09:52:05 -0400
+ -- perfSONAR developers <debian@perfsonar.net>  Tue, 04 Jun 2024 12:54:11 -0400
