@@ -18,7 +18,6 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 1,
-  "id": 2,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -43,7 +42,7 @@
         "content": "<div>\n<text style=\"font-size:20pt;\">\n<img \nsrc=\"/grafana/public/img/perfsonar-logo-white-full.svg\" \nstyle=\"background:rgb(17, 18, 23); width:200px; \"/> \non $node_name\n</text>\n<a class=\"simple-button\" target=\"_blank\" href=\"https://docs.perfsonar.net/\" style=\"float: right;\">? Help</a>\n<a class=\"simple-button\" target=\"_blank\" href=\"/toolkit/auth/admin/\" style=\"float: right;\">Configuration</a>\n<a class=\"simple-button\" href=\"/grafana/d/ff439cb3-6042-43b5-a999-674681d80395/perfsonar-main?orgId=1\" style=\"float: right;\">Home</a>\n</div>\n\n\n<style>\n  /* custom stuff */\n  a.buttons, button.buttons {\n    text-decoration: none;\n    background-color: #1b6522;\n    border: 3px solid white; \n    border-radius: 3px;\n    color: white !important;  \n    font-weight: bold; \n    text-align: right; \n    padding: 10px; \n    width: auto;\n    display: inline-block;\n  }\n  a.simple-button {\n    text-decoration: none;\n    background-color: black;\n    border: 3px solid #1b6522; \n    border-radius: 3px;\n    color: white; \n    font-weight: bold; \n    text-align: right; \n    padding: 10px; \n    width: auto;\n    margin: 0 5px 0 5px;\n  }\n  a.simple-button:hover {\n    color: #1b6522;\n  }\n  h1.title,h2.title,h3.title,div.title {\n    color: #6D6E71; \n    font-weight:bold;\n  }\n  p.description {\n    color: #6D6E71;\n  }\n  a.link {\n    color: #1b6522;\n  }\n\n  /* ----grafana stuff---- */\n  button.css-82ooe6-button, button.css-1pq88ji-button {\n    background-color: rgba(78, 193, 224,0.7);\n    color: white;\n  }\n  button.css-82ooe6-button:hover, button.css-1pq88ji-button:hover {\n    background-color: #1b6522;\n  }\n  button.dashboard-row__title {\n    color: #6D6E71;\n  }\n  /* +add button */\n  button.css-r8pbcf-button-add-panel-button-add-panel-button-text,\n  button.css-1bvfhzx-button-add-panel-button-add-panel-button-text {\n    color: #1b6522;\n    border: 1px solid #1b6522;\n    }\n\n\n  /* ----light mode---- */\n  button.css-14424at {\n    color: #6D6E71; \n  }\n  button.css-14424at:hover {\n    color: #1b6522; \n  }\n    /* data links */\n  div.css-1d09i7b {\n    color: rgb(36, 41, 46);\n  }\n  div.css-1d09i7b:hover {\n    color: #1b6522;\n  }\n\n  /* ----dark mode---- */\n  div.css-1h2bvkc {\n    color: rgb(204, 204, 220);\n  }\n  div.css-1h2bvkc:hover {\n    color: #6d6e71;\n  }\n  button.css-1n3c59t {\n    color: #1b6522;\n  }\n  button.css-1n3c59t:hover {\n    color: #6D6E71;\n  }\n\n  /* data links */\n  div.css-1ijov7j {\n    color: rgb(204, 204, 220);\n  }\n  div.css-1ijov7j:hover {\n    color: #1b6522;\n  }\n  \n</style>",
         "mode": "html"
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "10.4.3",
       "targets": [
         {
           "alias": "",
@@ -740,8 +739,35 @@
           "metrics": [
             {
               "field": "result.latency.p_95",
+              "hide": true,
               "id": "1",
               "type": "max"
+            },
+            {
+              "field": "test.spec.bucket-width",
+              "hide": true,
+              "id": "8",
+              "settings": {
+                "missing": "0.001"
+              },
+              "type": "max"
+            },
+            {
+              "id": "9",
+              "pipelineVariables": [
+                {
+                  "name": "latency",
+                  "pipelineAgg": "1"
+                },
+                {
+                  "name": "bucket_width",
+                  "pipelineAgg": "8"
+                }
+              ],
+              "settings": {
+                "script": "params.latency * (params.bucket_width / 0.001)"
+              },
+              "type": "bucket_script"
             }
           ],
           "query": "test.type.keyword:latencybg AND (meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$dest OR reference.display-set-dest.keyword:$dest_ref)",
@@ -825,8 +851,35 @@
           "metrics": [
             {
               "field": "result.latency.median",
+              "hide": true,
               "id": "1",
               "type": "max"
+            },
+            {
+              "field": "test.spec.bucket-width",
+              "hide": true,
+              "id": "8",
+              "settings": {
+                "missing": "0.001"
+              },
+              "type": "max"
+            },
+            {
+              "id": "9",
+              "pipelineVariables": [
+                {
+                  "name": "latency",
+                  "pipelineAgg": "1"
+                },
+                {
+                  "name": "bucket_width",
+                  "pipelineAgg": "8"
+                }
+              ],
+              "settings": {
+                "script": "params.latency * (params.bucket_width / 0.001)"
+              },
+              "type": "bucket_script"
             }
           ],
           "query": "test.type.keyword:latencybg AND (meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$dest OR reference.display-set-dest.keyword:$dest_ref)",
@@ -910,8 +963,35 @@
           "metrics": [
             {
               "field": "result.latency.min",
+              "hide": true,
               "id": "1",
               "type": "min"
+            },
+            {
+              "field": "test.spec.bucket-width",
+              "hide": true,
+              "id": "8",
+              "settings": {
+                "missing": ".001"
+              },
+              "type": "max"
+            },
+            {
+              "id": "9",
+              "pipelineVariables": [
+                {
+                  "name": "latency",
+                  "pipelineAgg": "1"
+                },
+                {
+                  "name": "bucket_width",
+                  "pipelineAgg": "8"
+                }
+              ],
+              "settings": {
+                "script": "params.latency * (params.bucket_width / 0.001)"
+              },
+              "type": "bucket_script"
             }
           ],
           "query": "test.type.keyword:latencybg AND (meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$dest OR reference.display-set-dest.keyword:$dest_ref)",
@@ -1079,8 +1159,35 @@
           "metrics": [
             {
               "field": "result.latency.p_95",
+              "hide": true,
               "id": "1",
               "type": "max"
+            },
+            {
+              "field": "test.spec.bucket-width",
+              "hide": true,
+              "id": "8",
+              "settings": {
+                "missing": "0.001"
+              },
+              "type": "max"
+            },
+            {
+              "id": "9",
+              "pipelineVariables": [
+                {
+                  "name": "latency",
+                  "pipelineAgg": "1"
+                },
+                {
+                  "name": "bucket_width",
+                  "pipelineAgg": "8"
+                }
+              ],
+              "settings": {
+                "script": "params.latency * (params.bucket_width / 0.001)"
+              },
+              "type": "bucket_script"
             }
           ],
           "query": "test.type.keyword:latencybg AND (meta.source.hostname.keyword:$dest OR reference.display-set-source.keyword:$dest_ref) AND (meta.destination.hostname.keyword:$source OR reference.display-set-dest.keyword:$source_ref)",
@@ -1164,8 +1271,35 @@
           "metrics": [
             {
               "field": "result.latency.median",
+              "hide": true,
               "id": "1",
               "type": "max"
+            },
+            {
+              "field": "test.spec.bucket-width",
+              "hide": true,
+              "id": "8",
+              "settings": {
+                "missing": "0.001"
+              },
+              "type": "max"
+            },
+            {
+              "id": "9",
+              "pipelineVariables": [
+                {
+                  "name": "latency",
+                  "pipelineAgg": "1"
+                },
+                {
+                  "name": "bucket_width",
+                  "pipelineAgg": "8"
+                }
+              ],
+              "settings": {
+                "script": "params.latency * (params.bucket_width / 0.001)"
+              },
+              "type": "bucket_script"
             }
           ],
           "query": "test.type.keyword:latencybg AND (meta.source.hostname.keyword:$dest OR reference.display-set-source.keyword:$dest_ref) AND (meta.destination.hostname.keyword:$source OR reference.display-set-dest.keyword:$source_ref)",
@@ -1249,8 +1383,35 @@
           "metrics": [
             {
               "field": "result.latency.min",
+              "hide": true,
               "id": "1",
               "type": "min"
+            },
+            {
+              "field": "test.spec.bucket-width",
+              "hide": true,
+              "id": "8",
+              "settings": {
+                "missing": "0.001"
+              },
+              "type": "max"
+            },
+            {
+              "id": "9",
+              "pipelineVariables": [
+                {
+                  "name": "latency",
+                  "pipelineAgg": "1"
+                },
+                {
+                  "name": "bucket_width",
+                  "pipelineAgg": "8"
+                }
+              ],
+              "settings": {
+                "script": "params.latency * (params.bucket_width / 0.001)"
+              },
+              "type": "bucket_script"
             }
           ],
           "query": "test.type.keyword:latencybg AND (meta.source.hostname.keyword:$dest OR reference.display-set-source.keyword:$dest_ref) AND (meta.destination.hostname.keyword:$source OR reference.display-set-dest.keyword:$source_ref)",
@@ -1310,7 +1471,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1479,7 +1641,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1647,7 +1810,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1754,8 +1918,35 @@
           "metrics": [
             {
               "field": "result.latency.stddev",
+              "hide": true,
               "id": "1",
               "type": "avg"
+            },
+            {
+              "field": "test.spec.bucket-width",
+              "hide": true,
+              "id": "8",
+              "settings": {
+                "missing": "0.001"
+              },
+              "type": "max"
+            },
+            {
+              "id": "9",
+              "pipelineVariables": [
+                {
+                  "name": "latency",
+                  "pipelineAgg": "1"
+                },
+                {
+                  "name": "bucket_width",
+                  "pipelineAgg": "8"
+                }
+              ],
+              "settings": {
+                "script": "params.latency * (params.bucket_width / 0.001)"
+              },
+              "type": "bucket_script"
             }
           ],
           "query": "test.type.keyword:latencybg AND (meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$dest OR reference.display-set-dest.keyword:$dest_ref)",
@@ -1839,8 +2030,35 @@
           "metrics": [
             {
               "field": "result.latency.variance",
+              "hide": true,
               "id": "1",
               "type": "avg"
+            },
+            {
+              "field": "test.spec.bucket-width",
+              "hide": true,
+              "id": "8",
+              "settings": {
+                "missing": "0.001"
+              },
+              "type": "max"
+            },
+            {
+              "id": "9",
+              "pipelineVariables": [
+                {
+                  "name": "latency",
+                  "pipelineAgg": "1"
+                },
+                {
+                  "name": "bucket_width",
+                  "pipelineAgg": "8"
+                }
+              ],
+              "settings": {
+                "script": "params.latency * ((params.bucket_width * params.bucket_width) / (0.001 * 0.001))"
+              },
+              "type": "bucket_script"
             }
           ],
           "query": "test.type.keyword:latencybg AND (meta.source.hostname.keyword:$source OR reference.display-set-source.keyword:$source_ref) AND (meta.destination.hostname.keyword:$dest OR reference.display-set-dest.keyword:$dest_ref)",
@@ -1935,7 +2153,16 @@
               "type": "avg"
             },
             {
+              "field": "test.spec.bucket-width",
+              "hide": true,
               "id": "9",
+              "settings": {
+                "missing": "0.001"
+              },
+              "type": "max"
+            },
+            {
+              "id": "10",
               "pipelineVariables": [
                 {
                   "name": "var1",
@@ -1944,10 +2171,14 @@
                 {
                   "name": "var2",
                   "pipelineAgg": "8"
+                },
+                {
+                  "name": "bucket_width",
+                  "pipelineAgg": "9"
                 }
               ],
               "settings": {
-                "script": "params.var1 - params.var2"
+                "script": "(params.var1 - params.var2) * (params.bucket_width / 0.001)"
               },
               "type": "bucket_script"
             }
@@ -2009,7 +2240,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2116,8 +2348,35 @@
           "metrics": [
             {
               "field": "result.latency.stddev",
+              "hide": true,
               "id": "1",
               "type": "avg"
+            },
+            {
+              "field": "test.spec.bucket-width",
+              "hide": true,
+              "id": "8",
+              "settings": {
+                "missing": "0.001"
+              },
+              "type": "max"
+            },
+            {
+              "id": "9",
+              "pipelineVariables": [
+                {
+                  "name": "latency",
+                  "pipelineAgg": "1"
+                },
+                {
+                  "name": "bucket_width",
+                  "pipelineAgg": "8"
+                }
+              ],
+              "settings": {
+                "script": "params.latency * (params.bucket_width / 0.001)"
+              },
+              "type": "bucket_script"
             }
           ],
           "query": "test.type.keyword:latencybg AND (meta.source.hostname.keyword:$dest OR reference.display-set-source.keyword:$dest_ref) AND (meta.destination.hostname.keyword:$source OR reference.display-set-dest.keyword:$source_ref)",
@@ -2201,8 +2460,35 @@
           "metrics": [
             {
               "field": "result.latency.variance",
+              "hide": true,
               "id": "1",
               "type": "avg"
+            },
+            {
+              "field": "test.spec.bucket-width",
+              "hide": true,
+              "id": "8",
+              "settings": {
+                "missing": "0.001"
+              },
+              "type": "max"
+            },
+            {
+              "id": "9",
+              "pipelineVariables": [
+                {
+                  "name": "latency",
+                  "pipelineAgg": "1"
+                },
+                {
+                  "name": "bucket_width",
+                  "pipelineAgg": "8"
+                }
+              ],
+              "settings": {
+                "script": "params.latency * ((params.bucket_width * params.bucket_width) / (0.001 * 0.001))"
+              },
+              "type": "bucket_script"
             }
           ],
           "query": "test.type.keyword:latencybg AND (meta.source.hostname.keyword:$dest OR reference.display-set-source.keyword:$dest_ref) AND (meta.destination.hostname.keyword:$source OR reference.display-set-dest.keyword:$source_ref)",
@@ -2297,7 +2583,16 @@
               "type": "avg"
             },
             {
+              "field": "test.spec.bucket-width",
+              "hide": true,
               "id": "9",
+              "settings": {
+                "missing": "0.001"
+              },
+              "type": "max"
+            },
+            {
+              "id": "10",
               "pipelineVariables": [
                 {
                   "name": "var1",
@@ -2306,10 +2601,14 @@
                 {
                   "name": "var2",
                   "pipelineAgg": "8"
+                },
+                {
+                  "name": "bucket_width",
+                  "pipelineAgg": "9"
                 }
               ],
               "settings": {
-                "script": "params.var1 - params.var2"
+                "script": "(params.var1 - params.var2) * (params.bucket_width / 0.001)"
               },
               "type": "bucket_script"
             }
@@ -2371,7 +2670,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2709,7 +3009,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3047,7 +3348,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3275,7 +3577,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3345,7 +3648,7 @@
         "showHeader": true,
         "sortBy": []
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "10.4.3",
       "targets": [
         {
           "alias": "",
@@ -3459,7 +3762,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3529,7 +3833,7 @@
         "showHeader": true,
         "sortBy": []
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "10.4.3",
       "targets": [
         {
           "alias": "",
@@ -4047,7 +4351,7 @@
         "content": "<hr>\n<div style=\"text-align:center\"><a href=\"https://www.perfsonar.net/about/privacy-policy/\">Privacy Policy</a> | <a href=\"http://stats.perfsonar.net/\">Global Node Directory</a> | <a href=\"/toolkit/services/host.cgi?method=get_summary\">Host JSON</a></div>\n<div style=\"padding:10px 10px 10px 10px;text-align:center\"><img style=\"width:30px;\" src=\"public/img/ps_footer_grafana_logo.svg\"/>&nbsp;Powered by Grafana</div>",
         "mode": "html"
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "10.4.3",
       "targets": [
         {
           "alias": "",
