@@ -26,8 +26,9 @@ case "$1" in
             fi
         fi
 
+        apache2ctl reload
         #update grafana config - this also starts grafana
-        /usr/lib/perfsonar/grafana//grafana_config.sh
+        /usr/lib/perfsonar/grafana/grafana_config.sh
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

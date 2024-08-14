@@ -1,4 +1,4 @@
-FROM grafana/grafana:10.4.0-ubuntu
+FROM grafana/grafana:10.4.7-ubuntu
 
 COPY . /usr/lib/perfsonar/grafana
 
