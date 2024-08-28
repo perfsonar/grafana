@@ -49,8 +49,9 @@ else:
 
 #connect to api and update permissions
 try_count = 0
-TRY_MAX = 15
-SLEEP_TIME=2
+TRY_MAX = 5
+SLEEP_TIME=6
+time.sleep(SLEEP_TIME)
 while(try_count < TRY_MAX):
     try:
         for folder_uid in folder_uids:
@@ -59,7 +60,8 @@ while(try_count < TRY_MAX):
                     auth=('admin', admin_password),
                     headers={"Accept": "application/json","Content-Type": "application/json"},
                     json=FOLDER_PERMISSIONS_JSON,
-                    verify=False
+                    verify=False,
+                    timeout=12
                 )
             r.raise_for_status()
         break
