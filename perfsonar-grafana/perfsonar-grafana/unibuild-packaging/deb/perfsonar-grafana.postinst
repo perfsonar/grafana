@@ -26,7 +26,6 @@ case "$1" in
             fi
         fi
 
-        systemctl restart apache2
         #update grafana config - this also starts grafana
         /usr/lib/perfsonar/grafana/grafana_config.sh
     ;;
