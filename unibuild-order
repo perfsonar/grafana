@@ -9,5 +9,5 @@ changecom()dnl
 #
 
 # Build primary packages
-grafana
+ifelse(FAMILY,Debian,grafana --no-install,grafana)
 perfsonar-grafana

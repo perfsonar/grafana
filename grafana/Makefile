@@ -80,7 +80,7 @@ endif
 # Standard targets
 
 build:: $(PRODUCTS_DIR) $(BUILD_DIR)
-	bash get_dependency.sh grafana $(PACKAGE_FORMAT)
+	bash get_dependency.sh all $(PACKAGE_FORMAT)
 	mv *.$(PACKAGE_FORMAT) $(PRODUCTS_DIR)
 
 clean::
