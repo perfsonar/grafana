@@ -11,7 +11,13 @@ PSCONFIG_GRAFANA_FILE='/etc/perfsonar/psconfig/grafana-agent.json'
 
 #read file
 grafana_ini = configparser.ConfigParser()
-grafana_ini.read(GRAFANA_INI_FILE)
+try:
+    grafana_ini.read(GRAFANA_INI_FILE)
+except Exception:
+    print('Duplicate section or option in', GRAFANA_INI_FILE)
+    print('Trying to read it again without strict mode.')
+    grafana_ini = configparser.ConfigParser(strict=False)
+    grafana_ini.read(GRAFANA_INI_FILE)
 
 #enable proxy
 grafana_ini['server'] = {
