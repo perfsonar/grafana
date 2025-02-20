@@ -1574,7 +1574,7 @@
               },
               {
                 "id": "custom.width",
-                "value": 58
+                "value": 82
               }
             ]
           },
@@ -1734,7 +1734,7 @@
           "id": "joinByField",
           "options": {
             "byField": "meta.labels.device.keyword",
-            "mode": "outer"
+            "mode": "inner"
           }
         },
         {
