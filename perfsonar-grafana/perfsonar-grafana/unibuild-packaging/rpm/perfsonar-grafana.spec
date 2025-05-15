@@ -69,7 +69,11 @@ if [ "$1" = "1" ]; then
     ######
     #if new install, then enable
     systemctl daemon-reload
-    systemctl enable grafana-server.service
+    # Enable the service. Try the full path to the unit file first, then the name of the service.
+    #   For some reason if chkconfig is not installed, EL9 tries to enable using a sysv script that 
+    #   does not exists even though Grafana very much has a systemd unit file. Include the fall back 
+    #   just in case the Grafana unit file path changes for some reason.
+    systemctl enable %{_unitdir}/grafana-server.service || systemctl enable grafana-server.service || :
 
     #Enable and restart apache for reverse proxy
     systemctl enable httpd
