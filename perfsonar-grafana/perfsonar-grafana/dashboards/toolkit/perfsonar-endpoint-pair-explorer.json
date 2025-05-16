@@ -93,6 +93,7 @@
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
+            "axisSoftMin": 0,
             "barAlignment": 0,
             "barWidthFactor": 0.6,
             "drawStyle": "line",
@@ -348,6 +349,7 @@
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
+            "axisSoftMin": 0,
             "barAlignment": 0,
             "barWidthFactor": 0.6,
             "drawStyle": "bars",
@@ -603,6 +605,7 @@
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
+            "axisSoftMin": 0,
             "barAlignment": 0,
             "barWidthFactor": 0.6,
             "drawStyle": "line",
@@ -1024,6 +1027,7 @@
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
+            "axisSoftMin": 0,
             "barAlignment": 0,
             "barWidthFactor": 0.6,
             "drawStyle": "line",
@@ -1445,6 +1449,7 @@
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
+            "axisSoftMin": 0,
             "barAlignment": 0,
             "barWidthFactor": 0.6,
             "drawStyle": "line",
@@ -1618,6 +1623,7 @@
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
+            "axisSoftMin": 0,
             "barAlignment": 0,
             "barWidthFactor": 0.6,
             "drawStyle": "line",
@@ -1790,6 +1796,7 @@
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
+            "axisSoftMin": 0,
             "barAlignment": 0,
             "barWidthFactor": 0.6,
             "drawStyle": "line",
@@ -2221,6 +2228,7 @@
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
+            "axisSoftMin": 0,
             "barAlignment": 0,
             "barWidthFactor": 0.6,
             "drawStyle": "line",
@@ -2652,6 +2660,7 @@
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
+            "axisSoftMin": 0,
             "barAlignment": 0,
             "barWidthFactor": 0.6,
             "drawStyle": "line",
@@ -2992,6 +3001,7 @@
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
+            "axisSoftMin": 0,
             "barAlignment": 0,
             "barWidthFactor": 0.6,
             "drawStyle": "line",
@@ -3332,7 +3342,9 @@
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
+            "axisSoftMin": 0,
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -3363,7 +3375,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3591,7 +3604,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3661,7 +3675,7 @@
         "showHeader": true,
         "sortBy": []
       },
-      "pluginVersion": "10.4.3",
+      "pluginVersion": "11.2.3",
       "targets": [
         {
           "alias": "",
@@ -3775,7 +3789,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3845,7 +3860,7 @@
         "showHeader": true,
         "sortBy": []
       },
-      "pluginVersion": "10.4.3",
+      "pluginVersion": "11.2.3",
       "targets": [
         {
           "alias": "",
@@ -3968,7 +3983,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -4021,7 +4037,7 @@
             "h": 9,
             "w": 24,
             "x": 0,
-            "y": 75
+            "y": 76
           },
           "id": 17,
           "options": {
@@ -4038,7 +4054,7 @@
             "showHeader": true,
             "sortBy": []
           },
-          "pluginVersion": "10.2.0",
+          "pluginVersion": "11.2.3",
           "targets": [
             {
               "alias": "",
@@ -4263,7 +4279,7 @@
             "h": 9,
             "w": 24,
             "x": 0,
-            "y": 84
+            "y": 85
           },
           "id": 20,
           "options": {
@@ -4337,65 +4353,65 @@
           ],
           "transparent": true,
           "type": "table"
-        }
-      ],
-      "title": "Advanced Displays",
-      "type": "row"
-    },
-    {
-      "datasource": {
-        "type": "grafana-opensearch-datasource",
-        "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
-      },
-      "gridPos": {
-        "h": 7,
-        "w": 24,
-        "x": 0,
-        "y": 76
-      },
-      "id": 22,
-      "options": {
-        "code": {
-          "language": "plaintext",
-          "showLineNumbers": false,
-          "showMiniMap": false
         },
-        "content": "<hr>\n<div style=\"text-align:center\"><a href=\"https://www.perfsonar.net/about/privacy-policy/\">Privacy Policy</a> | <a href=\"http://stats.perfsonar.net/\">Global Node Directory</a> | <a href=\"/toolkit/services/host.cgi?method=get_summary\">Host JSON</a></div>\n<div style=\"padding:10px 10px 10px 10px;text-align:center\"><img style=\"width:30px;\" src=\"public/img/ps_footer_grafana_logo.svg\"/>&nbsp;Powered by Grafana</div>",
-        "mode": "html"
-      },
-      "pluginVersion": "10.4.3",
-      "targets": [
         {
-          "alias": "",
-          "bucketAggs": [
-            {
-              "field": "pscheduler.start_time",
-              "id": "2",
-              "settings": {
-                "interval": "auto"
-              },
-              "type": "date_histogram"
-            }
-          ],
           "datasource": {
             "type": "grafana-opensearch-datasource",
             "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
           },
-          "format": "table",
-          "metrics": [
+          "gridPos": {
+            "h": 7,
+            "w": 24,
+            "x": 0,
+            "y": 94
+          },
+          "id": 22,
+          "options": {
+            "code": {
+              "language": "plaintext",
+              "showLineNumbers": false,
+              "showMiniMap": false
+            },
+            "content": "<hr>\n<div style=\"text-align:center\"><a href=\"https://www.perfsonar.net/about/privacy-policy/\">Privacy Policy</a> | <a href=\"http://stats.perfsonar.net/\">Global Node Directory</a> | <a href=\"/toolkit/services/host.cgi?method=get_summary\">Host JSON</a></div>\n<div style=\"padding:10px 10px 10px 10px;text-align:center\"><img style=\"width:30px;\" src=\"public/img/ps_footer_grafana_logo.svg\"/>&nbsp;Powered by Grafana</div>",
+            "mode": "html"
+          },
+          "pluginVersion": "11.2.3",
+          "targets": [
             {
-              "id": "1",
-              "type": "count"
+              "alias": "",
+              "bucketAggs": [
+                {
+                  "field": "pscheduler.start_time",
+                  "id": "2",
+                  "settings": {
+                    "interval": "auto"
+                  },
+                  "type": "date_histogram"
+                }
+              ],
+              "datasource": {
+                "type": "grafana-opensearch-datasource",
+                "uid": "f990c0c6-a920-41c2-8b3e-a43e6ff9234a"
+              },
+              "format": "table",
+              "metrics": [
+                {
+                  "id": "1",
+                  "type": "count"
+                }
+              ],
+              "query": "",
+              "queryType": "lucene",
+              "refId": "A",
+              "timeField": "pscheduler.start_time"
             }
           ],
-          "query": "",
-          "queryType": "lucene",
-          "refId": "A",
-          "timeField": "pscheduler.start_time"
+          "transparent": true,
+          "type": "text"
         }
       ],
-      "transparent": true,
-      "type": "text"
+      "title": "Advanced Displays",
+      "type": "row"
     }
   ],
   "schemaVersion": 39,
@@ -4447,8 +4463,8 @@
       {
         "current": {
           "selected": false,
-          "text": "ps-dev-staging-el9-tk1.c.esnet-perfsonar.internal",
-          "value": "ps-dev-staging-el9-tk1.c.esnet-perfsonar.internal"
+          "text": "ps-dev-staging-u24-tk1",
+          "value": "ps-dev-staging-u24-tk1"
         },
         "datasource": {
           "type": "grafana-opensearch-datasource",
@@ -4471,8 +4487,8 @@
       {
         "current": {
           "selected": false,
-          "text": "ps-dev-staging-d12-tk1",
-          "value": "ps-dev-staging-d12-tk1"
+          "text": "ps-dev-staging-el9-tk1.c.esnet-perfsonar.internal",
+          "value": "ps-dev-staging-el9-tk1.c.esnet-perfsonar.internal"
         },
         "datasource": {
           "type": "grafana-opensearch-datasource",
@@ -4548,6 +4564,6 @@
   "timezone": "",
   "title": "perfSONAR Endpoint Pair Explorer",
   "uid": "b6df6a8d-1b66-4712-a8da-957b36dc37dc",
-  "version": 3,
+  "version": 4,
   "weekStart": ""
 }
