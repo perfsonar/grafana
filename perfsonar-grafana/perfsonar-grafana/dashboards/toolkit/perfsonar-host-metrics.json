@@ -464,7 +464,7 @@
           "showLineNumbers": false,
           "showMiniMap": false
         },
-        "content": "<div>\n<text style=\"font-size:20pt;\">\nLookup Sevice Metrics\n</text>\n</div>",
+        "content": "<div>\n<text style=\"font-size:20pt;\">\nLookup Service Metrics\n</text>\n</div>",
         "mode": "html"
       },
       "pluginVersion": "10.4.0",
@@ -950,52 +950,54 @@
     },
     {
       "datasource": {
-        "type": "grafana-opensearch-datasource",
-        "uid": "f60bacda-08de-4933-9013-91cfae76df57"
+        "uid": "f60bacda-08de-4933-9013-91cfae76df57",
+        "type": "grafana-opensearch-datasource"
       },
       "fieldConfig": {
         "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
           "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
             "drawStyle": "line",
+            "lineInterpolation": "linear",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "lineWidth": 1,
             "fillOpacity": 0,
             "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
+            "spanNulls": true,
             "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
+            "showPoints": "auto",
             "pointSize": 5,
+            "stacking": {
+              "mode": "none",
+              "group": "A"
+            },
+            "axisPlacement": "auto",
+            "axisLabel": "",
+            "axisColorMode": "text",
+            "axisBorderShow": false,
             "scaleDistribution": {
               "type": "linear"
             },
-            "showPoints": "auto",
-            "spanNulls": true,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
+            "axisCenteredZero": false,
+            "hideFrom": {
+              "tooltip": false,
+              "viz": false,
+              "legend": false
             },
             "thresholdsStyle": {
               "mode": "off"
             }
+          },
+          "color": {
+            "mode": "palette-classic"
           },
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1014,7 +1016,7 @@
             "properties": [
               {
                 "id": "displayName",
-                "value": "Available"
+                "value": "Available RAM"
               }
             ]
           },
@@ -1026,7 +1028,31 @@
             "properties": [
               {
                 "id": "displayName",
-                "value": "Total"
+                "value": "Total RAM"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Average values.node_memory_SwapFree_bytes.val"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Available swap"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Max values.node_memory_SwapTotal_bytes.val"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Total swap"
               }
             ]
           }
@@ -1040,19 +1066,23 @@
       },
       "id": 6,
       "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
         "tooltip": {
           "mode": "multi",
           "sort": "none"
+        },
+        "legend": {
+          "showLegend": true,
+          "displayMode": "list",
+          "placement": "bottom",
+          "calcs": []
         }
       },
       "targets": [
         {
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "f60bacda-08de-4933-9013-91cfae76df57"
+          },
           "alias": "",
           "bucketAggs": [
             {
@@ -1064,28 +1094,36 @@
               "type": "date_histogram"
             }
           ],
-          "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "f60bacda-08de-4933-9013-91cfae76df57"
-          },
           "format": "table",
           "metrics": [
             {
               "field": "values.node_memory_MemAvailable_bytes.val",
               "id": "1",
               "settings": {},
-              "type": "avg"
+              "type": "avg",
+              "hide": false
             },
             {
               "field": "values.node_memory_MemTotal_bytes.val",
               "id": "3",
               "type": "max"
+            },
+            {
+              "id": "4",
+              "type": "avg",
+              "field": "values.node_memory_SwapFree_bytes.val"
+            },
+            {
+              "id": "5",
+              "type": "max",
+              "field": "values.node_memory_SwapTotal_bytes.val"
             }
           ],
           "query": "meta.id.keyword: $host",
           "queryType": "lucene",
           "refId": "A",
-          "timeField": "@timestamp"
+          "timeField": "@timestamp",
+          "hide": false
         }
       ],
       "title": "Memory",
@@ -2164,7 +2202,7 @@
       },
       "gridPos": {
         "h": 9,
-        "w": 18,
+        "w": 19,
         "x": 0,
         "y": 49
       },
