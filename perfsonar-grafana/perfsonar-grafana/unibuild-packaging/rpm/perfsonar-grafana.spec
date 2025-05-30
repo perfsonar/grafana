@@ -3,8 +3,8 @@
 %define httpd_config_base   /etc/httpd/conf.d
 
 #Version variables set by automated scripts
-%define perfsonar_auto_version 5.2.0
-%define perfsonar_auto_relnum 1
+%define perfsonar_auto_version 5.3.0
+%define perfsonar_auto_relnum 0.a1.0
 
 # defining macros needed by SELinux
 # SELinux policy type - Targeted policy is the default SELinux policy used in Red Hat Enterprise Linux.
