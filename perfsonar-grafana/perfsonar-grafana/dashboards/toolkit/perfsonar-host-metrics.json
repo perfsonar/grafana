@@ -80,7 +80,7 @@
         "content": "<div>\n<text style=\"font-size:20pt;\">\n<img \nsrc=\"/grafana/public/img/perfsonar-logo-white-full.svg\" \nstyle=\"background:rgb(17, 18, 23); width:200px; \"/> \non $node_name\n</text>\n<a class=\"simple-button\" target=\"_blank\" href=\"https://docs.perfsonar.net/\" style=\"float: right;\">? Help</a>\n<a class=\"simple-button\" target=\"_blank\" href=\"/toolkit/auth/admin/\" style=\"float: right;\">Configuration</a>\n<a class=\"simple-button\" href=\"/grafana/d/ff439cb3-6042-43b5-a999-674681d80395/perfsonar-main?orgId=1\" style=\"float: right;\">Home</a>\n</div>\n\n\n<style>\n  /* custom stuff */\n  a.buttons, button.buttons {\n    text-decoration: none;\n    background-color: #1b6522;\n    border: 3px solid white; \n    border-radius: 3px;\n    color: white !important;  \n    font-weight: bold; \n    text-align: right; \n    padding: 10px; \n    width: auto;\n    display: inline-block;\n  }\n  a.simple-button {\n    text-decoration: none;\n    background-color: black;\n    border: 3px solid #1b6522; \n    border-radius: 3px;\n    color: white; \n    font-weight: bold; \n    text-align: right; \n    padding: 10px; \n    width: auto;\n    margin: 0 5px 0 5px;\n  }\n  a.simple-button:hover {\n    color: #1b6522;\n  }\n  h1.title,h2.title,h3.title,div.title {\n    color: #6D6E71; \n    font-weight:bold;\n  }\n  p.description {\n    color: #6D6E71;\n  }\n  a.link {\n    color: #1b6522;\n  }\n\n  /* ----grafana stuff---- */\n  button.css-82ooe6-button, button.css-1pq88ji-button {\n    background-color: rgba(78, 193, 224,0.7);\n    color: white;\n  }\n  button.css-82ooe6-button:hover, button.css-1pq88ji-button:hover {\n    background-color: #1b6522;\n  }\n  button.dashboard-row__title {\n    color: #6D6E71;\n  }\n  /* +add button */\n  button.css-r8pbcf-button-add-panel-button-add-panel-button-text,\n  button.css-1bvfhzx-button-add-panel-button-add-panel-button-text {\n    color: #1b6522;\n    border: 1px solid #1b6522;\n    }\n\n\n  /* ----light mode---- */\n  button.css-14424at {\n    color: #6D6E71; \n  }\n  button.css-14424at:hover {\n    color: #1b6522; \n  }\n    /* data links */\n  div.css-1d09i7b {\n    color: rgb(36, 41, 46);\n  }\n  div.css-1d09i7b:hover {\n    color: #1b6522;\n  }\n\n  /* ----dark mode---- */\n  div.css-1h2bvkc {\n    color: rgb(204, 204, 220);\n  }\n  div.css-1h2bvkc:hover {\n    color: #6d6e71;\n  }\n  button.css-1n3c59t {\n    color: #1b6522;\n  }\n  button.css-1n3c59t:hover {\n    color: #6D6E71;\n  }\n\n  /* data links */\n  div.css-1ijov7j {\n    color: rgb(204, 204, 220);\n  }\n  div.css-1ijov7j:hover {\n    color: #1b6522;\n  }\n  \n</style>",
         "mode": "html"
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "11.2.9",
       "targets": [
         {
           "alias": "",
@@ -135,7 +135,7 @@
         "content": "<div>\n<text style=\"font-size:20pt;\">\nService Up/Down Metrics\n</text>\n</div>",
         "mode": "html"
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "11.2.9",
       "targets": [
         {
           "alias": "",
@@ -239,6 +239,7 @@
         "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "horizontal",
+        "percentChangeColorMode": "standard",
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
@@ -254,7 +255,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "11.2.9",
       "targets": [
         {
           "alias": "",
@@ -467,7 +468,7 @@
         "content": "<div>\n<text style=\"font-size:20pt;\">\nLookup Service Metrics\n</text>\n</div>",
         "mode": "html"
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "11.2.9",
       "targets": [
         {
           "alias": "",
@@ -568,7 +569,7 @@
         "showHeader": false,
         "sortBy": []
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "11.2.9",
       "targets": [
         {
           "alias": "",
@@ -830,7 +831,7 @@
         "showHeader": false,
         "sortBy": []
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "11.2.9",
       "targets": [
         {
           "alias": "",
@@ -914,7 +915,7 @@
         "content": "<div>\n<text style=\"font-size:20pt;\">\nHost Metrics\n</text>\n</div>",
         "mode": "html"
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "11.2.9",
       "targets": [
         {
           "alias": "",
@@ -950,46 +951,46 @@
     },
     {
       "datasource": {
-        "uid": "f60bacda-08de-4933-9013-91cfae76df57",
-        "type": "grafana-opensearch-datasource"
+        "type": "grafana-opensearch-datasource",
+        "uid": "f60bacda-08de-4933-9013-91cfae76df57"
       },
       "fieldConfig": {
         "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
           "custom": {
-            "drawStyle": "line",
-            "lineInterpolation": "linear",
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
             "barAlignment": 0,
             "barWidthFactor": 0.6,
-            "lineWidth": 1,
+            "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
-            "spanNulls": true,
-            "insertNulls": false,
-            "showPoints": "auto",
-            "pointSize": 5,
-            "stacking": {
-              "mode": "none",
-              "group": "A"
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
             },
-            "axisPlacement": "auto",
-            "axisLabel": "",
-            "axisColorMode": "text",
-            "axisBorderShow": false,
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
             },
-            "axisCenteredZero": false,
-            "hideFrom": {
-              "tooltip": false,
-              "viz": false,
-              "legend": false
+            "showPoints": "auto",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
             },
             "thresholdsStyle": {
               "mode": "off"
             }
-          },
-          "color": {
-            "mode": "palette-classic"
           },
           "mappings": [],
           "thresholds": {
@@ -1066,23 +1067,19 @@
       },
       "id": 6,
       "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
         "tooltip": {
           "mode": "multi",
           "sort": "none"
-        },
-        "legend": {
-          "showLegend": true,
-          "displayMode": "list",
-          "placement": "bottom",
-          "calcs": []
         }
       },
       "targets": [
         {
-          "datasource": {
-            "type": "grafana-opensearch-datasource",
-            "uid": "f60bacda-08de-4933-9013-91cfae76df57"
-          },
           "alias": "",
           "bucketAggs": [
             {
@@ -1094,14 +1091,19 @@
               "type": "date_histogram"
             }
           ],
+          "datasource": {
+            "type": "grafana-opensearch-datasource",
+            "uid": "f60bacda-08de-4933-9013-91cfae76df57"
+          },
           "format": "table",
+          "hide": false,
           "metrics": [
             {
               "field": "values.node_memory_MemAvailable_bytes.val",
+              "hide": false,
               "id": "1",
               "settings": {},
-              "type": "avg",
-              "hide": false
+              "type": "avg"
             },
             {
               "field": "values.node_memory_MemTotal_bytes.val",
@@ -1109,21 +1111,20 @@
               "type": "max"
             },
             {
+              "field": "values.node_memory_SwapFree_bytes.val",
               "id": "4",
-              "type": "avg",
-              "field": "values.node_memory_SwapFree_bytes.val"
+              "type": "avg"
             },
             {
+              "field": "values.node_memory_SwapTotal_bytes.val",
               "id": "5",
-              "type": "max",
-              "field": "values.node_memory_SwapTotal_bytes.val"
+              "type": "max"
             }
           ],
           "query": "meta.id.keyword: $host",
           "queryType": "lucene",
           "refId": "A",
-          "timeField": "@timestamp",
-          "hide": false
+          "timeField": "@timestamp"
         }
       ],
       "title": "Memory",
@@ -1153,7 +1154,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1198,7 +1200,7 @@
         "showHeader": false,
         "sortBy": []
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "11.2.9",
       "targets": [
         {
           "alias": "",
@@ -1321,7 +1323,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1378,7 +1381,7 @@
         "showHeader": true,
         "sortBy": []
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "11.2.9",
       "targets": [
         {
           "alias": "",
@@ -1453,6 +1456,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -1483,7 +1487,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1574,7 +1579,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1680,7 +1686,7 @@
         "showHeader": true,
         "sortBy": []
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "11.2.9",
       "targets": [
         {
           "alias": "",
@@ -1818,6 +1824,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -1848,7 +1855,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2020,7 +2028,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2065,7 +2074,7 @@
         "showHeader": true,
         "sortBy": []
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "11.2.9",
       "targets": [
         {
           "alias": "",
@@ -2133,6 +2142,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -2163,7 +2173,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2286,7 +2297,7 @@
         "content": "<div>\n<text style=\"font-size:20pt;\">\npScheduler Metrics\n</text>\n</div>",
         "mode": "html"
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "11.2.9",
       "targets": [
         {
           "alias": "",
@@ -2322,6 +2333,7 @@
     },
     {
       "datasource": {
+        "default": false,
         "type": "grafana-opensearch-datasource",
         "uid": "f60bacda-08de-4933-9013-91cfae76df57"
       },
@@ -2338,6 +2350,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -2368,7 +2381,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2414,7 +2428,7 @@
               "type": "terms"
             },
             {
-              "field": "pscheduler.start_time",
+              "field": "@timestamp",
               "id": "2",
               "settings": {
                 "interval": "auto"
@@ -2446,6 +2460,7 @@
     },
     {
       "datasource": {
+        "default": false,
         "type": "grafana-opensearch-datasource",
         "uid": "f60bacda-08de-4933-9013-91cfae76df57"
       },
@@ -2462,6 +2477,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -2492,7 +2508,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2538,7 +2555,7 @@
               "type": "terms"
             },
             {
-              "field": "pscheduler.start_time",
+              "field": "@timestamp",
               "id": "2",
               "settings": {
                 "interval": "auto"
@@ -2570,6 +2587,7 @@
     },
     {
       "datasource": {
+        "default": false,
         "type": "grafana-opensearch-datasource",
         "uid": "f60bacda-08de-4933-9013-91cfae76df57"
       },
@@ -2586,6 +2604,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -2616,7 +2635,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2662,7 +2682,7 @@
               "type": "terms"
             },
             {
-              "field": "pscheduler.start_time",
+              "field": "@timestamp",
               "id": "2",
               "settings": {
                 "interval": "auto"
@@ -2694,6 +2714,7 @@
     },
     {
       "datasource": {
+        "default": false,
         "type": "grafana-opensearch-datasource",
         "uid": "f60bacda-08de-4933-9013-91cfae76df57"
       },
@@ -2710,6 +2731,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -2740,7 +2762,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2786,7 +2809,7 @@
               "type": "terms"
             },
             {
-              "field": "pscheduler.start_time",
+              "field": "@timestamp",
               "id": "2",
               "settings": {
                 "interval": "auto"
@@ -2837,7 +2860,7 @@
         "content": "<div>\n<text style=\"font-size:20pt;\">\npSConfig Metrics\n</text>\n</div>",
         "mode": "html"
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "11.2.9",
       "targets": [
         {
           "alias": "",
@@ -2894,7 +2917,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2951,7 +2975,7 @@
         "showHeader": true,
         "sortBy": []
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "11.2.9",
       "targets": [
         {
           "alias": "",
@@ -3061,7 +3085,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3106,7 +3131,7 @@
         "showHeader": true,
         "sortBy": []
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "11.2.9",
       "targets": [
         {
           "alias": "",
@@ -3192,7 +3217,7 @@
         "content": "<div>\n<text style=\"font-size:20pt;\">\nClock Metrics\n</text>\n</div>",
         "mode": "html"
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "11.2.9",
       "targets": [
         {
           "alias": "",
@@ -3244,6 +3269,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -3274,7 +3300,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3386,7 +3413,7 @@
         "content": "<div>\n<text style=\"font-size:20pt;\">\nHost Tuning Settings\n</text>\n</div>",
         "mode": "html"
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "11.2.9",
       "targets": [
         {
           "alias": "",
@@ -3454,7 +3481,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3486,7 +3514,7 @@
         "showHeader": true,
         "sortBy": []
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "11.2.9",
       "targets": [
         {
           "alias": "",
@@ -3659,7 +3687,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3696,7 +3725,7 @@
           }
         ]
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "11.2.9",
       "targets": [
         {
           "alias": "",
@@ -3835,9 +3864,9 @@
     "list": [
       {
         "current": {
-          "selected": true,
-          "text": "10.128.15.219",
-          "value": "10.128.15.219"
+          "selected": false,
+          "text": "localhost",
+          "value": "localhost"
         },
         "datasource": {
           "type": "grafana-opensearch-datasource",
@@ -3860,8 +3889,8 @@
       {
         "current": {
           "selected": false,
-          "text": "ps-dev-staging-el9-tk2.c.esnet-perfsonar.internal",
-          "value": "ps-dev-staging-el9-tk2.c.esnet-perfsonar.internal"
+          "text": "ps-dev-staging-el9-tk1",
+          "value": "ps-dev-staging-el9-tk1"
         },
         "datasource": {
           "type": "grafana-opensearch-datasource",
@@ -3918,6 +3947,6 @@
   "timezone": "",
   "title": "perfSONAR Host Metrics",
   "uid": "eb96563b-0d93-4910-be3c-5be331a00339",
-  "version": 4,
+  "version": 5,
   "weekStart": ""
 }
