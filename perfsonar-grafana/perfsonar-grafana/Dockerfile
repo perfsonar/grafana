@@ -25,8 +25,12 @@ RUN chown -R grafana:root ${PERFSONAR_ROOTPATH}
 RUN sed -i ${PERFSONAR_ROOTPATH}/provisioning/dashboards/*.yaml -e 's/allowUiUpdates: false/allowUiUpdates: true/g'
 RUN sed -i ${PERFSONAR_ROOTPATH}/provisioning/datasources/*.yaml -e 's/editable: false/editable: true/g'
 
-#Uncomment below to point datasource at different MA by default
-#RUN sed -i /usr/lib/perfsonar/grafana/provisioning/datasources/*.yaml -e 's/localhost/34.72.54.168/g'
+# This script will run before Grafana starts to modify the datasource URLs.
+COPY docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
+# The original Grafana CMD (which starts Grafana) will now be passed as arguments to our entrypoint script.
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 
 USER grafana
 EXPOSE 3000
