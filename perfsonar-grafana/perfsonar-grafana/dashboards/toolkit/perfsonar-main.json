@@ -497,7 +497,7 @@
               "type": "max"
             }
           ],
-          "query": "test.type.keyword: latencybg",
+          "query": "test.type.keyword: latencybg OR test.type.keyword: latency",
           "queryType": "lucene",
           "refId": "A",
           "timeField": "pscheduler.start_time"
@@ -1211,7 +1211,7 @@
               "type": "min"
             }
           ],
-          "query": "test.type.keyword: throughput OR test.type.keyword: latencybg",
+          "query": "test.type.keyword: throughput OR test.type.keyword: latencybg OR test.type.keyword: latency",
           "queryType": "lucene",
           "refId": "A",
           "timeField": "pscheduler.start_time"
