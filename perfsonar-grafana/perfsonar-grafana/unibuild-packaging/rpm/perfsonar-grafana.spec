@@ -37,6 +37,10 @@ Requires:       selinux-policy-%{selinuxtype}
 Requires(post): selinux-policy-%{selinuxtype}
 BuildRequires:  selinux-policy-devel
 
+# Discontinued in 5.1.0
+Obsoletes:      perfsonar-graphs
+
+
 %description
 A package that installs and configures Grafana for perfSONAR
 
