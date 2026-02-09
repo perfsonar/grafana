@@ -3,7 +3,7 @@
 %define httpd_config_base   /etc/httpd/conf.d
 
 #Version variables set by automated scripts
-%define perfsonar_auto_version 5.2.3
+%define perfsonar_auto_version 5.2.4
 %define perfsonar_auto_relnum 1
 
 # defining macros needed by SELinux
@@ -36,6 +36,10 @@ Requires(post): python3-requests
 Requires:       selinux-policy-%{selinuxtype}
 Requires(post): selinux-policy-%{selinuxtype}
 BuildRequires:  selinux-policy-devel
+
+# Discontinued in 5.1.0
+Obsoletes:      perfsonar-graphs
+
 
 %description
 A package that installs and configures Grafana for perfSONAR
