@@ -1,18 +1,17 @@
-version: '3.7'
 services:
   grafana:
-    restart: &grafana-restart always
-    image: ghcr.io/perfsonar/grafana:latest
+    restart: always
+    image: ghcr.io/perfsonar/grafana:5.3.0
     build:
       context: .
       dockerfile: Dockerfile
     environment:
-      &grafana-env
+      - OPENSEARCH_URL=https://opensearch-node:9200
+      - OPENSEARCH_VERSION=2.19.4
       - GF_INSTALL_PLUGINS=grafana-opensearch-datasource,esnet-matrix-panel
       - GF_PANELS_DISABLE_SANITIZE_HTML=true
       - GF_PATHS_PROVISIONING=/usr/lib/perfsonar/grafana/provisioning
       - GF_SERVER_ROOT_URL=%(protocol)s://%(domain)s:%(http_port)s/grafana/
       - GF_SERVER_SERVE_FROM_SUB_PATH=true
     ports:
-      &grafana-ports
        - 3000:3000
