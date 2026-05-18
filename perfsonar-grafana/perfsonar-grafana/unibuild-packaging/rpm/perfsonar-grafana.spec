@@ -3,7 +3,7 @@
 %define httpd_config_base   /etc/httpd/conf.d
 
 #Version variables set by automated scripts
-%define perfsonar_auto_version 5.2.4
+%define perfsonar_auto_version 5.2.5
 %define perfsonar_auto_relnum 1
 
 # defining macros needed by SELinux
